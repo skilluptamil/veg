@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About FreshLeaf Market - Pioneering honest, transparent, farm-to-table vegetable and fruit sourcing for healthy communities.">
+  <title>About Us - FreshLeaf Market</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="index.html" class="header-brand"><img src="assets/images/logo.svg" alt="FreshLeaf Market"></a>
+        <nav class="main-nav d-none d-lg-block">
+          <ul class="d-flex align-items-center gap-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Fresh Market Landing</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Organic Farm Market</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count wishlist-badge-count">2</span>
+          </a>
+          <a href="cart.html" class="action-badge-btn" title="Shopping Cart"><i class="bi bi-basket3"></i><span class="badge-count cart-badge-count">3</span></a>
+          <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-md-inline-flex"><i class="bi bi-person"></i> Login</a>
+          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 - Fresh Market</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2 text-success"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="about.html"><i class="bi bi-people me-2"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2 text-success"></i> Delivery Zones</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html"><i class="bi bi-box2-heart me-2 text-success"></i> Subscription Baskets</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html"><i class="bi bi-briefcase me-2 text-success"></i> Services & Wholesale</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html"><i class="bi bi-journal-text me-2 text-success"></i> Blog & Recipes</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html"><i class="bi bi-envelope me-2 text-success"></i> Contact Us</a></li>
+      </ul>
+      <div class="border-top pt-3">
+        <a href="admin/index.html" class="btn btn-fresh btn-fresh-outline w-100 mb-2"><i class="bi bi-speedometer2"></i> Admin Panel</a>
+        <a href="login.html" class="btn btn-fresh btn-fresh-primary w-100"><i class="bi bi-person"></i> Login / Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Breadcrumb Hero -->
+  <section class="py-5 bg-surface border-bottom">
+    <div class="container py-3 text-center">
+      <div class="badge-section"><i class="bi bi-info-circle-fill"></i> Our Purpose & Story</div>
+      <h1 class="hero-title mb-2">Cultivating Health, Nurturing Soil</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About Us</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Company Story Section -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=800&q=80" alt="FreshLeaf Farm Story" class="rounded-4 shadow-lg w-100">
+        </div>
+        <div class="col-lg-6 ps-lg-5">
+          <div class="badge-section"><i class="bi bi-book"></i> The FreshLeaf Journey</div>
+          <h2 class="h1 fw-bold mb-3">Redefining How Fresh Produce Reaches Your Kitchen</h2>
+          <p class="text-muted mb-3">
+            In 2021, FreshLeaf was established with a simple realization: city consumers were paying exorbitant prices for wilted vegetables that spent days in transit, while dedicated local farmers received meager returns.
+          </p>
+          <p class="text-muted mb-4">
+            We built a direct cold-chain logistics network connecting 50+ family farms directly to suburban households. By harvesting strictly against daily confirmed demand, we eliminate food waste, ensure peak nutrition, and give farmers the fair compensation they deserve.
+          </p>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 bg-surface rounded-3">
+                <h6 class="fw-bold text-success mb-1"><i class="bi bi-compass"></i> Our Mission</h6>
+                <p class="small text-muted mb-0">To make organic, chemical-free farm produce universally accessible and affordable.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-surface rounded-3">
+                <h6 class="fw-bold text-warning mb-1"><i class="bi bi-eye"></i> Our Vision</h6>
+                <p class="small text-muted mb-0">To restore ecological balance by fostering 100% regenerative local agricultural belts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counters -->
+  <section class="py-5 bg-card border-top border-bottom">
+    <div class="container py-3">
+      <div class="row g-4 text-center">
+        <div class="col-lg-3 col-6">
+          <div class="display-5 fw-bold text-success mb-1">50+</div>
+          <p class="text-muted fw-semibold mb-0">Local Partner Farmers</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="display-5 fw-bold text-warning mb-1">15K+</div>
+          <p class="text-muted fw-semibold mb-0">Delighted Families</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="display-5 fw-bold text-success mb-1">120+</div>
+          <p class="text-muted fw-semibold mb-0">Fresh Harvest Products</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="display-5 fw-bold text-warning mb-1">5+</div>
+          <p class="text-muted fw-semibold mb-0">Years of Community Trust</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-gem"></i> Guiding Principles</div>
+        <h2 class="h1 fw-bold">Our Core Values</h2>
+        <p class="text-muted">The foundational pillars that guide every harvest, check, and delivery.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon-wrap"><i class="bi bi-shield-lock-fill"></i></div>
+            <h4 class="feature-title">Radical Transparency</h4>
+            <p class="feature-desc">Every vegetable is batch-tagged with the farmer's name, harvest date, and exact farm location.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon-wrap"><i class="bi bi-flower1"></i></div>
+            <h4 class="feature-title">Zero Chemicals</h4>
+            <p class="feature-desc">We enforce strict 0-pesticide protocols with multi-spectrum lab verification for all growers.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon-wrap"><i class="bi bi-recycle"></i></div>
+            <h4 class="feature-title">Eco Stewardship</h4>
+            <p class="feature-desc">From solar-powered packing centers to compostable packaging, we protect the planet.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon-wrap"><i class="bi bi-heart-pulse-fill"></i></div>
+            <h4 class="feature-title">Nutritional Integrity</h4>
+            <p class="feature-desc">Delivering within hours of harvest preserves up to 40% more antioxidants than standard retail.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Farm-to-Fork 4-Step Quality Process -->
+  <section class="py-5 bg-card border-top border-bottom">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-gear-wide-connected"></i> Quality Assurance</div>
+        <h2 class="h1 fw-bold">From Soil to Doorstep in 4 Simple Steps</h2>
+        <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+          Our synchronized cold-chain workflow eliminates wholesale middle-warehouses to deliver unadulterated freshness within hours of plucking.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 bg-surface rounded-4 h-100 border text-center position-relative shadow-sm transition-hover">
+            <div class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 mb-3 fw-bold small">Step 01</div>
+            <div class="mx-auto rounded-circle bg-success text-white d-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-brightness-alt-high-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-2">5:00 AM Dawn Harvest</h5>
+            <p class="small text-muted mb-0">
+              Produce is plucked at peak natural hydration and sugar concentration before the morning sun evaporates moisture.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 bg-surface rounded-4 h-100 border text-center position-relative shadow-sm transition-hover">
+            <div class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-3 py-1 mb-3 fw-bold small">Step 02</div>
+            <div class="mx-auto rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-eyedropper"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Multi-Residue Lab Scan</h5>
+            <p class="small text-muted mb-0">
+              Every crop batch undergoes rapid testing for 0 synthetic chemical residues, natural firmness, and Brix sweetness level.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 bg-surface rounded-4 h-100 border text-center position-relative shadow-sm transition-hover">
+            <div class="badge bg-info bg-opacity-10 text-info rounded-pill px-3 py-1 mb-3 fw-bold small">Step 03</div>
+            <div class="mx-auto rounded-circle bg-info text-white d-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-snow2"></i>
+            </div>
+            <h5 class="fw-bold mb-2">4°C Ozone Cold Wash</h5>
+            <p class="small text-muted mb-0">
+              Cooled immediately with purified micro-mist ozone rinse to remove soil particles without stripping natural waxy bio-coatings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 bg-surface rounded-4 h-100 border text-center position-relative shadow-sm transition-hover">
+            <div class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 mb-3 fw-bold small">Step 04</div>
+            <div class="mx-auto rounded-circle bg-success text-white d-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-truck"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Sub-3-Hour EV Delivery</h5>
+            <p class="small text-muted mb-0">
+              Dispatched in breathable cotton crisper pouches via electric refrigerated vans right to your kitchen counter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Sustainable Impact & Certified Standards -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="badge-section"><i class="bi bi-globe-americas"></i> Environmental Impact</div>
+          <h2 class="h1 fw-bold mb-3">Farming That Gives Back More Than It Takes</h2>
+          <p class="text-muted mb-4">
+            We believe agricultural commerce should regenerate the planet. By supporting circular farming principles, we turn food consumption into a catalyst for ecological renewal.
+          </p>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 bg-card rounded-4 border shadow-sm h-100">
+                <div class="d-flex align-items-center gap-2 mb-2 text-success fs-4">
+                  <i class="bi bi-droplet-half"></i>
+                  <span class="h4 fw-bold mb-0 text-main">4.2M Liters</span>
+                </div>
+                <h6 class="fw-bold mb-1">Water Saved Annually</h6>
+                <p class="small text-muted mb-0">Through smart soil moisture sensors and precision micro-drip networks.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-card rounded-4 border shadow-sm h-100">
+                <div class="d-flex align-items-center gap-2 mb-2 text-warning fs-4">
+                  <i class="bi bi-cash-stack"></i>
+                  <span class="h4 fw-bold mb-0 text-main">+35% Extra</span>
+                </div>
+                <h6 class="fw-bold mb-1">Fair Farmer Pay</h6>
+                <p class="small text-muted mb-0">Guaranteed minimum pricing above unstable wholesale auction rates.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-card rounded-4 border shadow-sm h-100">
+                <div class="d-flex align-items-center gap-2 mb-2 text-success fs-4">
+                  <i class="bi bi-shield-check"></i>
+                  <span class="h4 fw-bold mb-0 text-main">100% Verified</span>
+                </div>
+                <h6 class="fw-bold mb-1">0-Pesticide Audited</h6>
+                <p class="small text-muted mb-0">NABL accredited multi-spectral residue testing for every harvest lot.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-card rounded-4 border shadow-sm h-100">
+                <div class="d-flex align-items-center gap-2 mb-2 text-primary fs-4">
+                  <i class="bi bi-bag-check-fill"></i>
+                  <span class="h4 fw-bold mb-0 text-main">Zero Plastic</span>
+                </div>
+                <h6 class="fw-bold mb-1">100% Eco Packaging</h6>
+                <p class="small text-muted mb-0">Reusable organic cotton totes, jute mesh bags, and cornstarch trays.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <img src="assets/images/about-farmland.jpg" alt="Lush Organic Farmland" class="rounded-4 shadow-lg w-100" style="min-height: 380px; object-fit: cover;">
+            <div class="position-absolute bottom-0 end-0 m-3 m-md-4 p-3 bg-card rounded-4 shadow-lg border d-flex align-items-center gap-3" style="max-width: 320px;">
+              <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px;">
+                <i class="bi bi-patch-check-fill fs-3"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">Regenerative Promise</h6>
+                <p class="small text-muted mb-0">Every subscription box funds 1 kg of native bio-compost enrichment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-people-fill"></i> Leadership</div>
+        <h2 class="h1 fw-bold">Meet the Agronomists & Founders</h2>
+        <p class="text-muted mb-0">Passionate agricultural scientists and supply-chain innovators.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Leader 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Meera Sen" class="team-avatar">
+            </div>
+            <div class="team-card-body">
+              <h5 class="team-name">Meera Sen</h5>
+              <div class="team-role">Founder & CEO</div>
+              <p class="team-bio">Agricultural economist with 12 years championing rural micro-enterprises and sustainable farm ecosystems.</p>
+              <div class="team-socials">
+                <a href="https://linkedin.com/in/meera-sen-freshleaf" target="_blank" rel="noopener noreferrer" class="team-social-link linkedin-btn" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/meerasen_agri" target="_blank" rel="noopener noreferrer" class="team-social-link twitter-btn" title="Twitter / X Profile"><i class="fab fa-x-twitter"></i></a>
+                <a href="mailto:meera.sen@freshleafmarket.com" class="team-social-link email-btn" title="Send Email"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leader 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Dr. Arindam Bose" class="team-avatar">
+            </div>
+            <div class="team-card-body">
+              <h5 class="team-name">Dr. Arindam Bose</h5>
+              <div class="team-role">Head of Agronomy & Soil</div>
+              <p class="team-bio">Ph.D. in Organic Microbiology from IARI, specializing in native soil biodiversity and 0-residue agronomy.</p>
+              <div class="team-socials">
+                <a href="https://linkedin.com/in/dr-arindam-bose-soil" target="_blank" rel="noopener noreferrer" class="team-social-link linkedin-btn" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/dr_arindambose" target="_blank" rel="noopener noreferrer" class="team-social-link twitter-btn" title="Twitter / X Profile"><i class="fab fa-x-twitter"></i></a>
+                <a href="mailto:arindam.bose@freshleafmarket.com" class="team-social-link email-btn" title="Send Email"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leader 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Kavita Nair" class="team-avatar">
+            </div>
+            <div class="team-card-body">
+              <h5 class="team-name">Kavita Nair</h5>
+              <div class="team-role">Cold-Chain Logistics Lead</div>
+              <p class="team-bio">Specialist in electric refrigerated fleet optimization, ensuring guaranteed sub-2-hour farm-to-table delivery.</p>
+              <div class="team-socials">
+                <a href="https://linkedin.com/in/kavita-nair-logistics" target="_blank" rel="noopener noreferrer" class="team-social-link linkedin-btn" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/kavita_coldchain" target="_blank" rel="noopener noreferrer" class="team-social-link twitter-btn" title="Twitter / X Profile"><i class="fab fa-x-twitter"></i></a>
+                <a href="mailto:kavita.nair@freshleafmarket.com" class="team-social-link email-btn" title="Send Email"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leader 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Sameer Deshmukh" class="team-avatar">
+            </div>
+            <div class="team-card-body">
+              <h5 class="team-name">Sameer Deshmukh</h5>
+              <div class="team-role">Farmer Relations Director</div>
+              <p class="team-bio">Community liaison ensuring transparent minimum procurement pricing and organic transition aid for 50+ growers.</p>
+              <div class="team-socials">
+                <a href="https://linkedin.com/in/sameer-deshmukh-farmrelations" target="_blank" rel="noopener noreferrer" class="team-social-link linkedin-btn" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/sameer_deshmukh" target="_blank" rel="noopener noreferrer" class="team-social-link twitter-btn" title="Twitter / X Profile"><i class="fab fa-x-twitter"></i></a>
+                <a href="mailto:sameer.deshmukh@freshleafmarket.com" class="team-social-link email-btn" title="Send Email"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-5 bg-surface border-top">
+    <div class="container py-4 text-center">
+      <div class="badge-section mb-3"><i class="bi bi-patch-check-fill text-success"></i> Direct From Our Farms</div>
+      <h2 class="h1 fw-bold mb-3">Ready to Taste Real Farm Freshness?</h2>
+      <p class="text-muted mb-4" style="max-width: 620px; margin: 0 auto;">
+        Join thousands of health-conscious families enjoying crisp, chemical-free vegetables, juicy orchard fruits, and organic aromatics delivered straight from certified local growers.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="products.html" class="btn btn-fresh btn-fresh-primary btn-fresh-lg">
+          <i class="bi bi-basket2-fill me-2"></i> Shop Fresh Produce
+        </a>
+        <a href="contact.html" class="btn btn-fresh btn-fresh-outline btn-fresh-lg">
+          <i class="bi bi-chat-dots-fill me-2"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Socials -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market">
+          </a>
+          <p class="footer-desc">
+            Your neighborhood local farm-to-table produce store. Delivering ethically grown, crisp vegetables, juicy orchard fruits, and organic essentials harvested daily.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919823011223" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-success me-1"></i> About Us</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right small text-success me-1"></i> All Produce</a></li>
+            <li><a href="delivery-coverage.html"><i class="bi bi-chevron-right small text-success me-1"></i> Delivery Zones</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-success me-1"></i> Subscriptions</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-success me-1"></i> Journal & Recipes</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-success me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Produce Categories</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
+            <li><a href="products.html?cat=fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Orchard Fruits</a></li>
+            <li><a href="products.html?cat=leafy-greens"><i class="bi bi-chevron-right small text-success me-1"></i> Hydroponic Greens</a></li>
+            <li><a href="products.html?cat=herbs"><i class="bi bi-chevron-right small text-success me-1"></i> Kitchen Herbs</a></li>
+            <li><a href="products.html?cat=dry-fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Dry Fruits & Nuts</a></li>
+            <li><a href="products.html?cat=combos"><i class="bi bi-chevron-right small text-success me-1"></i> Value Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact Info -->
+        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+          <h5 class="footer-title">Visit Our Market</h5>
+          <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
+            <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
+            <div>
+              <strong>FreshLeaf Central Market Hub</strong><br>
+              <span class="footer-contact-text">Shop 14, Green Acre Square, Farmway Road, Pune 411045</span>
+            </div>
+          </a>
+          <a href="tel:+919823011223" class="footer-contact-link mb-2">
+            <i class="bi bi-telephone-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">+91 98230 11223 / 020-25667890</span>
+            </div>
+          </a>
+          <a href="mailto:orders@freshleafmarket.com" class="footer-contact-link mb-2">
+            <i class="bi bi-envelope-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">orders@freshleafmarket.com</span>
+            </div>
+          </a>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">Open Daily: 6:00 AM – 9:30 PM (Morning Harvest)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2 pt-4 mt-4 border-top border-secondary-subtle">
+        <div class="small text-muted">
+          &copy; 2026 <strong>FreshLeaf Market</strong>. All Rights Reserved. Ethical produce direct from certified local farms.
+        </div>
+        <div class="payment-icons d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('visa')" title="Visa Card Info">
+            <i class="fab fa-cc-visa text-primary"></i> Visa
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('mastercard')" title="Mastercard Info">
+            <i class="fab fa-cc-mastercard text-danger"></i> Mastercard
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('upi')" title="UPI & QR Payments Info">
+            <i class="bi bi-qr-code-scan text-success"></i> UPI / QR
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('cod')" title="Cash on Delivery Info">
+            <i class="bi bi-cash-stack text-success"></i> Cash on Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

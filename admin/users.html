@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Directory - FreshLeaf Admin</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core & Admin Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css" id="rtl-stylesheet" disabled>
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <a href="../index.html"><img src="../assets/images/logo.svg" alt="FreshLeaf Market" height="38"></a>
+    </div>
+    <ul class="admin-nav-list list-unstyled">
+      <li class="admin-nav-item"><a href="index.html" class="admin-nav-link"><i class="bi bi-speedometer2"></i> <span>Dashboard</span></a></li>
+      <li class="admin-nav-item"><a href="products.html" class="admin-nav-link"><i class="bi bi-box-seam"></i> <span>Products</span></a></li>
+      <li class="admin-nav-item"><a href="orders.html" class="admin-nav-link"><i class="bi bi-cart-check"></i> <span>Orders</span></a></li>
+      <li class="admin-nav-item"><a href="users.html" class="admin-nav-link active"><i class="bi bi-people"></i> <span>Customers</span></a></li>
+      <li class="admin-nav-item"><a href="messages.html" class="admin-nav-link"><i class="bi bi-chat-left-text"></i> <span>Messages</span></a></li>
+      <li class="admin-nav-item"><a href="analytics.html" class="admin-nav-link"><i class="bi bi-graph-up-arrow"></i> <span>Analytics</span></a></li>
+      <li class="admin-nav-item"><a href="settings.html" class="admin-nav-link"><i class="bi bi-sliders"></i> <span>Settings</span></a></li>
+      <li class="admin-nav-item mt-4 pt-3 border-top"><a href="../index.html" class="admin-nav-link text-success"><i class="bi bi-arrow-left-circle"></i> <span>Back to Store</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="d-flex align-items-center gap-3">
+      <button type="button" class="btn btn-light border btn-sm d-lg-none" id="adminSidebarToggle"><i class="bi bi-list fs-5"></i></button>
+      <h5 class="fw-bold mb-0 d-none d-sm-block">Customer Accounts & Subscription Directory</h5>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <button type="button" class="theme-toggle-btn text-main"><i class="bi bi-moon-stars-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn text-main"><i class="bi bi-translate"></i> RTL</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    
+    <div class="admin-card">
+      <div class="admin-card-header flex-wrap gap-3">
+        <div>
+          <h4 class="fw-bold mb-1">Registered Customers (15,420 Active)</h4>
+          <p class="small text-muted mb-0">View subscriber tiers, order frequency, and customer spend metrics.</p>
+        </div>
+        <div class="d-flex gap-2">
+          <input type="text" id="adminTableSearch" class="form-control form-control-sm" placeholder="Search customers..." style="width: 220px;">
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table admin-table align-middle">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Contact</th>
+              <th>Membership Tier</th>
+              <th>Total Orders</th>
+              <th>Lifetime Spend</th>
+              <th>Joined Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" width="40" height="40" class="rounded-circle" style="object-fit: cover;">
+                  <div>
+                    <strong class="d-block">Ananya Sharma</strong>
+                    <small class="text-muted">ID: #CUST-1042</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small">ananya.s@example.com</div>
+                <small class="text-muted">+91 98234 11223</small>
+              </td>
+              <td><span class="badge bg-success-subtle text-success">Family Box Subscriber</span></td>
+              <td><strong>48 Orders</strong></td>
+              <td><strong class="text-success">₹34,500</strong></td>
+              <td>Jan 2024</td>
+              <td><span class="badge bg-success">Active</span></td>
+              <td>
+                <button class="btn btn-sm btn-light border" title="Edit Customer" onclick="showToast('Customer profile opened', 'info')"><i class="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" width="40" height="40" class="rounded-circle" style="object-fit: cover;">
+                  <div>
+                    <strong class="d-block">Dr. Rajesh Verma</strong>
+                    <small class="text-muted">ID: #CUST-1088</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small">dr.verma@nutrition.in</div>
+                <small class="text-muted">+91 97654 44556</small>
+              </td>
+              <td><span class="badge bg-primary-subtle text-primary">Organic Master VIP</span></td>
+              <td><strong>64 Orders</strong></td>
+              <td><strong class="text-success">₹72,800</strong></td>
+              <td>Oct 2023</td>
+              <td><span class="badge bg-success">Active</span></td>
+              <td>
+                <button class="btn btn-sm btn-light border" title="Edit Customer"><i class="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" width="40" height="40" class="rounded-circle" style="object-fit: cover;">
+                  <div>
+                    <strong class="d-block">Chef Priya (B2B Account)</strong>
+                    <small class="text-muted">ID: #B2B-304</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small">kitchen@olivebistro.com</div>
+                <small class="text-muted">+91 99887 76655</small>
+              </td>
+              <td><span class="badge bg-warning-subtle text-dark">Commercial Wholesale</span></td>
+              <td><strong>120 Orders</strong></td>
+              <td><strong class="text-success">₹1,45,000</strong></td>
+              <td>Aug 2023</td>
+              <td><span class="badge bg-success">Active</span></td>
+              <td>
+                <button class="btn btn-sm btn-light border" title="Edit Customer"><i class="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

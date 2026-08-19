@@ -1,0 +1,228 @@
+/* ==========================================================================
+   FreshLeaf Market - Right-to-Left (RTL) Stylesheet (rtl.css)
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] body {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Margin & Padding Inversions */
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+
+/* Header & Navigation */
+[dir="rtl"] .main-nav .nav-link {
+  text-align: right;
+}
+
+[dir="rtl"] .main-nav .dropdown-menu {
+  text-align: right;
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .main-nav .dropdown-item {
+  text-align: right;
+}
+
+[dir="rtl"] .main-nav .dropdown-item:hover {
+  padding-left: 1rem !important;
+  padding-right: 1.25rem !important;
+}
+
+[dir="rtl"] .main-nav .dropdown-toggle::after {
+  margin-left: 0 !important;
+  margin-right: 0.35rem !important;
+}
+
+[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .badge-count {
+  right: auto;
+  left: -4px;
+}
+
+/* Hero Section */
+[dir="rtl"] .floating-hero-card.card-left {
+  left: auto;
+  right: -5%;
+}
+
+[dir="rtl"] .floating-hero-card.card-right {
+  right: auto;
+  left: -5%;
+}
+
+[dir="rtl"] .hero-actions {
+  justify-content: flex-start;
+}
+
+/* Product Cards */
+[dir="rtl"] .product-badges {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .product-actions {
+  right: auto;
+  left: 12px;
+  transform: translateX(-10px);
+}
+
+[dir="rtl"] .product-card:hover .product-actions {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .product-rating {
+  flex-direction: row;
+}
+
+[dir="rtl"] .search-popup {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+
+[dir="rtl"] .search-input-wrap input {
+  padding-left: 3rem !important;
+  padding-right: 1.5rem !important;
+  text-align: right;
+}
+
+[dir="rtl"] .search-input-wrap .search-submit-btn {
+  right: auto;
+  left: 12px;
+}
+
+/* Daily Deals Cards */
+[dir="rtl"] .deal-card:hover {
+  transform: translateX(-6px);
+}
+
+/* Team Cards */
+[dir="rtl"] .team-socials {
+  flex-direction: row;
+}
+
+/* Delivery Cards */
+[dir="rtl"] .delivery-zone-list li {
+  text-align: right;
+}
+
+[dir="rtl"] .delivery-zone-list li i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Subscription Bundle Cards */
+[dir="rtl"] .bundle-items-list li {
+  text-align: right;
+}
+
+[dir="rtl"] .bundle-items-list li i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Footer Section */
+[dir="rtl"] .footer-brand img {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .footer-links a {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-links a i.bi-chevron-right {
+  transform: scaleX(-1);
+  margin-left: 0.4rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .footer-contact-item,
+[dir="rtl"] .footer-contact-link {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-contact-item i,
+[dir="rtl"] .footer-contact-link i {
+  margin-left: 0.6rem !important;
+  margin-right: 0 !important;
+}
+
+@media (min-width: 992px) {
+  [dir="rtl"] .footer-col-contact,
+  [dir="rtl"] .site-footer .footer-col-contact {
+    padding-left: 0 !important;
+    padding-right: 3.5rem !important;
+  }
+}
+
+[dir="rtl"] .footer-socials {
+  justify-content: flex-start;
+}
+
+/* Toast Notification */
+[dir="rtl"] .toast-container-custom {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .fresh-toast {
+  border-left: 1px solid var(--border-color);
+  border-right: 4px solid var(--primary);
+  animation-name: slideInLeft;
+  text-align: right;
+}
+
+[dir="rtl"] .fresh-toast.toast-error {
+  border-right-color: var(--danger);
+}
+
+/* Back To Top Button */
+[dir="rtl"] .back-to-top {
+  left: 30px !important;
+  right: auto !important;
+}
+
+/* Password Input & View Icon in RTL */
+[dir="rtl"] .password-input-wrap input.form-control {
+  padding-right: 0.85rem !important;
+  padding-left: 2.85rem !important;
+  text-align: right;
+}
+
+[dir="rtl"] .password-input-wrap .password-toggle-btn {
+  right: auto !important;
+  left: 10px !important;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
