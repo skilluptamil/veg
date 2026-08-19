@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Commercial, wholesale, restaurant supply, and subscription services for fresh vegetables and fruits by FreshLeaf Market.">
+  <title>Services & Commercial Supply - FreshLeaf Market</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="index.html" class="header-brand"><img src="assets/images/logo.svg" alt="FreshLeaf Market"></a>
+        <nav class="main-nav d-none d-lg-block">
+          <ul class="d-flex align-items-center gap-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Fresh Market Landing</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Organic Farm Market</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+            <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count wishlist-badge-count">2</span>
+          </a>
+          <a href="cart.html" class="action-badge-btn" title="Shopping Cart"><i class="bi bi-basket3"></i><span class="badge-count cart-badge-count">3</span></a>
+          <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-md-inline-flex"><i class="bi bi-person"></i> Login</a>
+          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 - Fresh Market</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2 text-success"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2 text-success"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2 text-success"></i> Delivery Zones</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html"><i class="bi bi-box2-heart me-2 text-success"></i> Subscription Baskets</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="services.html"><i class="bi bi-briefcase me-2"></i> Services & Wholesale</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html"><i class="bi bi-journal-text me-2 text-success"></i> Blog & Recipes</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html"><i class="bi bi-envelope me-2 text-success"></i> Contact Us</a></li>
+      </ul>
+      <div class="border-top pt-3">
+        <a href="admin/index.html" class="btn btn-fresh btn-fresh-outline w-100 mb-2"><i class="bi bi-speedometer2"></i> Admin Panel</a>
+        <a href="login.html" class="btn btn-fresh btn-fresh-primary w-100"><i class="bi bi-person"></i> Login / Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Breadcrumb -->
+  <section class="py-5 bg-surface border-bottom text-center">
+    <div class="container py-2">
+      <div class="badge-section"><i class="bi bi-grid-3x3-gap-fill"></i> Flexible Solutions</div>
+      <h1 class="hero-title mb-2">Our Specialized Fresh Services</h1>
+      <p class="text-muted mb-0" style="max-width: 600px; margin: 0 auto;">From weekly household baskets to bulk restaurant procurement and corporate wellness programs.</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="row g-4">
+        
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card text-start">
+            <div class="feature-icon-wrap ms-0"><i class="bi bi-house-heart-fill"></i></div>
+            <h4 class="feature-title">Same-Day Home Delivery</h4>
+            <p class="feature-desc mb-4">Direct farm harvest delivered to your doorstep in refrigerated cold vans within 2 hours of packing.</p>
+            <a href="service-details.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card text-start">
+            <div class="feature-icon-wrap ms-0"><i class="bi bi-cup-hot-fill"></i></div>
+            <h4 class="feature-title">Restaurant & Cafe Supply</h4>
+            <p class="feature-desc mb-4">Contractual daily 5:30 AM delivery of premium hydroponic greens, heirloom tomatoes, and gourmet herbs.</p>
+            <a href="service-details.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card text-start">
+            <div class="feature-icon-wrap ms-0"><i class="bi bi-building"></i></div>
+            <h4 class="feature-title">Corporate Wellness Fruit Boxes</h4>
+            <p class="feature-desc mb-4">Energize your workplace team with weekly curated office fruit baskets and dried superfruit snacks.</p>
+            <a href="service-details.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card text-start">
+            <div class="feature-icon-wrap ms-0"><i class="bi bi-box2-heart-fill"></i></div>
+            <h4 class="feature-title">Weekly Subscription Baskets</h4>
+            <p class="feature-desc mb-4">Never run out of essential greens. Automatic customizable recurring deliveries with 15% subscriber savings.</p>
+            <a href="pricing.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">View Plans <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card text-start">
+            <div class="feature-icon-wrap ms-0"><i class="bi bi-boxes"></i></div>
+            <h4 class="feature-title">Bulk Community & Co-op Orders</h4>
+            <p class="feature-desc mb-4">Apartment complex bulk drops with wholesale crate pricing and free collective doorstep distribution.</p>
+            <a href="service-details.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card text-start">
+            <div class="feature-icon-wrap ms-0"><i class="bi bi-calendar-event"></i></div>
+            <h4 class="feature-title">Event & Festival Produce</h4>
+            <p class="feature-desc mb-4">Bulk procurement of tender coconuts, exotic fruits, and fresh edible garnishes for catering and weddings.</p>
+            <a href="service-details.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand"><img src="assets/images/logo-dark.svg" alt="FreshLeaf Market"></a>
+          <p class="footer-desc">Your neighborhood local farm-to-table produce store. Delivering ethically grown, crisp vegetables and orchard fruits.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Subscriptions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Products</h5>
+          <ul class="footer-links">
+            <li><a href="products.html">All Produce</a></li>
+            <li><a href="products.html?cat=vegetables">Vegetables</a></li>
+            <li><a href="products.html?cat=fruits">Fruits</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Customer Care</h5>
+          <p class="small text-muted"><i class="bi bi-telephone text-warning me-2"></i> +91 98765 43210 (6 AM - 9 PM)</p>
+          <p class="small text-muted"><i class="bi bi-envelope text-warning me-2"></i> support@freshleafmarket.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        &copy; 2026 <strong>FreshLeaf Market</strong>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

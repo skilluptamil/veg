@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact FreshLeaf Market - Speak with our farm produce specialists, wholesale desk, or customer support team.">
+  <title>Contact Us - FreshLeaf Market</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="index.html" class="header-brand"><img src="assets/images/logo.svg" alt="FreshLeaf Market"></a>
+        <nav class="main-nav d-none d-lg-block">
+          <ul class="d-flex align-items-center gap-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Fresh Market Landing</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Organic Farm Market</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count wishlist-badge-count">2</span>
+          </a>
+          <a href="cart.html" class="action-badge-btn" title="Shopping Cart"><i class="bi bi-basket3"></i><span class="badge-count cart-badge-count">3</span></a>
+          <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-md-inline-flex"><i class="bi bi-person"></i> Login</a>
+          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 - Fresh Market</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2 text-success"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2 text-success"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2 text-success"></i> Delivery Zones</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html"><i class="bi bi-box2-heart me-2 text-success"></i> Subscription Baskets</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html"><i class="bi bi-briefcase me-2 text-success"></i> Services & Wholesale</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html"><i class="bi bi-journal-text me-2 text-success"></i> Blog & Recipes</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact Us</a></li>
+      </ul>
+      <div class="border-top pt-3">
+        <a href="admin/index.html" class="btn btn-fresh btn-fresh-outline w-100 mb-2"><i class="bi bi-speedometer2"></i> Admin Panel</a>
+        <a href="login.html" class="btn btn-fresh btn-fresh-primary w-100"><i class="bi bi-person"></i> Login / Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Breadcrumb -->
+  <section class="py-5 bg-surface border-bottom text-center">
+    <div class="container py-2">
+      <div class="badge-section"><i class="bi bi-telephone-inbound-fill"></i> We Are Here for You</div>
+      <h1 class="hero-title mb-2">Get in Touch with Our Market Team</h1>
+      <p class="text-muted mb-0" style="max-width: 600px; margin: 0 auto;">Have a question about today's morning harvest, wholesale supply, or need subscription help? Reach out below.</p>
+    </div>
+  </section>
+
+  <!-- Contact Cards & Form -->
+  <section class="py-5">
+    <div class="container py-4">
+      
+      <!-- Top 3 Info Cards -->
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 bg-card rounded-4 border text-center shadow-sm h-100">
+            <div class="feature-icon-wrap mb-3"><i class="bi bi-geo-alt-fill"></i></div>
+            <h5 class="fw-bold mb-2">Central Produce Hub</h5>
+            <p class="small text-muted mb-0">42 Green Meadow Way, Agriculture Zone, Pune 411045, Maharashtra, India</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 bg-card rounded-4 border text-center shadow-sm h-100">
+            <div class="feature-icon-wrap mb-3"><i class="bi bi-telephone-fill"></i></div>
+            <h5 class="fw-bold mb-2">Direct Phone & WhatsApp</h5>
+            <p class="small text-muted mb-1">+91 (020) 2456-7890 (Desk)</p>
+            <p class="small text-success fw-bold mb-0"><i class="bi bi-whatsapp"></i> +91 98765 43210 (WhatsApp Order)</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 bg-card rounded-4 border text-center shadow-sm h-100">
+            <div class="feature-icon-wrap mb-3"><i class="bi bi-clock-fill"></i></div>
+            <h5 class="fw-bold mb-2">Harvest & Delivery Hours</h5>
+            <p class="small text-muted mb-1">Morning Dispatch: 6:00 AM – 9:00 AM</p>
+            <p class="small text-muted mb-0">Evening Dispatch: 5:00 PM – 9:00 PM (Daily)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Form & Map Row -->
+      <div class="row g-5 align-items-center">
+        
+        <!-- Validated Contact Form -->
+        <div class="col-lg-6">
+          <div class="bg-card p-4 p-md-5 rounded-4 border shadow-sm">
+            <h3 class="fw-bold mb-2">Send Us a Message</h3>
+            <p class="text-muted small mb-4">We reply to all harvest and customer inquiries within 1 business hour.</p>
+            
+            <form id="contactForm" novalidate>
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label class="form-label small fw-bold" for="contactName">Full Name *</label>
+                  <input type="text" class="form-control form-control-sm" id="contactName" placeholder="e.g. Rahul Sharma" required>
+                  <div class="invalid-feedback small">Please provide your name.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label small fw-bold" for="contactEmail">Email Address *</label>
+                  <input type="email" class="form-control form-control-sm" id="contactEmail" placeholder="e.g. rahul@example.com" required>
+                  <div class="invalid-feedback small">Please enter a valid email.</div>
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label class="form-label small fw-bold" for="contactPhone">Phone Number *</label>
+                  <input type="tel" class="form-control form-control-sm" id="contactPhone" placeholder="+91 98765 43210" required>
+                  <div class="invalid-feedback small">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label small fw-bold" for="contactSubject">Subject / Inquiry Type *</label>
+                  <select class="form-select form-select-sm" id="contactSubject" required>
+                    <option value="" selected disabled>Choose topic...</option>
+                    <option value="order">Order & Delivery Status</option>
+                    <option value="b2b">Restaurant & Bulk Supply</option>
+                    <option value="subscription">Subscription Basket Help</option>
+                    <option value="farmer">Farmer Partnership Inquiry</option>
+                    <option value="other">General Question</option>
+                  </select>
+                  <div class="invalid-feedback small">Please select an inquiry topic.</div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label small fw-bold" for="contactMessage">Message *</label>
+                <textarea class="form-control form-control-sm" id="contactMessage" rows="4" placeholder="How can our market team assist you today?" required></textarea>
+                <div class="invalid-feedback small">Please write a message (at least 10 characters).</div>
+              </div>
+
+              <button type="submit" class="btn btn-fresh btn-fresh-primary w-100">
+                <i class="bi bi-send-fill me-2"></i> Submit Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Visual Map & Visit Hub -->
+        <div class="col-lg-6">
+          <div class="rounded-4 overflow-hidden shadow-sm border mb-4">
+            <!-- Stylized Farm Location Map Placeholder with Real Coordinates Embed -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.0471115664!2d73.79292679808383!3d18.524598599502283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d082e20!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="360" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="p-4 bg-surface rounded-4">
+            <h5 class="fw-bold mb-2"><i class="bi bi-shop text-success me-2"></i> Visit Our Farm Market Counter</h5>
+            <p class="small text-muted mb-0">
+              Prefer hand-selecting your vegetables? Our retail produce counter at the Central Hub welcomes visitors every morning from 6:30 AM to 12:00 Noon for farm-gate sales.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Socials -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market">
+          </a>
+          <p class="footer-desc">
+            Your neighborhood local farm-to-table produce store. Delivering ethically grown, crisp vegetables, juicy orchard fruits, and organic essentials harvested daily.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919823011223" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-success me-1"></i> About Us</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right small text-success me-1"></i> All Produce</a></li>
+            <li><a href="delivery-coverage.html"><i class="bi bi-chevron-right small text-success me-1"></i> Delivery Zones</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-success me-1"></i> Subscriptions</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-success me-1"></i> Journal & Recipes</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-success me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Produce Categories</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
+            <li><a href="products.html?cat=fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Orchard Fruits</a></li>
+            <li><a href="products.html?cat=leafy-greens"><i class="bi bi-chevron-right small text-success me-1"></i> Hydroponic Greens</a></li>
+            <li><a href="products.html?cat=herbs"><i class="bi bi-chevron-right small text-success me-1"></i> Kitchen Herbs</a></li>
+            <li><a href="products.html?cat=dry-fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Dry Fruits & Nuts</a></li>
+            <li><a href="products.html?cat=combos"><i class="bi bi-chevron-right small text-success me-1"></i> Value Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact Info -->
+        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+          <h5 class="footer-title">Visit Our Market</h5>
+          <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
+            <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
+            <div>
+              <strong>FreshLeaf Central Market Hub</strong><br>
+              <span class="footer-contact-text">Shop 14, Green Acre Square, Farmway Road, Pune 411045</span>
+            </div>
+          </a>
+          <a href="tel:+919823011223" class="footer-contact-link mb-2">
+            <i class="bi bi-telephone-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">+91 98230 11223 / 020-25667890</span>
+            </div>
+          </a>
+          <a href="mailto:orders@freshleafmarket.com" class="footer-contact-link mb-2">
+            <i class="bi bi-envelope-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">orders@freshleafmarket.com</span>
+            </div>
+          </a>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">Open Daily: 6:00 AM – 9:30 PM (Morning Harvest)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2 pt-4 mt-4 border-top border-secondary-subtle">
+        <div class="small text-muted">
+          &copy; 2026 <strong>FreshLeaf Market</strong>. All Rights Reserved. Ethical produce direct from certified local farms.
+        </div>
+        <div class="payment-icons d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('visa')" title="Visa Card Info">
+            <i class="fab fa-cc-visa text-primary"></i> Visa
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('mastercard')" title="Mastercard Info">
+            <i class="fab fa-cc-mastercard text-danger"></i> Mastercard
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('upi')" title="UPI & QR Payments Info">
+            <i class="bi bi-qr-code-scan text-success"></i> UPI / QR
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('cod')" title="Cash on Delivery Info">
+            <i class="bi bi-cash-stack text-success"></i> Cash on Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

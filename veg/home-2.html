@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshLeaf Organic Farm & Local Market - Dedicated to 100% certified organic produce, regenerative soil agriculture, and ethical farmer partnerships.">
+  <title>Organic Farm & Local Market - FreshLeaf</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="index.html" class="header-brand">
+          <img src="assets/images/logo.svg" alt="FreshLeaf Market">
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="main-nav d-none d-lg-block">
+          <ul class="d-flex align-items-center gap-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-shop"></i> Fresh Market Landing</a></li>
+                <li><a class="dropdown-item active" href="home-2.html"><i class="bi bi-flower1"></i> Organic Farm Market</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count wishlist-badge-count">2</span>
+          </a>
+          <a href="cart.html" class="action-badge-btn" title="Shopping Cart">
+            <i class="bi bi-basket3"></i>
+            <span class="badge-count cart-badge-count">3</span>
+          </a>
+          <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-md-inline-flex">
+            <i class="bi bi-person"></i> Login
+          </a>
+          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 - Fresh Market</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="home-2.html"><i class="bi bi-flower1 me-2"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2 text-success"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2 text-success"></i> Delivery Zones</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html"><i class="bi bi-box2-heart me-2 text-success"></i> Subscription Baskets</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html"><i class="bi bi-briefcase me-2 text-success"></i> Services & Wholesale</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html"><i class="bi bi-journal-text me-2 text-success"></i> Blog & Recipes</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html"><i class="bi bi-envelope me-2 text-success"></i> Contact Us</a></li>
+      </ul>
+      <div class="border-top pt-3">
+        <a href="admin/index.html" class="btn btn-fresh btn-fresh-outline w-100 mb-2"><i class="bi bi-speedometer2"></i> Admin Panel</a>
+        <a href="login.html" class="btn btn-fresh btn-fresh-primary w-100"><i class="bi bi-person"></i> Login / Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Distinct Hero Section: Organic, Local, Sustainable -->
+  <section class="hero-organic">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="badge-section bg-success text-white mb-3">
+            <i class="bi bi-patch-check-fill"></i> Organic • Local • Sustainable
+          </div>
+          <h1 class="hero-title text-white">
+            Good Food Starts With <span class="text-warning">Good Farming</span>
+          </h1>
+          <p class="hero-lead text-light mb-4">
+            We practice regenerative agriculture that respects the soil, empowers local farming families, and brings purely natural, pesticide-free harvest to your doorstep.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="about.html" class="btn btn-fresh btn-fresh-accent btn-fresh-lg">
+              <i class="bi bi-tree-fill"></i> Learn About Us
+            </a>
+            <a href="products.html" class="btn btn-fresh btn-fresh-outline-light btn-fresh-lg">
+              <i class="bi bi-basket-fill"></i> Shop Organic Harvest
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-5 mt-lg-0">
+          <div class="organic-pillar-box">
+            <h4 class="text-white fw-bold mb-4">The Organic Promise</h4>
+            <div class="pillar-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <h6 class="text-white fw-bold mb-1">0% Synthetic Chemicals</h6>
+                <p class="small text-light opacity-75 mb-0">No chemical pesticides, fungicides, or synthetic ripening agents.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="bi bi-moisture"></i>
+              <div>
+                <h6 class="text-white fw-bold mb-1">Living Microbiome Soil</h6>
+                <p class="small text-light opacity-75 mb-0">Cultivated with native cow manure, compost, and bio-fertilizers.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="bi bi-sun"></i>
+              <div>
+                <h6 class="text-white fw-bold mb-1">Naturally Tree-Ripened</h6>
+                <p class="small text-light opacity-75 mb-0">Harvested at true physiological maturity for supreme flavor & sweetness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Farm Products with Origin Tags -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-star-fill"></i> Direct From Soil</div>
+        <h2 class="h1 fw-bold">This Week's Featured Farm Harvest</h2>
+        <p class="text-muted">Know exactly which farm and grower nurtured your family's food.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Farm Product 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="assets/images/products/vine-tomatoes.jpg" alt="Vine Tomatoes">
+              <div class="product-badges">
+                <span class="badge-pill badge-organic">Certified Organic</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="d-flex align-items-center gap-2 mb-2 text-success small fw-semibold">
+                <i class="bi bi-geo-alt-fill"></i> Anand Bio Farms, Nashik
+              </div>
+              <h4 class="product-title"><a href="product-details.html">Naturally Ripened Vine Tomatoes</a></h4>
+              <p class="small text-muted mb-3">Rich in lycopene and grown in open-air soil beds with zero artificial sprays.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="current-price">₹45</span>
+                  <span class="product-unit-label">/ 1 kg</span>
+                </div>
+                <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="addToCart({ id: 'prod-1', name: 'Naturally Ripened Vine Tomatoes', price: 45, unit: '1 kg', image: 'assets/images/products/vine-tomatoes.jpg', category: 'Vegetables' })">
+                  <i class="bi bi-cart-plus-fill"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Farm Product 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="assets/images/products/alphonso-mangoes.jpg" alt="Alphonso Mangoes">
+              <div class="product-badges">
+                <span class="badge-pill badge-organic">GI-Tagged Heritage</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="d-flex align-items-center gap-2 mb-2 text-success small fw-semibold">
+                <i class="bi bi-geo-alt-fill"></i> Kokana Heritage Orchards, Ratnagiri
+              </div>
+              <h4 class="product-title"><a href="product-details.html">Authentic Ratnagiri Alphonso</a></h4>
+              <p class="small text-muted mb-3">Single-estate orchard mangoes, tree-ripened with natural hay insulation.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="current-price">₹650</span>
+                  <span class="product-unit-label">/ 6 pcs</span>
+                </div>
+                <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="addToCart({ id: 'prod-3', name: 'Authentic Ratnagiri Alphonso', price: 650, unit: '6 pcs', image: 'assets/images/products/alphonso-mangoes.jpg', category: 'Fruits' })">
+                  <i class="bi bi-cart-plus-fill"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Farm Product 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=500&q=80" alt="Baby Spinach">
+              <div class="product-badges">
+                <span class="badge-pill badge-organic">Hydro-Organic</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="d-flex align-items-center gap-2 mb-2 text-success small fw-semibold">
+                <i class="bi bi-geo-alt-fill"></i> GreenValley Hydroponics, Pune
+              </div>
+              <h4 class="product-title"><a href="product-details.html">Crisp Hydroponic Baby Spinach</a></h4>
+              <p class="small text-muted mb-3">Clean-water cultivated tender greens. Washed in purified ozone water.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="current-price">₹30</span>
+                  <span class="product-unit-label">/ Bunch</span>
+                </div>
+                <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="addToCart({ id: 'prod-2', name: 'Crisp Hydroponic Baby Spinach', price: 30, unit: '1 Bunch', image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&q=80', category: 'Leafy Greens' })">
+                  <i class="bi bi-cart-plus-fill"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Farmers Spotlight -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-heart-fill"></i> Meet the Growers</div>
+        <h2 class="h1 fw-bold">The Hands Behind Your Harvest</h2>
+        <p class="text-muted">Meet the dedicated men and women stewarding clean agriculture.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Farmer 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="farmer-card">
+            <div class="farmer-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=400&q=80" alt="Ramesh Patil" class="farmer-avatar">
+            </div>
+            <h4 class="farmer-name">Ramesh Patil</h4>
+            <div class="farmer-badge">
+              <span class="badge-pill badge-organic">Organic Farmer • 18 Yrs</span>
+            </div>
+            <p class="farmer-quote">
+              "We have converted 25 acres of farmland into a certified zero-pesticide sanctuary. FreshLeaf pays us fair rates directly on harvest day."
+            </p>
+            <div class="farmer-location">
+              <i class="bi bi-geo-alt-fill text-success"></i> Anand Bio Farms, Nashik
+            </div>
+          </div>
+        </div>
+
+        <!-- Farmer 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="farmer-card">
+            <div class="farmer-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Sunita Joshi" class="farmer-avatar">
+            </div>
+            <h4 class="farmer-name">Sunita Joshi</h4>
+            <div class="farmer-badge">
+              <span class="badge-pill badge-seasonal">Orchard Specialist</span>
+            </div>
+            <p class="farmer-quote">
+              "Growing authentic Alphonso requires patience and natural climate harmony. Our third-generation family orchard is proud to partner with FreshLeaf."
+            </p>
+            <div class="farmer-location">
+              <i class="bi bi-geo-alt-fill text-success"></i> Heritage Orchards, Ratnagiri
+            </div>
+          </div>
+        </div>
+
+        <!-- Farmer 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="farmer-card">
+            <div class="farmer-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Vikas Shinde" class="farmer-avatar">
+            </div>
+            <h4 class="farmer-name">Vikas Shinde</h4>
+            <div class="farmer-badge">
+              <span class="badge-pill badge-fresh">Hydroponic Pioneer</span>
+            </div>
+            <p class="farmer-quote">
+              "Using 90% less water and zero soil pollutants, our automated climate greenhouses deliver baby greens with unmatched nutritional density."
+            </p>
+            <div class="farmer-location">
+              <i class="bi bi-geo-alt-fill text-success"></i> GreenValley Greens, Pune
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Sourcing Journey -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-arrow-repeat"></i> Traceability</div>
+        <h2 class="h1 fw-bold">How We Harvest & Source</h2>
+        <p class="text-muted">From morning dew to your kitchen counter in 6 hours.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step-card">
+            <div class="step-badge">1</div>
+            <div class="step-icon"><i class="bi bi-sun"></i></div>
+            <h5 class="fw-bold mb-2">5:00 AM Harvest</h5>
+            <p class="small text-muted mb-0">Produce is hand-picked at sunrise while moisture & natural sweetness are highest.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step-card">
+            <div class="step-badge">2</div>
+            <div class="step-icon"><i class="bi bi-shield-check"></i></div>
+            <h5 class="fw-bold mb-2">Residue Testing</h5>
+            <p class="small text-muted mb-0">Sample batch lab checks verify 0% synthetic chemical residues.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step-card">
+            <div class="step-badge">3</div>
+            <div class="step-icon"><i class="bi bi-box2"></i></div>
+            <h5 class="fw-bold mb-2">Eco-Packaging</h5>
+            <p class="small text-muted mb-0">Packed in breathable cotton mesh pouches and recycled paper cartons.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step-card">
+            <div class="step-badge">4</div>
+            <div class="step-icon"><i class="bi bi-truck"></i></div>
+            <h5 class="fw-bold mb-2">Doorstep Delivery</h5>
+            <p class="small text-muted mb-0">Delivered via cold-chain electric vans within 2 hours of packing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farm Photo Gallery -->
+  <section class="py-5 bg-card">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-camera-fill"></i> Visual Story</div>
+        <h2 class="h1 fw-bold">Life on the Organic Fields</h2>
+        <p class="text-muted">A glimpse into our regenerative family farms and clean harvest.</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80" alt="Farm Landscape" class="rounded-4 shadow-sm w-100" style="height: 260px; object-fit: cover;">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=600&q=80" alt="Greenhouse Farming" class="rounded-4 shadow-sm w-100" style="height: 260px; object-fit: cover;">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=600&q=80" alt="Harvest Produce" class="rounded-4 shadow-sm w-100" style="height: 260px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Socials -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market">
+          </a>
+          <p class="footer-desc">
+            Your neighborhood local farm-to-table produce store. Delivering ethically grown, crisp vegetables, juicy orchard fruits, and organic essentials harvested daily.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919823011223" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-success me-1"></i> About Us</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right small text-success me-1"></i> All Produce</a></li>
+            <li><a href="delivery-coverage.html"><i class="bi bi-chevron-right small text-success me-1"></i> Delivery Zones</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-success me-1"></i> Subscriptions</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-success me-1"></i> Journal & Recipes</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-success me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Produce Categories</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
+            <li><a href="products.html?cat=fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Orchard Fruits</a></li>
+            <li><a href="products.html?cat=leafy-greens"><i class="bi bi-chevron-right small text-success me-1"></i> Hydroponic Greens</a></li>
+            <li><a href="products.html?cat=herbs"><i class="bi bi-chevron-right small text-success me-1"></i> Kitchen Herbs</a></li>
+            <li><a href="products.html?cat=dry-fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Dry Fruits & Nuts</a></li>
+            <li><a href="products.html?cat=combos"><i class="bi bi-chevron-right small text-success me-1"></i> Value Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact Info -->
+        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+          <h5 class="footer-title">Visit Our Market</h5>
+          <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
+            <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
+            <div>
+              <strong>FreshLeaf Central Market Hub</strong><br>
+              <span class="footer-contact-text">Shop 14, Green Acre Square, Farmway Road, Pune 411045</span>
+            </div>
+          </a>
+          <a href="tel:+919823011223" class="footer-contact-link mb-2">
+            <i class="bi bi-telephone-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">+91 98230 11223 / 020-25667890</span>
+            </div>
+          </a>
+          <a href="mailto:orders@freshleafmarket.com" class="footer-contact-link mb-2">
+            <i class="bi bi-envelope-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">orders@freshleafmarket.com</span>
+            </div>
+          </a>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">Open Daily: 6:00 AM – 9:30 PM (Morning Harvest)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2 pt-4 mt-4 border-top border-secondary-subtle">
+        <div class="small text-muted">
+          &copy; 2026 <strong>FreshLeaf Market</strong>. All Rights Reserved. Ethical produce direct from certified local farms.
+        </div>
+        <div class="payment-icons d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('visa')" title="Visa Card Info">
+            <i class="fab fa-cc-visa text-primary"></i> Visa
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('mastercard')" title="Mastercard Info">
+            <i class="fab fa-cc-mastercard text-danger"></i> Mastercard
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('upi')" title="UPI & QR Payments Info">
+            <i class="bi bi-qr-code-scan text-success"></i> UPI / QR
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('cod')" title="Cash on Delivery Info">
+            <i class="bi bi-cash-stack text-success"></i> Cash on Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+        <div class="modal-header border-bottom-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 pt-0">
+          <div class="row align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <div class="modal-product-gallery">
+                <img src="" id="qvImage" alt="Product Preview" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <span class="badge-pill badge-organic mb-2" id="qvCategory">Vegetables</span>
+              <h3 class="fw-bold mb-1" id="qvTitle">Product Name</h3>
+              <div class="product-rating mb-2">
+                <span><i class="bi bi-star-fill"></i> <span id="qvRating">4.9</span></span>
+                <span class="rating-count">(Verified Quality)</span>
+              </div>
+              <div class="product-price mb-3">
+                <span class="current-price fs-3" id="qvPrice">₹45</span>
+                <span class="original-price" id="qvOldPrice">₹60</span>
+                <span class="product-unit-label" id="qvUnit">/ 1 kg</span>
+              </div>
+              <div class="p-3 bg-surface rounded-3 mb-3 small">
+                <div class="mb-1"><i class="bi bi-geo-alt-fill text-success me-1"></i> Origin: <strong id="qvFarmer">Anand Bio Farms, Nashik</strong></div>
+                <div><i class="bi bi-clock-history text-success me-1"></i> Harvested: <strong>Within last 6 hours</strong></div>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-fresh btn-fresh-primary w-100" id="qvAddToCartBtn">
+                  <i class="bi bi-cart-plus me-1"></i> Add to Basket
+                </button>
+                <a href="product-details.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm" id="qvDetailsLink" title="View full details">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

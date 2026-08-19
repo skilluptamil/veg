@@ -1,0 +1,292 @@
+/* ==========================================================================
+   FreshLeaf Market - Admin Dashboard Stylesheet (admin.css)
+   ========================================================================== */
+
+:root {
+  --admin-sidebar-width: 260px;
+  --admin-sidebar-collapsed: 80px;
+  --admin-header-height: 70px;
+}
+
+body.admin-body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: var(--font-body);
+}
+
+[data-bs-theme="dark"] body.admin-body,
+body.admin-body.dark-mode {
+  background-color: #0b1320;
+  color: #e2e8f0;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--admin-sidebar-width);
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-color);
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-normal);
+}
+
+[data-bs-theme="dark"] .admin-sidebar,
+body.dark-mode .admin-sidebar {
+  background-color: #152238;
+  border-right-color: #1e293b;
+}
+
+.admin-brand {
+  height: var(--admin-header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-nav-list {
+  padding: 1.25rem 0.85rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.admin-nav-item {
+  margin-bottom: 0.35rem;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.admin-nav-link i {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  transition: var(--transition-fast);
+}
+
+.admin-nav-link:hover,
+.admin-nav-link.active {
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+}
+
+.admin-nav-link:hover i,
+.admin-nav-link.active i {
+  color: var(--primary);
+}
+
+.admin-nav-badge {
+  margin-left: auto;
+  background-color: var(--accent);
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Header */
+.admin-header {
+  position: fixed;
+  top: 0;
+  left: var(--admin-sidebar-width);
+  right: 0;
+  height: var(--admin-header-height);
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1030;
+  transition: var(--transition-normal);
+}
+
+[data-bs-theme="dark"] .admin-header,
+body.dark-mode .admin-header {
+  background-color: #152238;
+  border-bottom-color: #1e293b;
+}
+
+/* Main Content Wrapper */
+.admin-main {
+  margin-left: var(--admin-sidebar-width);
+  margin-top: var(--admin-header-height);
+  padding: 2rem;
+  min-height: calc(100vh - var(--admin-header-height));
+  transition: var(--transition-normal);
+}
+
+/* Metric KPI Cards */
+.metric-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+[data-bs-theme="dark"] .metric-card,
+body.dark-mode .metric-card {
+  background: #152238;
+  border-color: #1e293b;
+}
+
+.metric-val {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0.25rem 0;
+  color: var(--heading-color);
+}
+
+.metric-trend {
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.metric-trend.up {
+  color: var(--primary);
+}
+
+.metric-trend.down {
+  color: var(--danger);
+}
+
+.metric-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.metric-icon.icon-green {
+  background: var(--primary-subtle);
+  color: var(--primary);
+}
+
+.metric-icon.icon-amber {
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.metric-icon.icon-blue {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.metric-icon.icon-purple {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+/* Admin Card Container */
+.admin-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+[data-bs-theme="dark"] .admin-card,
+body.dark-mode .admin-card {
+  background: #152238;
+  border-color: #1e293b;
+}
+
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.admin-table th {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #64748b;
+  border-bottom-width: 1px;
+}
+
+.admin-table td {
+  font-size: 0.92rem;
+  vertical-align: middle;
+  padding: 1rem 0.75rem;
+}
+
+/* Responsive & RTL */
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  .admin-header {
+    left: 0;
+  }
+  .admin-main {
+    margin-left: 0;
+    padding: 1.25rem;
+  }
+}
+
+[dir="rtl"] .admin-sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .admin-header {
+  left: 0;
+  right: var(--admin-sidebar-width);
+}
+
+[dir="rtl"] .admin-main {
+  margin-left: 0;
+  margin-right: var(--admin-sidebar-width);
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .admin-sidebar {
+    transform: translateX(100%);
+  }
+  [dir="rtl"] .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  [dir="rtl"] .admin-header {
+    right: 0;
+  }
+  [dir="rtl"] .admin-main {
+    margin-right: 0;
+  }
+}

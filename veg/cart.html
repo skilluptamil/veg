@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - FreshLeaf Market | Local Vegetable & Fruit Market</title>
+  <meta name="description" content="Review your fresh farm produce basket, select delivery time slot, apply coupons, and checkout seamlessly at FreshLeaf Market.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons & Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Site Header -->
+  <header class="site-header sticky-top">
+    <div class="container-fluid px-lg-4 px-3">
+      <div class="d-flex align-items-center justify-content-between">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="header-brand">
+          <img src="assets/images/logo.svg" alt="FreshLeaf Market">
+        </a>
+
+        <!-- Desktop Navigation Bar -->
+        <nav class="main-nav d-none d-lg-block">
+          <ul class="nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="index.html" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-shop"></i> Fresh Market Landing</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-flower1"></i> Organic Farm Market</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions d-flex align-items-center gap-2">
+          <!-- Theme Toggle -->
+          <button class="theme-toggle-btn action-badge-btn" title="Toggle Theme" onclick="toggleTheme()">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <!-- RTL Toggle -->
+          <button class="action-badge-btn" title="Toggle RTL Direction" onclick="toggleRTL()">
+            <i class="bi bi-translate"></i>
+          </button>
+          <!-- Wishlist Badge -->
+          <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count wishlist-badge-count">2</span>
+          </a>
+          <!-- Cart Icon (Navigates to Full Cart Page) -->
+          <a href="cart.html" class="action-badge-btn active-cart-btn" title="Shopping Cart">
+            <i class="bi bi-basket3"></i>
+            <span class="badge-count cart-badge-count">3</span>
+          </a>
+          <!-- Login Link -->
+          <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-sm-inline-flex">
+            <i class="bi bi-person me-1"></i> Login
+          </a>
+          <!-- Mobile Hamburger -->
+          <button class="mobile-toggle d-lg-none action-badge-btn" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-start mobile-menu-drawer" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <ul class="nav flex-column mobile-nav-list p-3">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house me-2"></i> Home 1 (Fresh Market)</a></li>
+        <li class="nav-item"><a class="nav-link" href="home-2.html"><i class="bi bi-flower1 me-2"></i> Home 2 (Organic Farm)</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-grid me-2"></i> Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="delivery-coverage.html"><i class="bi bi-truck me-2"></i> Delivery</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-box2-heart me-2"></i> Subscriptions</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html"><i class="bi bi-journal-text me-2"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link active fw-bold text-success" href="cart.html"><i class="bi bi-basket3 me-2"></i> Shopping Cart (<span class="cart-badge-count">3</span>)</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-person me-2"></i> Login / Account</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Header Breadcrumb -->
+  <section class="py-4 bg-surface border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <div>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-1 small">
+              <li class="breadcrumb-item"><a href="index.html" class="text-success"><i class="bi bi-house me-1"></i>Home</a></li>
+              <li class="breadcrumb-item"><a href="products.html" class="text-success">Products</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+            </ol>
+          </nav>
+          <h1 class="h3 fw-bold mb-0">Your Fresh Produce Basket</h1>
+        </div>
+        <div class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fs-6 fw-semibold">
+          <i class="bi bi-shield-check me-1"></i> 100% Farm-Direct Freshness Guaranteed
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Page Cart Section -->
+  <section class="py-5 bg-main">
+    <div class="container">
+      
+      <!-- Free Delivery Progress Card -->
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-card" id="cartFreeShippingCard">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-2 gap-2">
+          <div class="fw-semibold" id="cartFreeShippingText">
+            <i class="bi bi-truck text-success me-2 fs-5"></i> Add <strong class="text-success">₹60</strong> more fresh produce to unlock <strong>FREE Same-Day Delivery!</strong>
+          </div>
+          <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">Free Shipping @ ₹500</span>
+        </div>
+        <div class="progress" style="height: 10px; border-radius: 20px; background-color: rgba(0,0,0,0.06);">
+          <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" id="cartFreeShippingBar" style="width: 88%; border-radius: 20px;"></div>
+        </div>
+      </div>
+
+      <div class="row g-4" id="cartMainContainer">
+        
+        <!-- Left Column: Produce Table & Options -->
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-card mb-4">
+            
+            <!-- Card Header -->
+            <div class="card-header bg-surface py-3 px-4 d-flex align-items-center justify-content-between border-0">
+              <h5 class="fw-bold mb-0">Basket Items (<span class="cart-badge-count">3</span> items)</h5>
+              <button class="btn btn-outline-danger btn-sm rounded-pill px-3" onclick="clearCart()">
+                <i class="bi bi-trash3 me-1"></i> Clear Basket
+              </button>
+            </div>
+
+            <!-- Produce Items Table -->
+            <div class="table-responsive p-0">
+              <table class="table align-middle mb-0">
+                <thead class="bg-surface text-muted small">
+                  <tr>
+                    <th scope="col" class="ps-4 py-3">Produce Item</th>
+                    <th scope="col" class="py-3 text-center">Unit Price</th>
+                    <th scope="col" class="py-3 text-center">Quantity</th>
+                    <th scope="col" class="py-3 text-end">Subtotal</th>
+                    <th scope="col" class="pe-4 py-3 text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                  <!-- Dynamically rendered via main.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Card Bottom Bar: Continue Shopping & Refresh -->
+            <div class="card-footer bg-surface py-3 px-4 d-flex flex-wrap justify-content-between align-items-center gap-2 border-0">
+              <a href="products.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+                <i class="bi bi-arrow-left me-1"></i> Continue Shopping
+              </a>
+              <span class="small text-muted">
+                <i class="bi bi-clock-history text-success me-1"></i> Harvested within the last 6 hours from certified local farms
+              </span>
+            </div>
+          </div>
+
+          <!-- Delivery Slot & Preferences -->
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-card mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-calendar2-check text-success me-2"></i> Preferred Delivery Time Slot</h5>
+            <div class="row g-3">
+              <div class="col-md-4 col-sm-6">
+                <label class="delivery-slot-card p-3 border rounded-3 d-block cursor-pointer active">
+                  <input type="radio" name="deliverySlot" value="morning" class="form-check-input me-2" checked>
+                  <strong class="d-block mt-1">Morning Slot</strong>
+                  <span class="small text-muted">06:00 AM – 09:00 AM</span>
+                </label>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <label class="delivery-slot-card p-3 border rounded-3 d-block cursor-pointer">
+                  <input type="radio" name="deliverySlot" value="noon" class="form-check-input me-2">
+                  <strong class="d-block mt-1">Afternoon Slot</strong>
+                  <span class="small text-muted">12:00 PM – 03:00 PM</span>
+                </label>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <label class="delivery-slot-card p-3 border rounded-3 d-block cursor-pointer">
+                  <input type="radio" name="deliverySlot" value="evening" class="form-check-input me-2">
+                  <strong class="d-block mt-1">Evening Slot</strong>
+                  <span class="small text-muted">05:00 PM – 08:00 PM</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-check mt-3">
+              <input class="form-check-input" type="checkbox" id="ecoPackCheck" checked>
+              <label class="form-check-label small" for="ecoPackCheck">
+                <strong>Eco-Friendly Packaging</strong>: Use biodegradable banana leaf wrapping & recyclable jute bag.
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary Card -->
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-card position-sticky" style="top: 100px;">
+            <h5 class="fw-bold mb-3">Order Summary</h5>
+            
+            <!-- Summary Breakdown -->
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Items Subtotal:</span>
+              <span class="fw-bold cart-subtotal-val">₹440</span>
+            </div>
+            
+            <div class="d-flex justify-content-between mb-2 text-success" id="promoDiscountRow" style="display: none !important;">
+              <span>Promo Discount (<span id="promoCodeLabel">FRESH10</span>):</span>
+              <span class="fw-bold" id="promoDiscountVal">-₹44</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Eco Packaging:</span>
+              <span class="fw-bold text-success">FREE</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">Delivery Charges:</span>
+              <span class="fw-bold" id="cartDeliveryCharge">₹40</span>
+            </div>
+
+            <!-- Promo Code Input -->
+            <div class="mb-4">
+              <label class="form-label small fw-semibold text-muted">Have a Coupon Code?</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="cartCouponInput" placeholder="Try 'FRESH10' or 'ORGANIC20'" style="text-transform: uppercase;">
+                <button class="btn btn-fresh btn-fresh-primary px-3" type="button" onclick="applyCoupon()">Apply</button>
+              </div>
+              <div class="small mt-1 text-success fw-semibold" id="couponFeedback" style="display: none;"></div>
+            </div>
+
+            <hr class="my-3 border-secondary-subtle">
+
+            <!-- Total Amount -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <span class="h6 fw-bold d-block mb-0">Estimated Total</span>
+                <span class="small text-muted">Taxes & fees included</span>
+              </div>
+              <span class="h3 fw-bold text-success mb-0" id="cartGrandTotal">₹480</span>
+            </div>
+
+            <!-- Proceed to Checkout Button -->
+            <button type="button" class="btn btn-fresh btn-fresh-primary w-100 py-3 mb-3 fw-bold fs-6 shadow-sm" onclick="placeDirectOrder()">
+              Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+
+            <!-- Trust Icons -->
+            <div class="p-3 bg-surface rounded-3 small">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-shield-lock-fill text-success fs-5"></i>
+                <span>Safe & Encrypted Checkout</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-arrow-repeat text-success fs-5"></i>
+                <span>No-Questions-Asked Replacements</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-truck text-success fs-5"></i>
+                <span>Delivered fresh to your doorstep</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty Cart View (Hidden by default, shown if cart is empty) -->
+      <div id="cartEmptyView" style="display: none;" class="text-center py-5">
+        <div class="card border-0 shadow-sm rounded-4 p-5 bg-card mx-auto" style="max-width: 540px;">
+          <div class="mb-3 text-muted" style="font-size: 4rem;">
+            <i class="bi bi-basket3 text-success"></i>
+          </div>
+          <h3 class="fw-bold mb-2">Your Produce Basket is Empty</h3>
+          <p class="text-muted mb-4">You don't have any farm-fresh vegetables, fruits, or organics in your basket yet.</p>
+          <div>
+            <a href="products.html" class="btn btn-fresh btn-fresh-primary btn-fresh-lg px-4">
+              <i class="bi bi-grid-fill me-2"></i> Browse Fresh Produce
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Socials -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market">
+          </a>
+          <p class="footer-desc">
+            Your neighborhood local farm-to-table produce store. Delivering ethically grown, crisp vegetables, juicy orchard fruits, and organic essentials harvested daily.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919823011223" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-success me-1"></i> About Us</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right small text-success me-1"></i> All Produce</a></li>
+            <li><a href="delivery-coverage.html"><i class="bi bi-chevron-right small text-success me-1"></i> Delivery Zones</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-success me-1"></i> Subscriptions</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-success me-1"></i> Journal & Recipes</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-success me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Produce Categories</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
+            <li><a href="products.html?cat=fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Orchard Fruits</a></li>
+            <li><a href="products.html?cat=leafy-greens"><i class="bi bi-chevron-right small text-success me-1"></i> Hydroponic Greens</a></li>
+            <li><a href="products.html?cat=herbs"><i class="bi bi-chevron-right small text-success me-1"></i> Kitchen Herbs</a></li>
+            <li><a href="products.html?cat=dry-fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Dry Fruits & Nuts</a></li>
+            <li><a href="products.html?cat=combos"><i class="bi bi-chevron-right small text-success me-1"></i> Value Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact Info -->
+        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+          <h5 class="footer-title">Visit Our Market</h5>
+          <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
+            <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
+            <div>
+              <strong>FreshLeaf Central Market Hub</strong><br>
+              <span class="footer-contact-text">Shop 14, Green Acre Square, Farmway Road, Pune 411045</span>
+            </div>
+          </a>
+          <a href="tel:+919823011223" class="footer-contact-link mb-2">
+            <i class="bi bi-telephone-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">+91 98230 11223 / 020-25667890</span>
+            </div>
+          </a>
+          <a href="mailto:orders@freshleafmarket.com" class="footer-contact-link mb-2">
+            <i class="bi bi-envelope-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">orders@freshleafmarket.com</span>
+            </div>
+          </a>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">Open Daily: 6:00 AM – 9:30 PM (Morning Harvest)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2 pt-4 mt-4 border-top border-secondary-subtle">
+        <div class="small text-muted">
+          &copy; 2026 <strong>FreshLeaf Market</strong>. All Rights Reserved. Ethical produce direct from certified local farms.
+        </div>
+        <div class="payment-icons d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('visa')" title="Visa Card Info">
+            <i class="fab fa-cc-visa text-primary"></i> Visa
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('mastercard')" title="Mastercard Info">
+            <i class="fab fa-cc-mastercard text-danger"></i> Mastercard
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('upi')" title="UPI & QR Payments Info">
+            <i class="bi bi-qr-code-scan text-success"></i> UPI / QR
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('cod')" title="Cash on Delivery Info">
+            <i class="bi bi-cash-stack text-success"></i> Cash on Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

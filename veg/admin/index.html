@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - FreshLeaf Market</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core & Admin Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css" id="rtl-stylesheet" disabled>
+  <link rel="stylesheet" href="../assets/css/admin.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <a href="../index.html">
+        <img src="../assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      </a>
+    </div>
+
+    <ul class="admin-nav-list list-unstyled">
+      <li class="admin-nav-item">
+        <a href="index.html" class="admin-nav-link active">
+          <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="products.html" class="admin-nav-link">
+          <i class="bi bi-box-seam"></i> <span>Products</span>
+          <span class="admin-nav-badge">12</span>
+        </a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="orders.html" class="admin-nav-link">
+          <i class="bi bi-cart-check"></i> <span>Orders</span>
+          <span class="admin-nav-badge">8 New</span>
+        </a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="users.html" class="admin-nav-link">
+          <i class="bi bi-people"></i> <span>Customers</span>
+        </a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="messages.html" class="admin-nav-link">
+          <i class="bi bi-chat-left-text"></i> <span>Messages</span>
+          <span class="admin-nav-badge">3</span>
+        </a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="analytics.html" class="admin-nav-link">
+          <i class="bi bi-graph-up-arrow"></i> <span>Analytics</span>
+        </a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="settings.html" class="admin-nav-link">
+          <i class="bi bi-sliders"></i> <span>Settings</span>
+        </a>
+      </li>
+      <li class="admin-nav-item mt-4 pt-3 border-top">
+        <a href="../index.html" class="admin-nav-link text-success">
+          <i class="bi bi-arrow-left-circle"></i> <span>Back to Store</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Admin Header Navbar -->
+  <header class="admin-header">
+    <div class="d-flex align-items-center gap-3">
+      <button type="button" class="btn btn-light border btn-sm d-lg-none" id="adminSidebarToggle">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+      <h5 class="fw-bold mb-0 d-none d-sm-block">Harvest Operations Overview</h5>
+    </div>
+
+    <div class="d-flex align-items-center gap-3">
+      <button type="button" class="theme-toggle-btn text-main" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn text-main" title="Toggle RTL"><i class="bi bi-translate"></i> RTL</button>
+      
+      <!-- Admin Avatar Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-main dropdown-toggle" data-bs-toggle="dropdown">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Admin" class="rounded-circle" width="36" height="36" style="object-fit: cover;">
+          <span class="small fw-bold d-none d-md-inline">Store Manager</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+          <li><a class="dropdown-item small" href="settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+          <li><a class="dropdown-item small text-danger" href="../login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main class="admin-main">
+    
+    <!-- KPI Metric Cards -->
+    <div class="row g-4 mb-4">
+      <div class="col-xl-3 col-sm-6">
+        <div class="metric-card">
+          <div>
+            <span class="text-muted small fw-semibold">Today's Revenue</span>
+            <div class="metric-val">₹52,480</div>
+            <span class="metric-trend up"><i class="bi bi-arrow-up-right"></i> +14.2% vs yesterday</span>
+          </div>
+          <div class="metric-icon icon-green"><i class="bi bi-currency-rupee"></i></div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-sm-6">
+        <div class="metric-card">
+          <div>
+            <span class="text-muted small fw-semibold">Today's Orders</span>
+            <div class="metric-val">124</div>
+            <span class="metric-trend up"><i class="bi bi-arrow-up-right"></i> +8.5% new buyers</span>
+          </div>
+          <div class="metric-icon icon-amber"><i class="bi bi-basket3-fill"></i></div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-sm-6">
+        <div class="metric-card">
+          <div>
+            <span class="text-muted small fw-semibold">Active Subscriptions</span>
+            <div class="metric-val">468</div>
+            <span class="metric-trend up"><i class="bi bi-arrow-up-right"></i> +22 this week</span>
+          </div>
+          <div class="metric-icon icon-blue"><i class="bi bi-box2-heart-fill"></i></div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-sm-6">
+        <div class="metric-card">
+          <div>
+            <span class="text-muted small fw-semibold">Pending Dispatches</span>
+            <div class="metric-val">18</div>
+            <span class="metric-trend text-warning"><i class="bi bi-clock-history"></i> Next slot: 5:30 PM</span>
+          </div>
+          <div class="metric-icon icon-purple"><i class="bi bi-truck"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-8">
+        <div class="admin-card mb-0 h-100">
+          <div class="admin-card-header">
+            <h5 class="fw-bold mb-0">Weekly Revenue & Harvest Trends</h5>
+            <span class="badge bg-success-subtle text-success small">Live Data</span>
+          </div>
+          <div style="position: relative; height: 280px;">
+            <canvas id="adminSalesChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="admin-card mb-0 h-100">
+          <div class="admin-card-header">
+            <h5 class="fw-bold mb-0">Sales by Category</h5>
+          </div>
+          <div style="position: relative; height: 280px;" class="d-flex align-items-center justify-content-center">
+            <canvas id="adminCategoryChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Orders & Top Selling Produce Tables -->
+    <div class="row g-4">
+      
+      <!-- Recent Orders Table -->
+      <div class="col-lg-8">
+        <div class="admin-card mb-0">
+          <div class="admin-card-header">
+            <h5 class="fw-bold mb-0">Recent Morning Harvest Orders</h5>
+            <a href="orders.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">View All</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table admin-table align-middle">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#FL-9024</strong></td>
+                  <td>Ananya Sharma</td>
+                  <td>Vine Tomatoes, Spinach (3 items)</td>
+                  <td><strong class="text-success">₹440</strong></td>
+                  <td>
+                    <select class="form-select form-select-sm order-status-select py-1" style="width: auto;">
+                      <option value="Pending">Pending</option>
+                      <option value="Confirmed">Confirmed</option>
+                      <option value="Packed">Packed</option>
+                      <option value="Out for Delivery" selected>Out for Delivery</option>
+                      <option value="Delivered">Delivered</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-light border" onclick="showToast('Viewing receipt for #FL-9024', 'info')"><i class="bi bi-receipt"></i></button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong>#FL-9023</strong></td>
+                  <td>Dr. Rajesh Verma</td>
+                  <td>Alphonso Mango Box (1 item)</td>
+                  <td><strong class="text-success">₹650</strong></td>
+                  <td>
+                    <select class="form-select form-select-sm order-status-select py-1" style="width: auto;">
+                      <option value="Pending">Pending</option>
+                      <option value="Confirmed">Confirmed</option>
+                      <option value="Packed" selected>Packed</option>
+                      <option value="Out for Delivery">Out for Delivery</option>
+                      <option value="Delivered">Delivered</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-light border" onclick="showToast('Viewing receipt for #FL-9023', 'info')"><i class="bi bi-receipt"></i></button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong>#FL-9022</strong></td>
+                  <td>Chef Priya (Olive Bistro)</td>
+                  <td>Baby Spinach, Basil (5 items)</td>
+                  <td><strong class="text-success">₹1,280</strong></td>
+                  <td>
+                    <select class="form-select form-select-sm order-status-select py-1" style="width: auto;">
+                      <option value="Pending">Pending</option>
+                      <option value="Confirmed" selected>Confirmed</option>
+                      <option value="Packed">Packed</option>
+                      <option value="Out for Delivery">Out for Delivery</option>
+                      <option value="Delivered">Delivered</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-light border" onclick="showToast('Viewing receipt for #FL-9022', 'info')"><i class="bi bi-receipt"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Top Selling Produce -->
+      <div class="col-lg-4">
+        <div class="admin-card mb-0">
+          <div class="admin-card-header">
+            <h5 class="fw-bold mb-0">Top Sourced Today</h5>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between p-2 mb-2 border-bottom">
+            <div class="d-flex align-items-center gap-2">
+              <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=80&q=80" class="rounded-3" width="40" height="40" style="object-fit: cover;">
+              <div>
+                <h6 class="small fw-bold mb-0">Vine Tomatoes</h6>
+                <small class="text-muted">142 kg dispatched</small>
+              </div>
+            </div>
+            <span class="text-success fw-bold small">₹6,390</span>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between p-2 mb-2 border-bottom">
+            <div class="d-flex align-items-center gap-2">
+              <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=80&q=80" class="rounded-3" width="40" height="40" style="object-fit: cover;">
+              <div>
+                <h6 class="small fw-bold mb-0">Alphonso Mangoes</h6>
+                <small class="text-muted">48 boxes dispatched</small>
+              </div>
+            </div>
+            <span class="text-success fw-bold small">₹31,200</span>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between p-2">
+            <div class="d-flex align-items-center gap-2">
+              <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=80&q=80" class="rounded-3" width="40" height="40" style="object-fit: cover;">
+              <div>
+                <h6 class="small fw-bold mb-0">Baby Spinach</h6>
+                <small class="text-muted">95 bunches</small>
+              </div>
+            </div>
+            <span class="text-success fw-bold small">₹2,850</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
