@@ -227,24 +227,6 @@ const freshProducts = [
     description: 'Crisp, iron-rich tender spinach leaves harvested at daybreak with zero chemical pesticides.'
   },
   {
-    id: 'prod-13',
-    name: 'Hydroponic Butterhead Lettuce',
-    category: 'leafy-greens',
-    categoryName: 'Leafy Greens',
-    price: 45,
-    oldPrice: 60,
-    unit: '1 Whole Head',
-    rating: 4.9,
-    reviewsCount: 63,
-    isOrganic: true,
-    isDeal: true,
-    isSeasonal: false,
-    inStock: true,
-    farmer: 'UrbanGreens Hydroponics, Pune',
-    image: 'https://images.unsplash.com/photo-1556784344-ad913c73cfc4?auto=format&fit=crop&w=600&q=80',
-    description: 'Silky, tender sweet lettuce heads grown in nutrient-balanced RO water with 0 soil dirt.'
-  },
-  {
     id: 'prod-14',
     name: 'Fresh Organic Methi (Fenugreek)',
     category: 'leafy-greens',
