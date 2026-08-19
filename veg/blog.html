@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh produce recipes, organic farming stories, seasonal nutrition advice, and food storage tips from FreshLeaf Market.">
+  <title>Fresh Farm Blog & Recipes - FreshLeaf Market</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="index.html" class="header-brand"><img src="assets/images/logo.svg" alt="FreshLeaf Market"></a>
+        <nav class="main-nav d-none d-lg-block">
+          <ul class="d-flex align-items-center gap-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Fresh Market Landing</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Organic Farm Market</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+            <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count wishlist-badge-count">2</span>
+          </a>
+          <a href="cart.html" class="action-badge-btn" title="Shopping Cart"><i class="bi bi-basket3"></i><span class="badge-count cart-badge-count">3</span></a>
+          <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-md-inline-flex"><i class="bi bi-person"></i> Login</a>
+          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 - Fresh Market</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2 text-success"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2 text-success"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2 text-success"></i> Delivery Zones</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html"><i class="bi bi-box2-heart me-2 text-success"></i> Subscription Baskets</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html"><i class="bi bi-briefcase me-2 text-success"></i> Services & Wholesale</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="blog.html"><i class="bi bi-journal-text me-2"></i> Blog & Recipes</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html"><i class="bi bi-envelope me-2 text-success"></i> Contact Us</a></li>
+      </ul>
+      <div class="border-top pt-3">
+        <a href="admin/index.html" class="btn btn-fresh btn-fresh-outline w-100 mb-2"><i class="bi bi-speedometer2"></i> Admin Panel</a>
+        <a href="login.html" class="btn btn-fresh btn-fresh-primary w-100"><i class="bi bi-person"></i> Login / Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Breadcrumb -->
+  <section class="py-5 bg-surface border-bottom text-center">
+    <div class="container py-2">
+      <div class="badge-section"><i class="bi bi-journal-bookmark-fill"></i> Health & Agronomy</div>
+      <h1 class="hero-title mb-2">Farm Journal & Fresh Recipes</h1>
+      <p class="text-muted mb-0" style="max-width: 600px; margin: 0 auto;">Expert guides on chemical-free eating, micro-season cooking, and regenerative soil farming.</p>
+    </div>
+  </section>
+
+  <!-- Blog Listing Section -->
+  <section class="py-5">
+    <div class="container">
+      
+      <!-- Filter and Search Row -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 mb-5">
+        <div class="d-flex gap-2 flex-wrap">
+          <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm active" data-blog-category="all">All Topics</button>
+          <button class="btn btn-fresh btn-fresh-outline btn-fresh-sm" data-blog-category="recipes">Seasonal Recipes</button>
+          <button class="btn btn-fresh btn-fresh-outline btn-fresh-sm" data-blog-category="nutrition">Nutrition & Health</button>
+          <button class="btn btn-fresh btn-fresh-outline btn-fresh-sm" data-blog-category="farming">Organic Farming</button>
+          <button class="btn btn-fresh btn-fresh-outline btn-fresh-sm" data-blog-category="storage">Storage Hacks</button>
+        </div>
+        <div class="search-input-wrap rounded-pill" style="min-width: 260px;">
+          <i class="bi bi-search search-icon"></i>
+          <input type="text" id="blogSearchInput" class="form-control form-control-sm" placeholder="Search farm articles...">
+        </div>
+      </div>
+
+      <div class="row g-4" id="blogGridContainer">
+        
+        <!-- Post 1 (Featured) -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="recipes">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=600&q=80" alt="Fresh Summer Salad">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Recipes</span>
+                <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-1">5 Refreshing Summer Salads Using Sun-Ripened Vine Tomatoes & Basil</a></h4>
+              <p class="blog-excerpt">Crisp, hydrating recipes that highlight natural lycopene and cold-pressed olive oil for hot afternoons.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Priya Kulkarni">
+                  <span>Chef Priya Kulkarni</span>
+                </div>
+                <a href="blog-details.html?id=post-1" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="nutrition">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1610970881699-44a5587cabec?auto=format&fit=crop&w=600&q=80" alt="Cold Pressed Green Juice">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Nutrition & Health</span>
+                <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-2">The Healing Power of Daily Cold-Pressed Celery & Morning Green Juice</a></h4>
+              <p class="blog-excerpt">How morning hydration with live plant electrolytes cleanses the liver and delivers natural bio-flavonoids.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Dr. Rajesh Verma">
+                  <span>Dr. Rajesh Verma</span>
+                </div>
+                <a href="blog-details.html?id=post-2" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="farming">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=600&q=80" alt="Balcony Herb Garden">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Urban Gardening</span>
+                <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-3">Beginner's Guide to Growing Coriander, Mint & Basil on a Sunny Balcony</a></h4>
+              <p class="blog-excerpt">Simple pot soil mixes, watering rhythms, and sunlight hacks to harvest kitchen herbs right outside your window.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Meera Sen">
+                  <span>Meera Sen</span>
+                </div>
+                <a href="blog-details.html?id=post-3" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="recipes">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80" alt="Root Vegetables">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Seasonal Harvest</span>
+                <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-4">7 Nutrient-Dense Farm Root Vegetables to Power Your Family's Immunity</a></h4>
+              <p class="blog-excerpt">From beetroot and sweet potatoes to fresh ginger and turmeric, uncover the healing subterranean roots.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Dr. Arindam Bose">
+                  <span>Dr. Arindam Bose</span>
+                </div>
+                <a href="blog-details.html?id=post-4" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="storage">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" alt="Storing Leafy Greens">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Storage Hacks</span>
+                <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-5">Zero-Waste Kitchen: How to Keep Leafy Greens & Herbs Crisp for 14 Days</a></h4>
+              <p class="blog-excerpt">Proven damp cloth wrapping techniques and glass jar water stem hacks to eliminate food spoilage.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Meera Sen">
+                  <span>Meera Sen</span>
+                </div>
+                <a href="blog-details.html?id=post-5" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="nutrition">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80" alt="Mango Nutrition">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Nutrition & Health</span>
+                <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-6">The Ultimate Guide to Authentic Ratnagiri Alphonso Mango Health Facts</a></h4>
+              <p class="blog-excerpt">Debunking myths: natural sugars vs. industrial processing, digestion enzymes, and daily immunity perks.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Dr. Rajesh Verma">
+                  <span>Dr. Rajesh Verma</span>
+                </div>
+                <a href="blog-details.html?id=post-6" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 7 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="farming">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" alt="Meet Farmer Ramesh">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Organic Farming</span>
+                <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-7">Farmer Spotlight: How Ramesh Swapped Chemical Sprays for Bio-Compost</a></h4>
+              <p class="blog-excerpt">A story of courage, regenerative earth revival, and 30% higher agricultural yields in Nashik.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Sameer Deshmukh">
+                  <span>Sameer Deshmukh</span>
+                </div>
+                <a href="blog-details.html?id=post-7" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 8 -->
+        <div class="col-lg-4 col-md-6 blog-card-item" data-category="recipes">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80" alt="Carrot Ginger Soup">
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-tag-fill text-success me-1"></i> Recipes</span>
+                <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+              </div>
+              <h4 class="blog-title"><a href="blog-details.html?id=post-8">Creamy Roasted Mountain Carrot & Fresh Ginger Detox Soup</a></h4>
+              <p class="blog-excerpt">Warm, antioxidant-packed winter soup that boosts digestive fire and soothes seasonal colds.</p>
+              <div class="blog-footer">
+                <div class="blog-author">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Priya Kulkarni">
+                  <span>Chef Priya Kulkarni</span>
+                </div>
+                <a href="blog-details.html?id=post-8" class="text-success fw-bold small">Read Story <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="d-flex justify-content-center mt-5">
+        <nav aria-label="Blog pages">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><i class="bi bi-chevron-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="blog.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="coming-soon.html" title="More Articles (Coming Soon)">2</a></li>
+            <li class="page-item"><a class="page-link" href="coming-soon.html" aria-label="Next" title="Next Page"><i class="bi bi-chevron-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Socials -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market">
+          </a>
+          <p class="footer-desc">
+            Your neighborhood local farm-to-table produce store. Delivering ethically grown, crisp vegetables, juicy orchard fruits, and organic essentials harvested daily.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919823011223" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-success me-1"></i> About Us</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right small text-success me-1"></i> All Produce</a></li>
+            <li><a href="delivery-coverage.html"><i class="bi bi-chevron-right small text-success me-1"></i> Delivery Zones</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-success me-1"></i> Subscriptions</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-success me-1"></i> Journal & Recipes</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-success me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Produce Categories</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
+            <li><a href="products.html?cat=fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Orchard Fruits</a></li>
+            <li><a href="products.html?cat=leafy-greens"><i class="bi bi-chevron-right small text-success me-1"></i> Hydroponic Greens</a></li>
+            <li><a href="products.html?cat=herbs"><i class="bi bi-chevron-right small text-success me-1"></i> Kitchen Herbs</a></li>
+            <li><a href="products.html?cat=dry-fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Dry Fruits & Nuts</a></li>
+            <li><a href="products.html?cat=combos"><i class="bi bi-chevron-right small text-success me-1"></i> Value Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact Info -->
+        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+          <h5 class="footer-title">Visit Our Market</h5>
+          <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
+            <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
+            <div>
+              <strong>FreshLeaf Central Market Hub</strong><br>
+              <span class="footer-contact-text">Shop 14, Green Acre Square, Farmway Road, Pune 411045</span>
+            </div>
+          </a>
+          <a href="tel:+919823011223" class="footer-contact-link mb-2">
+            <i class="bi bi-telephone-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">+91 98230 11223 / 020-25667890</span>
+            </div>
+          </a>
+          <a href="mailto:orders@freshleafmarket.com" class="footer-contact-link mb-2">
+            <i class="bi bi-envelope-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">orders@freshleafmarket.com</span>
+            </div>
+          </a>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock-fill text-success fs-5 me-2"></i>
+            <div>
+              <span class="footer-contact-text">Open Daily: 6:00 AM – 9:30 PM (Morning Harvest)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2 pt-4 mt-4 border-top border-secondary-subtle">
+        <div class="small text-muted">
+          &copy; 2026 <strong>FreshLeaf Market</strong>. All Rights Reserved. Ethical produce direct from certified local farms.
+        </div>
+        <div class="payment-icons d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('visa')" title="Visa Card Info">
+            <i class="fab fa-cc-visa text-primary"></i> Visa
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('mastercard')" title="Mastercard Info">
+            <i class="fab fa-cc-mastercard text-danger"></i> Mastercard
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('upi')" title="UPI & QR Payments Info">
+            <i class="bi bi-qr-code-scan text-success"></i> UPI / QR
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('cod')" title="Cash on Delivery Info">
+            <i class="bi bi-cash-stack text-success"></i> Cash on Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

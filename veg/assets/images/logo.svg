@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <g transform="translate(6, 8)">
+    <circle cx="22" cy="22" r="22" fill="#EBFBF0"/>
+    <!-- Organic Leaf Shape -->
+    <path d="M 22,6 C 33,6 40,15 38,28 C 36,36 28,39 22,39 C 14,39 6,32 7,20 C 8,11 15,6 22,6 Z" fill="url(#leafGrad)"/>
+    <!-- Leaf Vein & Sprout -->
+    <path d="M 22,38 C 22,26 27,16 35,11" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 23,26 C 28,24 33,25 35,27" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- Small Sun / Fresh Dot -->
+    <circle cx="34" cy="10" r="4.5" fill="url(#amberGrad)"/>
+  </g>
+  <!-- Brand Text -->
+  <text x="60" y="38" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="#0F172A" letter-spacing="-0.5">Fresh<tspan fill="#16A34A">Leaf</tspan></text>
+</svg>

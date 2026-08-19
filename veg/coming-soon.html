@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Next Season Harvest | FreshLeaf Market</title>
+  <meta name="description" content="More fresh farm produce, exotic harvests, and seasonal varieties are arriving soon at FreshLeaf Market.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="top-bar-left d-none d-md-flex align-items-center gap-3">
+        <span><i class="bi bi-geo-alt-fill text-warning me-1"></i> Delivery across Pune, Mumbai & Bangalore</span>
+        <span class="opacity-50">|</span>
+        <span><i class="bi bi-clock-fill text-warning me-1"></i> Morning Harvest: 6:00 AM - 9:00 AM</span>
+      </div>
+      <div class="top-bar-right d-flex align-items-center gap-3 ms-auto">
+        <span class="d-none d-sm-inline"><i class="bi bi-shield-check text-success me-1"></i> 100% Chemical-Free Guarantee</span>
+        <a href="contact.html" class="top-bar-link"><i class="bi bi-headset me-1"></i> Help Center</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="header-brand">
+        <img src="assets/images/logo.svg" alt="FreshLeaf Market" class="logo-img" height="44">
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="main-nav d-none d-lg-block">
+        <ul class="nav-list d-flex align-items-center gap-4 mb-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html">Classic Market Home</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Organic Farm Direct</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions d-flex align-items-center gap-2">
+        
+        <!-- Theme Toggle Button -->
+        <button class="btn-icon-round theme-toggle-btn" id="themeToggleBtn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+
+        <!-- RTL Switcher -->
+        <button class="btn-icon-round rtl-toggle-btn" id="rtlToggleBtn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+          <i class="bi bi-translate"></i>
+        </button>
+
+        <!-- Wishlist Button -->
+        <a href="wishlist.html" class="btn-icon-round position-relative" title="My Wishlist" aria-label="View Wishlist">
+          <i class="bi bi-heart"></i>
+          <span class="badge-counter badge-wishlist">0</span>
+        </a>
+
+        <!-- Cart Offcanvas Trigger -->
+        <button class="btn-icon-round position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="View Cart">
+          <i class="bi bi-basket2"></i>
+          <span class="badge-counter badge-cart">0</span>
+        </button>
+
+        <!-- Login / User Action -->
+        <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-sm-inline-flex align-items-center gap-1">
+          <i class="bi bi-person"></i> Login
+        </a>
+
+        <!-- Mobile Nav Toggle -->
+        <button class="btn-icon-round d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-label="Open Navigation">
+          <i class="bi bi-list fs-5"></i>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Breadcrumb -->
+  <section class="py-4 bg-surface border-bottom">
+    <div class="container text-center">
+      <div class="badge-section mb-2"><i class="bi bi-stars text-warning me-1"></i> Coming Soon</div>
+      <h1 class="h2 fw-bold mb-1">Upcoming Seasonal Harvests</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Next Page Catalog</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Coming Soon Hero -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="row align-items-center justify-content-center g-5">
+        
+        <div class="col-lg-8 text-center">
+          
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-success-subtle text-success rounded-pill fw-semibold small mb-3">
+            <i class="bi bi-clock-history"></i> Next Catalog Batch Launching Soon
+          </div>
+
+          <h2 class="display-5 fw-bold mb-3">More Farm Produce is Growing for You!</h2>
+          
+          <p class="lead text-muted mb-4 mx-auto" style="max-width: 650px;">
+            We are currently onboarding <strong>30+ regional organic farmers</strong> and preparing seasonal exotic berries, winter greens, cold-pressed oils, and extended catalog pages.
+          </p>
+
+          <!-- Launch Countdown Box -->
+          <div class="countdown-wrap justify-content-center mb-5">
+            <div class="countdown-unit">
+              <div class="countdown-number count-days">07</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number count-hours">14</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number count-minutes">32</div>
+              <div class="countdown-label">Mins</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number count-seconds">45</div>
+              <div class="countdown-label">Secs</div>
+            </div>
+          </div>
+
+          <!-- Notification Form -->
+          <div class="card bg-surface border-0 rounded-4 p-4 shadow-sm mb-4 mx-auto" style="max-width: 580px;">
+            <h5 class="fw-bold mb-2"><i class="bi bi-bell-fill text-warning me-2"></i>Get Notified When Next Batch Drops</h5>
+            <p class="small text-muted mb-3">Subscribe to get an instant notification and an exclusive <strong>20% off voucher</strong> on the new harvest launch.</p>
+            
+            <form class="newsletter-form w-100" onsubmit="event.preventDefault(); showToast('🎉 You are on the VIP harvest list! We will notify you when new produce arrives.', 'success'); this.reset();">
+              <input type="email" placeholder="Enter your email address" required class="form-control">
+              <button type="submit" class="btn btn-fresh btn-fresh-accent">Notify Me</button>
+            </form>
+          </div>
+
+          <!-- Quick Navigation Actions -->
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a href="products.html" class="btn btn-fresh btn-fresh-primary btn-fresh-lg">
+              <i class="bi bi-arrow-left me-1"></i> Browse Current In-Stock Catalog
+            </a>
+            <a href="pricing.html" class="btn btn-fresh btn-fresh-outline btn-fresh-lg">
+              <i class="bi bi-box2-heart me-1"></i> Explore Weekly Subscriptions
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview Cards: What's Arriving Soon -->
+  <section class="py-5 bg-surface border-top border-bottom">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-flower1 text-success"></i> Sneak Peek</div>
+        <h2 class="h1 fw-bold">What's Sowing for Next Harvest</h2>
+        <p class="text-muted">Here are a few exciting new categories coming to our farm-to-table shelves:</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Preview 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card bg-card border rounded-4 p-4 h-100 shadow-sm text-center">
+            <div class="display-4 text-danger mb-3"><i class="bi bi-basket3-fill"></i></div>
+            <h5 class="fw-bold mb-2">Hydroponic Strawberries & Berries</h5>
+            <p class="small text-muted mb-0">Sweet Mahabaleshwar strawberries, blueberries, and mulberries harvested in climate-monitored tunnels.</p>
+          </div>
+        </div>
+
+        <!-- Preview 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card bg-card border rounded-4 p-4 h-100 shadow-sm text-center">
+            <div class="display-4 text-warning mb-3"><i class="bi bi-shield-shaded"></i></div>
+            <h5 class="fw-bold mb-2">Organic Oyster & Portobello Mushrooms</h5>
+            <p class="small text-muted mb-0">Spore-cultivated organic mushrooms grown on sterilized sawdust beds with high protein and umami richness.</p>
+          </div>
+        </div>
+
+        <!-- Preview 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card bg-card border rounded-4 p-4 h-100 shadow-sm text-center">
+            <div class="display-4 text-success mb-3"><i class="bi bi-droplet-half"></i></div>
+            <h5 class="fw-bold mb-2">Wood Cold-Pressed Cooking Oils</h5>
+            <p class="small text-muted mb-0">Single-origin wood-churned (Kachi Ghani) mustard, sesame, and groundnut oils with natural micro-nutrients intact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Assurance Strip -->
+  <section class="py-4 bg-fresh-subtle">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-md-3 col-6">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-patch-check-fill text-success fs-4"></i>
+            <span class="fw-bold small">100% Certified Organic</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-truck text-success fs-4"></i>
+            <span class="fw-bold small">2-Hour Express Delivery</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-shield-lock-fill text-success fs-4"></i>
+            <span class="fw-bold small">Zero Pesticide Guarantee</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-arrow-repeat text-success fs-4"></i>
+            <span class="fw-bold small">Easy Return at Doorstep</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Col 1: Brand & Socials -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market">
+          </a>
+          <p class="footer-desc">
+            Direct farm-to-doorstep daily organic groceries. Clean, chemical-free vegetables, orchard fruits, and pure pantry essentials harvested at sunrise.
+          </p>
+          <div class="footer-socials d-flex gap-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-success me-1"></i> About Us</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right small text-success me-1"></i> Fresh Produce</a></li>
+            <li><a href="delivery-coverage.html"><i class="bi bi-chevron-right small text-success me-1"></i> Delivery Areas</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-success me-1"></i> Subscriptions</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-success me-1"></i> Healthy Recipes</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-success me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Produce Categories</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
+            <li><a href="products.html?cat=fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Orchard Fruits</a></li>
+            <li><a href="products.html?cat=leafy-greens"><i class="bi bi-chevron-right small text-success me-1"></i> Hydroponic Greens</a></li>
+            <li><a href="products.html?cat=herbs"><i class="bi bi-chevron-right small text-success me-1"></i> Kitchen Herbs</a></li>
+            <li><a href="products.html?cat=dry-fruits"><i class="bi bi-chevron-right small text-success me-1"></i> Dry Fruits & Nuts</a></li>
+            <li><a href="products.html?cat=combos"><i class="bi bi-chevron-right small text-success me-1"></i> Value Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact Info -->
+        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+          <h5 class="footer-title">Visit Our Market</h5>
+          <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
+            <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
+            <div>
+              <div class="fw-semibold text-white">Pune Agricultural Market</div>
+              <div class="small text-muted">Shop 14-16, Gultekdi Market Yard, Pune, Maharashtra 411037</div>
+            </div>
+          </a>
+          
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <a href="tel:+919876543210" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+              <i class="bi bi-telephone-fill me-1"></i> +91 98765 43210
+            </a>
+            <a href="contact.html" class="btn btn-fresh btn-fresh-primary btn-fresh-sm">
+              <i class="bi bi-clock-fill me-1"></i> 6 AM - 9 PM
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-5 pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <p class="small text-muted mb-0">
+          &copy; 2026 <strong>FreshLeaf Market Inc.</strong> All rights reserved. Cultivated with organic passion.
+        </p>
+        <div class="payment-methods d-flex align-items-center gap-2">
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('visa')" title="Visa Payment Information">
+            <i class="bi bi-credit-card-2-front text-primary me-1"></i> Visa
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('mastercard')" title="Mastercard Information">
+            <i class="bi bi-credit-card text-warning me-1"></i> Mastercard
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('upi')" title="UPI / QR Information">
+            <i class="bi bi-qr-code-scan text-success me-1"></i> UPI / QR
+          </button>
+          <button type="button" class="payment-badge-btn" onclick="showPaymentModal('cod')" title="Cash on Delivery Information">
+            <i class="bi bi-cash-stack text-success me-1"></i> Cash on Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="cartOffcanvasLabel">
+        <i class="bi bi-basket2 text-success me-2"></i> Your Fresh Basket
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+      <div class="cart-items-container">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+      <div class="cart-summary-container border-top pt-3 mt-3">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenuOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="36">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4">
+      <ul class="nav flex-column gap-2 mb-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="delivery-coverage.html">Delivery</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Subscriptions</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="border-top pt-3 d-flex flex-column gap-2">
+        <a href="login.html" class="btn btn-fresh btn-fresh-primary w-100">Login to Account</a>
+        <a href="register.html" class="btn btn-fresh btn-fresh-outline w-100">Create Free Account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+    <div id="liveToast" class="toast align-items-center border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2" id="toastMessage">
+          <!-- Injected via showToast() -->
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

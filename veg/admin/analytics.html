@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvest Analytics & Revenue - FreshLeaf Admin</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core & Admin Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css" id="rtl-stylesheet" disabled>
+  <link rel="stylesheet" href="../assets/css/admin.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <a href="../index.html"><img src="../assets/images/logo.svg" alt="FreshLeaf Market" height="38"></a>
+    </div>
+    <ul class="admin-nav-list list-unstyled">
+      <li class="admin-nav-item"><a href="index.html" class="admin-nav-link"><i class="bi bi-speedometer2"></i> <span>Dashboard</span></a></li>
+      <li class="admin-nav-item"><a href="products.html" class="admin-nav-link"><i class="bi bi-box-seam"></i> <span>Products</span></a></li>
+      <li class="admin-nav-item"><a href="orders.html" class="admin-nav-link"><i class="bi bi-cart-check"></i> <span>Orders</span></a></li>
+      <li class="admin-nav-item"><a href="users.html" class="admin-nav-link"><i class="bi bi-people"></i> <span>Customers</span></a></li>
+      <li class="admin-nav-item"><a href="messages.html" class="admin-nav-link"><i class="bi bi-chat-left-text"></i> <span>Messages</span></a></li>
+      <li class="admin-nav-item"><a href="analytics.html" class="admin-nav-link active"><i class="bi bi-graph-up-arrow"></i> <span>Analytics</span></a></li>
+      <li class="admin-nav-item"><a href="settings.html" class="admin-nav-link"><i class="bi bi-sliders"></i> <span>Settings</span></a></li>
+      <li class="admin-nav-item mt-4 pt-3 border-top"><a href="../index.html" class="admin-nav-link text-success"><i class="bi bi-arrow-left-circle"></i> <span>Back to Store</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="d-flex align-items-center gap-3">
+      <button type="button" class="btn btn-light border btn-sm d-lg-none" id="adminSidebarToggle"><i class="bi bi-list fs-5"></i></button>
+      <h5 class="fw-bold mb-0 d-none d-sm-block">Harvest Demand & Revenue Intelligence</h5>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <button type="button" class="theme-toggle-btn text-main"><i class="bi bi-moon-stars-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn text-main"><i class="bi bi-translate"></i> RTL</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    
+    <!-- Top Stats -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3 col-6">
+        <div class="p-3 bg-card rounded-4 border text-center">
+          <span class="text-muted small">Monthly Gross Sales</span>
+          <div class="fs-3 fw-bold text-success">₹14.8 Lakhs</div>
+          <span class="small text-success"><i class="bi bi-arrow-up"></i> +18.4% YoY</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="p-3 bg-card rounded-4 border text-center">
+          <span class="text-muted small">Avg Order Value (AOV)</span>
+          <div class="fs-3 fw-bold text-main">₹584</div>
+          <span class="small text-success"><i class="bi bi-arrow-up"></i> +₹42 vs last month</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="p-3 bg-card rounded-4 border text-center">
+          <span class="text-muted small">Farmer Payouts Settled</span>
+          <div class="fs-3 fw-bold text-warning">₹9.2 Lakhs</div>
+          <span class="small text-muted">100% On-Time</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="p-3 bg-card rounded-4 border text-center">
+          <span class="text-muted small">Repeat Customer Ratio</span>
+          <div class="fs-3 fw-bold text-primary">76.4%</div>
+          <span class="small text-success"><i class="bi bi-arrow-up"></i> High retention</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Charts -->
+    <div class="row g-4 mb-4">
+      
+      <div class="col-lg-7">
+        <div class="admin-card mb-0">
+          <div class="admin-card-header">
+            <h5 class="fw-bold mb-0">Hourly Order Volume Peak (24h Window)</h5>
+            <span class="badge bg-success-subtle text-success small">Peak at 7:00 PM – 9:00 PM</span>
+          </div>
+          <div style="position: relative; height: 280px;">
+            <canvas id="hourlyPeakChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="admin-card mb-0">
+          <div class="admin-card-header">
+            <h5 class="fw-bold mb-0">Top Performing Delivery Zones</h5>
+          </div>
+          <div class="d-flex flex-column gap-3 mt-3">
+            <div>
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Zone 1: Kothrud & Deccan</span>
+                <span class="text-success">42% of total orders</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 42%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Zone 2: Baner & Aundh</span>
+                <span class="text-success">28% of total orders</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 28%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Zone 3: Viman Nagar & Kharadi</span>
+                <span class="text-warning">18% of total orders</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-warning" style="width: 18%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between small fw-bold mb-1">
+                <span>Extended Suburbs</span>
+                <span class="text-muted">12% of total orders</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-secondary" style="width: 12%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctx = document.getElementById('hourlyPeakChart');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['6 AM', '8 AM', '10 AM', '12 PM', '2 PM', '4 PM', '6 PM', '8 PM', '10 PM'],
+            datasets: [{
+              label: 'Orders Placed',
+              data: [35, 20, 15, 12, 18, 25, 48, 62, 28],
+              backgroundColor: '#15803d',
+              borderRadius: 6
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
