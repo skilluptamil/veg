@@ -155,11 +155,15 @@ function initSearchPopup() {
 /* --------------------------------------------------------------------------
    6. Shopping Cart & Wishlist State
    -------------------------------------------------------------------------- */
-let cart = [
+let cart = JSON.parse(localStorage.getItem('freshleaf_cart_items')) || [
   { id: 'prod-1', name: 'Fresh Farm Tomatoes', price: 45, unit: '1 kg', qty: 2, image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=300&q=80' },
   { id: 'prod-2', name: 'Organic Baby Spinach', price: 30, unit: '1 Bunch', qty: 1, image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=300&q=80' },
   { id: 'prod-3', name: 'Sweet Alphonso Mangoes', price: 320, unit: '1 Dozen', qty: 1, image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=300&q=80' }
 ];
+
+function saveCartState() {
+  localStorage.setItem('freshleaf_cart_items', JSON.stringify(cart));
+}
 
 let wishlistItems = JSON.parse(localStorage.getItem('freshleaf_wishlist_items')) || [
   { id: 'prod-1', name: 'Naturally Ripened Vine Tomatoes', price: 45, oldPrice: 60, unit: '1 kg', category: 'Vegetables', origin: 'Anand Bio Farms, Nashik', inStock: true, image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=300&q=80' },
@@ -172,6 +176,15 @@ function initCartAndWishlist() {
   renderCart();
   updateWishlistBadges();
   renderWishlistPage();
+
+  // Check if user just subscribed to a plan
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('subscribed')) {
+    const planName = decodeURIComponent(urlParams.get('subscribed'));
+    setTimeout(() => {
+      showToast(`🎉 <strong>Subscription Activated!</strong> Added "${planName}" to your basket. Review your plan details and complete checkout below.`, 'success');
+    }, 300);
+  }
 
   // Global Add To Cart Event Listener
   document.addEventListener('click', (e) => {
@@ -209,13 +222,61 @@ function addToCart(item) {
   } else {
     cart.push({ ...item, qty: 1 });
   }
+  saveCartState();
   renderCart();
   showToast(`Added "${item.name}" to your basket! <a href="cart.html" class="text-success text-decoration-underline fw-bold ms-1">View Cart &rarr;</a>`, 'success');
+}
+
+function subscribeToPlan(planId) {
+  const billingToggle = document.getElementById('pricingBillingToggle');
+  const isMonthly = billingToggle ? billingToggle.checked : false;
+
+  const plans = {
+    'plan-starter': {
+      id: isMonthly ? 'plan-starter-monthly' : 'plan-starter-weekly',
+      name: `Starter Basket (${isMonthly ? 'Monthly' : 'Weekly'} Subscription)`,
+      price: isMonthly ? 1599 : 449,
+      unit: isMonthly ? 'Monthly Plan (4 Deliveries)' : 'Weekly Plan (1 Delivery)',
+      image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80',
+      category: 'Subscriptions'
+    },
+    'plan-family': {
+      id: isMonthly ? 'plan-family-monthly' : 'plan-family-weekly',
+      name: `Family Harvest Box (${isMonthly ? 'Monthly' : 'Weekly'} Subscription)`,
+      price: isMonthly ? 3199 : 899,
+      unit: isMonthly ? 'Monthly Plan (4 Deliveries)' : 'Weekly Plan (1 Delivery)',
+      image: 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80',
+      category: 'Subscriptions'
+    },
+    'plan-organic': {
+      id: isMonthly ? 'plan-organic-monthly' : 'plan-organic-weekly',
+      name: `Organic Master Box (${isMonthly ? 'Monthly' : 'Weekly'} Subscription)`,
+      price: isMonthly ? 4999 : 1399,
+      unit: isMonthly ? 'Monthly Plan (4 Deliveries)' : 'Weekly Plan (1 Delivery)',
+      image: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=400&q=80',
+      category: 'Subscriptions'
+    }
+  };
+
+  const selectedPlan = plans[planId] || plans['plan-family'];
+
+  const existing = cart.find(p => p.id === selectedPlan.id);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ ...selectedPlan, qty: 1 });
+  }
+  saveCartState();
+  renderCart();
+
+  // Navigate to Cart page with subscription notification
+  window.location.href = 'cart.html?subscribed=' + encodeURIComponent(selectedPlan.name);
 }
 
 function removeFromCart(id) {
   const item = cart.find(p => p.id === id);
   cart = cart.filter(p => p.id !== id);
+  saveCartState();
   renderCart();
   if (item) {
     showToast(`Removed "${item.name}" from basket`, 'info');
@@ -229,6 +290,7 @@ function updateCartQty(id, delta) {
   if (item.qty <= 0) {
     removeFromCart(id);
   } else {
+    saveCartState();
     renderCart();
   }
 }
@@ -239,6 +301,7 @@ function clearCart() {
   if (confirm('Are you sure you want to clear all items from your basket?')) {
     cart = [];
     appliedDiscountPercent = 0;
+    saveCartState();
     renderCart();
     showToast('Your basket has been cleared', 'info');
   }
@@ -378,7 +441,7 @@ function renderCart() {
               <img src="${item.image}" alt="${item.name}" class="cart-item-img-table">
               <div>
                 <h6 class="fw-bold mb-1">${item.name}</h6>
-                <span class="badge bg-success-subtle text-success small rounded-pill px-2 py-0.5">Farm Direct</span>
+                <span class="badge ${item.category === 'Subscriptions' ? 'bg-primary-subtle text-primary' : 'bg-success-subtle text-success'} small rounded-pill px-2 py-0.5">${item.category === 'Subscriptions' ? 'Automated Subscription' : 'Farm Direct'}</span>
                 <span class="small text-muted ms-2">${item.unit}</span>
               </div>
             </div>
