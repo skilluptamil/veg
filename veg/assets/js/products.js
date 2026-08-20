@@ -444,12 +444,19 @@ const categoryMeta = {
     breadcrumb: 'Certified Organic',
     badge: 'Zero Chemical Residue',
     subtitle: 'Lab-tested organic produce grown strictly without synthetic fertilizers or chemical sprays.'
+  },
+  'deals': {
+    title: "Today's Flash Deals & Special Offers",
+    breadcrumb: "Today's Deals",
+    badge: 'Limited Time Discounts',
+    subtitle: 'Save up to 30% on freshly harvested organic fruits, vegetables, and combo boxes.'
   }
 };
 
 let activeCategory = 'all';
 let maxPrice = 1000;
 let onlyOrganic = false;
+let onlyDeals = false;
 let onlyInStock = false;
 let minRating = 0;
 let searchQuery = '';
@@ -482,9 +489,16 @@ function parseUrlCategory() {
   const urlParams = new URLSearchParams(window.location.search);
   const cat = urlParams.get('cat') || urlParams.get('category');
   const organic = urlParams.get('organic');
+  const deals = urlParams.get('deals') || urlParams.get('deal');
   const search = urlParams.get('search') || urlParams.get('q');
 
-  if (cat) {
+  onlyDeals = false;
+  onlyOrganic = false;
+
+  if (deals === 'true' || deals === '1' || cat === 'deals') {
+    onlyDeals = true;
+    activeCategory = 'all';
+  } else if (cat) {
     if (cat === 'organic') {
       onlyOrganic = true;
       activeCategory = 'all';
@@ -688,6 +702,7 @@ function initProductFilters() {
 
 function getFilteredProducts() {
   return freshProducts.filter(p => {
+    if (onlyDeals && !p.isDeal) return false;
     if (activeCategory !== 'all' && p.category !== activeCategory) return false;
     if (p.price > maxPrice) return false;
     if (onlyOrganic && !p.isOrganic) return false;

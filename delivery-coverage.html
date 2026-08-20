@@ -37,8 +37,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.html">Fresh Market Landing</a></li>
-                <li><a class="dropdown-item" href="home-2.html">Organic Farm Market</a></li>
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-shop me-2"></i>Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-flower1 me-2"></i>Home 2</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -72,8 +72,8 @@
     </div>
     <div class="offcanvas-body">
       <ul class="nav flex-column gap-2 mb-4">
-        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 - Fresh Market</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2 text-success"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2 text-success"></i> Home 2</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2 text-success"></i> About Us</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
         <li class="nav-item"><a class="nav-link fw-bold text-success" href="delivery-coverage.html"><i class="bi bi-truck me-2"></i> Delivery Zones</a></li>
@@ -89,17 +89,29 @@
     </div>
   </div>
 
-  <!-- Page Breadcrumb -->
+  <!-- Page Breadcrumb & Quick Actions -->
   <section class="py-5 bg-surface border-bottom text-center">
     <div class="container py-2">
       <div class="badge-section"><i class="bi bi-geo-alt-fill"></i> Fast & Reliable Logistics</div>
       <h1 class="hero-title mb-2">Delivery Zones & Express Coverage</h1>
-      <p class="text-muted mb-0" style="max-width: 600px; margin: 0 auto;">Enter your postal code to verify same-day delivery slots and free shipping thresholds.</p>
+      <p class="text-muted mb-4" style="max-width: 600px; margin: 0 auto;">Check your postal code for instant time slot availability, 2-hour express delivery, and live cold-chain logistics tracking.</p>
+      
+      <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <a href="#zipCheckerSection" class="btn btn-fresh btn-fresh-primary btn-fresh-sm">
+          <i class="bi bi-geo-alt-fill me-1"></i> Check Pincode
+        </a>
+        <a href="#liveTrackerSection" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+          <i class="bi bi-crosshair me-1"></i> Track Live Order
+        </a>
+        <a href="#slotBookingSection" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+          <i class="bi bi-clock-history me-1"></i> Reserve Delivery Slot
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Interactive Zip Code Checker -->
-  <section class="py-5">
+  <section class="py-5" id="zipCheckerSection">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -109,12 +121,29 @@
             
             <form id="deliveryZipForm">
               <div class="zip-input-group">
-                <input type="text" id="zipCodeInput" placeholder="e.g. 411045, 400001, 560001" maxlength="6" required>
+                <input type="text" id="zipCodeInput" placeholder="e.g. 411045, 411038, 411057" maxlength="6" required>
                 <button type="submit" class="btn btn-fresh btn-fresh-primary btn-fresh-lg">
                   <i class="bi bi-search me-1"></i> Check Postal Code
                 </button>
               </div>
             </form>
+
+            <div class="d-flex justify-content-center align-items-center gap-2 mt-3 flex-wrap">
+              <button type="button" class="btn btn-outline-success btn-sm rounded-pill px-3" onclick="detectUserLocation()">
+                <i class="bi bi-crosshair me-1"></i> Auto-Detect Location (GPS)
+              </button>
+            </div>
+
+            <!-- Quick Area Chips -->
+            <div class="pin-chips-wrapper">
+              <span class="small text-muted d-block w-100 mb-1">Quick Select Area:</span>
+              <button type="button" class="pin-chip-btn" onclick="quickCheckZip('411045')"><i class="bi bi-geo-alt-fill text-success"></i> Baner (411045)</button>
+              <button type="button" class="pin-chip-btn" onclick="quickCheckZip('411038')"><i class="bi bi-geo-alt-fill text-success"></i> Kothrud (411038)</button>
+              <button type="button" class="pin-chip-btn" onclick="quickCheckZip('411057')"><i class="bi bi-geo-alt-fill text-primary"></i> Hinjawadi (411057)</button>
+              <button type="button" class="pin-chip-btn" onclick="quickCheckZip('411014')"><i class="bi bi-geo-alt-fill text-primary"></i> Viman Nagar (411014)</button>
+              <button type="button" class="pin-chip-btn" onclick="quickCheckZip('412115')"><i class="bi bi-geo-alt-fill text-warning"></i> Wagholi (412115)</button>
+              <button type="button" class="pin-chip-btn" onclick="quickCheckZip('410501')"><i class="bi bi-geo-alt-fill text-warning"></i> Chakan (410501)</button>
+            </div>
 
             <!-- Result Box -->
             <div id="zipCheckResult" style="display: none;"></div>
@@ -124,76 +153,282 @@
     </div>
   </section>
 
-  <!-- Delivery Zones Overview -->
-  <section class="py-5 bg-surface">
+
+
+  <!-- Live Order Tracking Section -->
+  <section class="py-5" id="liveTrackerSection">
     <div class="container py-4">
       <div class="text-center mb-5">
-        <div class="badge-section"><i class="bi bi-map-fill"></i> City-Wide Network</div>
-        <h2 class="h1 fw-bold">Our Serviceable Delivery Zones</h2>
-        <p class="text-muted">Serviced by our temperature-controlled fleet every morning and evening.</p>
+        <div class="badge-section"><i class="bi bi-radar"></i> Real-Time Visibility</div>
+        <h2 class="h1 fw-bold">Live Order & Cold-Chain Tracker</h2>
+        <p class="text-muted">Track your morning harvest dispatch with active GPS telemetry and temperature verification.</p>
       </div>
 
-      <div class="row g-4">
-        <!-- Zone 1 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="delivery-zone-card">
-            <div class="delivery-zone-header">
-              <span class="badge bg-success-subtle text-success fw-bold px-3 py-2 rounded-pill">Zone 1: Urban Core</span>
-              <i class="bi bi-lightning-charge-fill text-warning fs-4"></i>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="tracker-card">
+            <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+              <i class="bi bi-search text-success"></i> Enter Order ID or Tracking Number
+            </h5>
+            <div class="input-group mb-3">
+              <input type="text" id="trackerOrderIdInput" class="form-control form-control-lg rounded-start-pill ps-4" placeholder="e.g. #FL-88241, #FL-77102" value="#FL-88241">
+              <button class="btn btn-fresh btn-fresh-primary btn-fresh-lg rounded-end-pill px-4" type="button" onclick="trackDeliveryOrder()">
+                <i class="bi bi-crosshair me-1"></i> Track Live Order
+              </button>
             </div>
-            <h4 class="delivery-zone-title">2-Hour Express Delivery</h4>
-            <p class="delivery-zone-desc">Within 15km of our Central Produce Fulfillment Hub with lightning morning delivery.</p>
-            <ul class="delivery-zone-list">
-              <li><i class="bi bi-sunrise-fill text-warning"></i> <div><strong>Morning Slot:</strong> 6:00 AM – 8:00 AM</div></li>
-              <li><i class="bi bi-sun-fill text-warning"></i> <div><strong>Noon Slot:</strong> 11:00 AM – 1:00 PM</div></li>
-              <li><i class="bi bi-sunset-fill text-warning"></i> <div><strong>Evening Slot:</strong> 5:30 PM – 8:30 PM</div></li>
-              <li><i class="bi bi-bag-check-fill text-success"></i> <div><strong>Free Delivery:</strong> Orders ₹400+ (else ₹35)</div></li>
-            </ul>
-            <div class="delivery-zone-pill">
-              <i class="bi bi-check-circle-fill text-success"></i> Live Express GPS Tracking Active
+
+            <div class="d-flex align-items-center gap-2 flex-wrap mb-4 small">
+              <span class="text-muted">Sample Active Orders:</span>
+              <button type="button" class="badge bg-surface text-main border rounded-pill px-2.5 py-1" onclick="trackDeliveryOrder('#FL-88241')">#FL-88241 (Express En Route)</button>
+              <button type="button" class="badge bg-surface text-main border rounded-pill px-2.5 py-1" onclick="trackDeliveryOrder('#FL-77102')">#FL-77102 (Morning Shuttle)</button>
+              <button type="button" class="badge bg-surface text-main border rounded-pill px-2.5 py-1" onclick="trackDeliveryOrder('#FL-66019')">#FL-66019 (Fresh Harvest)</button>
             </div>
+
+            <!-- Live Tracker Result Container -->
+            <div id="liveTrackerResultContainer" class="p-4 rounded-4 bg-surface border">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 border-bottom pb-3">
+                <div>
+                  <span class="badge bg-success-subtle text-success fw-bold px-2.5 py-1 rounded-pill mb-1">
+                    <span class="live-pulse-dot"></span> Out for Delivery
+                  </span>
+                  <h4 class="fw-bold mb-0 text-main">Order #FL-88241</h4>
+                </div>
+                <div class="text-md-end">
+                  <div class="small text-muted">Estimated Arrival</div>
+                  <div class="fw-bold text-success fs-5">7:15 AM (~12 mins away)</div>
+                </div>
+              </div>
+
+              <!-- Stepper -->
+              <div class="tracker-timeline mb-4">
+                <div class="tracker-step-item completed">
+                  <div class="tracker-step-icon"><i class="bi bi-check2"></i></div>
+                  <div class="fw-bold text-main">Order Placed & Harvest Batch Assigned</div>
+                  <div class="small text-muted">5:00 AM · Fresh produce allocated from Purandar Farm</div>
+                </div>
+                <div class="tracker-step-item completed">
+                  <div class="tracker-step-icon"><i class="bi bi-check2"></i></div>
+                  <div class="fw-bold text-main">Harvested & Quality Graded</div>
+                  <div class="small text-muted">5:45 AM · Crispness check passed, zero pesticide verified</div>
+                </div>
+                <div class="tracker-step-item completed">
+                  <div class="tracker-step-icon"><i class="bi bi-check2"></i></div>
+                  <div class="fw-bold text-main">Packed in Cold Container (11.8°C)</div>
+                  <div class="small text-muted">6:15 AM · Moisture-wicking breathable pouches applied</div>
+                </div>
+                <div class="tracker-step-item active">
+                  <div class="tracker-step-icon"><i class="bi bi-truck"></i></div>
+                  <div class="fw-bold text-warning-emphasis">Out for Delivery in Van #FL-EXP-104</div>
+                  <div class="small text-muted">6:40 AM · Driver Rahul Sharma en route to your sector</div>
+                </div>
+                <div class="tracker-step-item">
+                  <div class="tracker-step-icon"><i class="bi bi-house-door"></i></div>
+                  <div class="fw-bold text-muted">Doorstep Drop</div>
+                  <div class="small text-muted">Expected 7:15 AM · Contactless delivery with photo proof</div>
+                </div>
+              </div>
+
+              <!-- Driver Card -->
+              <div class="p-3 bg-card rounded-3 border d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="p-2 bg-success-subtle text-success rounded-circle"><i class="bi bi-person-badge fs-3"></i></div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-main">Rahul Sharma (Delivery Specialist)</h6>
+                    <span class="small text-muted">★ 4.9 Rating · Temperature Verified (36.4°C)</span>
+                  </div>
+                </div>
+                <div class="d-flex gap-2">
+                  <a href="tel:+919823011223" class="btn btn-fresh btn-fresh-primary btn-fresh-sm">
+                    <i class="bi bi-telephone-fill me-1"></i> Call Driver
+                  </a>
+                  <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm" onclick="openDeliveryFeatureModal('live-gps')">
+                    <i class="bi bi-geo-alt-fill me-1"></i> View GPS Map
+                  </button>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Zone 2 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="delivery-zone-card">
-            <div class="delivery-zone-header">
-              <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 rounded-pill">Zone 2: Suburban Belt</span>
-              <i class="bi bi-truck text-primary fs-4"></i>
-            </div>
-            <h4 class="delivery-zone-title">Same-Day Morning Shuttles</h4>
-            <p class="delivery-zone-desc">15km to 35km radius connecting major suburban residential townships and societies.</p>
-            <ul class="delivery-zone-list">
-              <li><i class="bi bi-sunrise-fill text-warning"></i> <div><strong>Morning Slot:</strong> 6:30 AM – 9:00 AM</div></li>
-              <li><i class="bi bi-sunset-fill text-warning"></i> <div><strong>Evening Slot:</strong> 6:00 PM – 9:00 PM</div></li>
-              <li><i class="bi bi-clock-history text-primary"></i> <div><strong>Order Cutoff:</strong> 9:00 PM previous night</div></li>
-              <li><i class="bi bi-bag-check-fill text-success"></i> <div><strong>Free Delivery:</strong> Orders ₹500+ (else ₹49)</div></li>
-            </ul>
-            <div class="delivery-zone-pill">
-              <i class="bi bi-check-circle-fill text-success"></i> Refrigerated Cold Van Service
-            </div>
-          </div>
-        </div>
+  <!-- Interactive Delivery Time Slot Selector -->
+  <section class="py-5 bg-surface" id="slotBookingSection">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="badge-section"><i class="bi bi-calendar-event"></i> Slot Reservation</div>
+        <h2 class="h1 fw-bold">Select Your Preferred Delivery Window</h2>
+        <p class="text-muted">Reserve a delivery slot ahead of time. All slots are fulfilled in cold-chain electric vans.</p>
+      </div>
 
-        <!-- Zone 3 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="delivery-zone-card">
-            <div class="delivery-zone-header">
-              <span class="badge bg-warning-subtle text-warning-emphasis fw-bold px-3 py-2 rounded-pill">Zone 3: Extended Ring</span>
-              <i class="bi bi-box-seam text-warning fs-4"></i>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          
+          <!-- Day Tabs -->
+          <ul class="nav nav-pills justify-content-center mb-4 gap-2" id="slotDayTabs" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active rounded-pill px-4 fw-semibold" data-bs-toggle="pill" data-bs-target="#tabToday">
+                <i class="bi bi-calendar2-check me-1"></i> Today (Express Slots)
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link rounded-pill px-4 fw-semibold" data-bs-toggle="pill" data-bs-target="#tabTomorrow">
+                <i class="bi bi-sun me-1"></i> Tomorrow (Fresh Morning Harvest)
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link rounded-pill px-4 fw-semibold" data-bs-toggle="pill" data-bs-target="#tabAfter">
+                <i class="bi bi-calendar3 me-1"></i> Day After Tomorrow
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="slotDayTabsContent">
+            
+            <!-- Today Slots -->
+            <div class="tab-pane fade show active" id="tabToday">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="slot-card selected">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-success-subtle text-success fw-bold rounded-pill">Early Harvest</span>
+                        <span class="small text-danger fw-bold"><i class="bi bi-fire"></i> 3 Slots Left</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">6:00 AM – 8:00 AM</h5>
+                      <p class="small text-muted mb-3">Fresh morning pick for breakfast salads & smoothies.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-primary btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Today', '6:00 AM – 8:00 AM', this)">
+                      <i class="bi bi-check-circle-fill me-1"></i> Slot Reserved
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-warning-subtle text-warning-emphasis fw-bold rounded-pill">Mid-Day Drop</span>
+                        <span class="small text-success fw-bold"><i class="bi bi-check-circle"></i> Available</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">11:00 AM – 1:00 PM</h5>
+                      <p class="small text-muted mb-3">Arrives in time for fresh lunchtime cooking.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Today', '11:00 AM – 1:00 PM', this)">
+                      Select Slot
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-primary-subtle text-primary fw-bold rounded-pill">Dinner Express</span>
+                        <span class="small text-success fw-bold"><i class="bi bi-check-circle"></i> Available</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">5:30 PM – 8:30 PM</h5>
+                      <p class="small text-muted mb-3">Post-work evening drop for wholesome family dinners.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Today', '5:30 PM – 8:30 PM', this)">
+                      Select Slot
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h4 class="delivery-zone-title">Scheduled Weekly Baskets</h4>
-            <p class="delivery-zone-desc">Greater metropolitan periphery, gated communities, and farm subscription drops.</p>
-            <ul class="delivery-zone-list">
-              <li><i class="bi bi-calendar-check-fill text-warning"></i> <div><strong>Delivery Days:</strong> Tue, Thu, Sat</div></li>
-              <li><i class="bi bi-sunrise-fill text-warning"></i> <div><strong>Morning Window:</strong> 7:00 AM – 11:00 AM</div></li>
-              <li><i class="bi bi-stars text-primary"></i> <div><strong>Specialty:</strong> Bulk orders & Weekly baskets</div></li>
-              <li><i class="bi bi-bag-check-fill text-success"></i> <div><strong>Free Delivery:</strong> Orders ₹800+ (else ₹75)</div></li>
-            </ul>
-            <div class="delivery-zone-pill">
-              <i class="bi bi-check-circle-fill text-success"></i> Eco-Insulated Farm Cartons
+
+            <!-- Tomorrow Slots -->
+            <div class="tab-pane fade" id="tabTomorrow">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-success-subtle text-success fw-bold rounded-pill">Early Bird</span>
+                        <span class="small text-success fw-bold"><i class="bi bi-check-circle"></i> All Slots Open</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">6:00 AM – 8:00 AM</h5>
+                      <p class="small text-muted mb-3">Farm harvest straight to your door at dawn.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Tomorrow', '6:00 AM – 8:00 AM', this)">
+                      Reserve Tomorrow Slot
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-warning-subtle text-warning-emphasis fw-bold rounded-pill">Noon Harvest</span>
+                        <span class="small text-success fw-bold"><i class="bi bi-check-circle"></i> Available</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">11:00 AM – 1:00 PM</h5>
+                      <p class="small text-muted mb-3">Crisp salad greens, juicy fruits, and daily veggies.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Tomorrow', '11:00 AM – 1:00 PM', this)">
+                      Reserve Tomorrow Slot
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-primary-subtle text-primary fw-bold rounded-pill">Evening Drop</span>
+                        <span class="small text-success fw-bold"><i class="bi bi-check-circle"></i> Available</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">5:30 PM – 8:30 PM</h5>
+                      <p class="small text-muted mb-3">Packed in chilled eco-cartons for evening convenience.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Tomorrow', '5:30 PM – 8:30 PM', this)">
+                      Reserve Tomorrow Slot
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- Day After Tomorrow Slots -->
+            <div class="tab-pane fade" id="tabAfter">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-success-subtle text-success fw-bold rounded-pill">Morning Slot</span>
+                        <span class="small text-success fw-bold">Open</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">6:00 AM – 8:00 AM</h5>
+                      <p class="small text-muted mb-3">Pre-book your weekly farm basket delivery.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Day After Tomorrow', '6:00 AM – 8:00 AM', this)">
+                      Pre-book Slot
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="slot-card">
+                    <div>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-primary-subtle text-primary fw-bold rounded-pill">Evening Slot</span>
+                        <span class="small text-success fw-bold">Open</span>
+                      </div>
+                      <h5 class="slot-time-badge mb-1">5:30 PM – 8:30 PM</h5>
+                      <p class="small text-muted mb-3">Pre-book your evening produce delivery.</p>
+                    </div>
+                    <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm w-100 btn-slot-reserve" onclick="selectDeliverySlot('Day After Tomorrow', '5:30 PM – 8:30 PM', this)">
+                      Pre-book Slot
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -215,11 +450,11 @@
             <div class="accordion-item rounded-3 mb-3 border">
               <h2 class="accordion-header">
                 <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                  How are vegetables and fruits kept fresh during transit?
+                  <span class="accordion-title" dir="auto">How are vegetables and fruits kept fresh during transit?</span>
                 </button>
               </h2>
               <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#deliveryFaq">
-                <div class="accordion-body text-muted small">
+                <div class="accordion-body text-muted small" dir="auto">
                   All our electric delivery vans are equipped with custom temperature-regulated cargo compartments maintaining 12°C. Produce is packed in breathable, moisture-wicking pouches to prevent condensation and bruising.
                 </div>
               </div>
@@ -228,30 +463,77 @@
             <div class="accordion-item rounded-3 mb-3 border">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                  What is the cutoff time for 6:00 AM Early Bird morning delivery?
+                  <span class="accordion-title" dir="auto">What is the cutoff time for 6:00 AM Early Bird morning delivery?</span>
                 </button>
               </h2>
               <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#deliveryFaq">
-                <div class="accordion-body text-muted small">
+                <div class="accordion-body text-muted small" dir="auto">
                   To receive your vegetables at 6:00 AM freshly picked for breakfast preparation, please place your order before 9:30 PM the previous evening.
                 </div>
               </div>
             </div>
 
-            <div class="accordion-item rounded-3 border">
+            <div class="accordion-item rounded-3 mb-3 border">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                  What happens if I receive a damaged or bruised item?
+                  <span class="accordion-title" dir="auto">What happens if I receive a damaged or bruised item?</span>
                 </button>
               </h2>
               <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#deliveryFaq">
-                <div class="accordion-body text-muted small">
+                <div class="accordion-body text-muted small" dir="auto">
                   We have a 100% "No-Questions-Asked Freshness Guarantee." Simply click a photo in our app or WhatsApp our hotline within 12 hours for an instant replacement or full credit refund.
                 </div>
               </div>
             </div>
+
+            <div class="accordion-item rounded-3 mb-3 border">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  <span class="accordion-title" dir="auto">How does the "Return & Earn ₹50" Carton Recycling program work?</span>
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#deliveryFaq">
+                <div class="accordion-body text-muted small" dir="auto">
+                  Our honeycomb corrugated cartons are 100% reusable and plastic-free. Whenever you accumulate 5 empty boxes, hand them to the delivery partner on your next drop. The driver scans your return QR and ₹50 is instantly credited to your FreshLeaf wallet.
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Customer Support Assistance Card -->
+          <div class="p-4 rounded-4 bg-surface border text-center mt-5">
+            <h5 class="fw-bold mb-2">Have Custom Delivery Inquiries or Bulk Orders?</h5>
+            <p class="text-muted small mb-4">Our logistics and farm-to-table support desk is active every day from 6:00 AM to 10:00 PM.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="https://wa.me/919823011223" target="_blank" rel="noopener noreferrer" class="btn btn-fresh btn-fresh-primary btn-fresh-sm">
+                <i class="fab fa-whatsapp me-1"></i> WhatsApp Support
+              </a>
+              <a href="tel:+919823011223" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+                <i class="bi bi-telephone-fill me-1"></i> Call 020-25667890
+              </a>
+              <a href="contact.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+                <i class="bi bi-envelope-fill me-1"></i> Contact Desk
+              </a>
+            </div>
+          </div>
+
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="py-5 bg-success text-white text-center">
+    <div class="container py-3">
+      <h2 class="fw-bold mb-3 text-white">Experience 2-Hour Crisp Farm Harvest at Your Doorstep</h2>
+      <p class="text-white-50 mb-4" style="max-width: 650px; margin: 0 auto;">Ethically grown produce, plucked at sunrise, chilled to perfection, and delivered across Pune and surrounding areas.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="products.html" class="btn btn-light btn-fresh-lg fw-bold rounded-pill text-success shadow">
+          <i class="bi bi-cart-plus me-1"></i> Shop Farm Fresh Produce
+        </a>
+        <a href="pricing.html" class="btn btn-outline-light btn-fresh-lg fw-bold rounded-pill">
+          <i class="bi bi-box2-heart me-1"></i> Explore Subscription Baskets
+        </a>
       </div>
     </div>
   </section>
@@ -360,5 +642,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/validation.js"></script>
 </body>
 </html>

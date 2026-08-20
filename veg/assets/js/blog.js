@@ -415,11 +415,7 @@ function initBlogListPage() {
             </h4>
             <p class="blog-excerpt">${post.excerpt}</p>
             <div class="blog-footer mt-auto">
-              <div class="blog-author">
-                <img src="${post.author.avatar}" alt="${post.author.name}">
-                <span>${post.author.name}</span>
-              </div>
-              <a href="blog-details.html?id=${post.id}" class="text-success fw-bold small">
+              <a href="blog-details.html?id=${post.id}" class="read-story-btn">
                 Read Story <i class="bi bi-arrow-right"></i>
               </a>
             </div>

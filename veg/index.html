@@ -44,8 +44,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="index.html"><i class="bi bi-shop"></i> Fresh Market Landing</a></li>
-                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-flower1"></i> Organic Farm Market</a></li>
+                <li><a class="dropdown-item active" href="index.html"><i class="bi bi-shop me-2"></i>Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-flower1 me-2"></i>Home 2</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -104,8 +104,8 @@
     </div>
     <div class="offcanvas-body">
       <ul class="nav flex-column gap-2 mb-4">
-        <li class="nav-item"><a class="nav-link fw-bold text-success" href="index.html"><i class="bi bi-shop me-2"></i> Home 1 - Fresh Market</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2"></i> Home 2 - Organic Farm</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="index.html"><i class="bi bi-shop me-2"></i> Home 1</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="home-2.html"><i class="bi bi-flower1 me-2"></i> Home 2</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2"></i> About Us</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2"></i> All Products</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2"></i> Delivery Coverage</a></li>
@@ -449,16 +449,16 @@
   </section>
 
   <!-- Daily Deals Section with Countdown -->
-  <section class="py-5 bg-fresh-subtle">
+  <section class="py-5 bg-fresh-subtle" id="dailyDeals">
     <div class="container">
       <div class="row align-items-center g-4">
         
-        <div class="col-lg-5 text-center text-lg-start">
+        <div class="col-lg-4 text-center text-lg-start">
           <div class="badge-section mb-2">
             <i class="bi bi-clock-history"></i> Limited Time Offer
           </div>
           <h2 class="section-title">Today's Flash Deals</h2>
-          <p class="section-subtitle">Grab premium organic harvests at exclusive wholesale prices before the daily morning counter runs out!</p>
+          <p class="section-subtitle">Grab premium organic harvests at exclusive wholesale prices before the daily midnight counter runs out!</p>
           
           <!-- Countdown Timer -->
           <div class="countdown-wrap mb-4">
@@ -476,59 +476,98 @@
             </div>
           </div>
 
-          <a href="products.html" class="btn btn-fresh btn-fresh-accent btn-fresh-lg mt-2">
-            <i class="bi bi-bag-check-fill"></i> Grab Deals Now
+          <a href="products.html?deals=true" class="btn btn-fresh btn-fresh-accent btn-fresh-lg mt-2">
+            <i class="bi bi-lightning-charge-fill"></i> Grab All Flash Deals
           </a>
         </div>
 
-        <div class="col-lg-7">
+        <div class="col-lg-8">
           <div class="row g-3">
             <!-- Deal Card 1 -->
-            <div class="col-md-12">
-              <div class="deal-card">
-                <img src="assets/images/products/red-apples.jpg" alt="Kashmiri Red Apples" class="deal-card-img">
-                <div class="deal-content">
-                  <div class="d-flex align-items-center gap-2 mb-1">
-                    <span class="badge-pill badge-deal">Save 20%</span>
-                    <span class="badge bg-success-subtle text-success small rounded-pill px-2 py-0.5">Organic</span>
-                  </div>
-                  <h5 class="mb-1 fw-bold">Organic Kashmiri Red Apples</h5>
-                  <p class="small text-muted mb-2">Direct from Sopore Apple Orchards. Crisp, sweet & juicy.</p>
-                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-2">
-                    <div class="product-price">
+            <div class="col-md-6">
+              <div class="deal-card h-100 flex-column align-items-start">
+                <div class="d-flex w-100 gap-3 align-items-center">
+                  <img src="assets/images/products/red-apples.jpg" alt="Kashmiri Red Apples" class="deal-card-img">
+                  <div class="deal-content flex-grow-1">
+                    <div class="d-flex align-items-center justify-content-between gap-1 mb-1">
+                      <span class="badge-pill badge-deal">Save 20%</span>
+                      <div class="d-flex gap-1">
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-circle p-1" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;"
+                          onclick="openQuickView(this)" data-id="prod-7" data-name="Organic Kashmiri Red Apples" data-price="180" data-old-price="220" data-unit="1 kg" data-image="assets/images/products/red-apples.jpg" data-category="Fruits" data-farmer="Sopore Apple Orchards, Kashmir" data-rating="4.9" title="Quick View">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-danger rounded-circle p-1" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;"
+                          onclick="toggleWishlist({ id: 'prod-7', name: 'Organic Kashmiri Red Apples', price: 180, unit: '1 kg', image: 'assets/images/products/red-apples.jpg', category: 'Fruits' })" title="Save to Wishlist">
+                          <i class="bi bi-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <h6 class="mb-1 fw-bold text-truncate"><a href="product-details.html?id=prod-7" class="text-decoration-none text-dark">Kashmiri Red Apples</a></h6>
+                    <div class="product-price mb-1">
                       <span class="current-price">₹180</span>
                       <span class="original-price">₹220</span>
                       <span class="product-unit-label">/ 1 kg</span>
                     </div>
-                    <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="addToCart({ id: 'prod-7', name: 'Organic Kashmiri Red Apples', price: 180, unit: '1 kg', image: 'assets/images/products/red-apples.jpg', category: 'Fruits' })">
-                      <i class="bi bi-cart-plus me-1"></i> Add to Basket
-                    </button>
                   </div>
+                </div>
+
+                <div class="deal-progress-wrap w-100 mt-2 pt-2 border-top">
+                  <div class="d-flex justify-content-between small text-muted mb-1">
+                    <span><i class="bi bi-fire text-danger me-1"></i><strong>82% Claimed</strong></span>
+                    <span class="text-danger fw-semibold">Only 8 kg left</span>
+                  </div>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 82%"></div>
+                  </div>
+                  <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm w-100 mt-2"
+                    onclick="addToCart({ id: 'prod-7', name: 'Organic Kashmiri Red Apples', price: 180, unit: '1 kg', image: 'assets/images/products/red-apples.jpg', category: 'Fruits' })">
+                    <i class="bi bi-cart-plus me-1"></i> Add to Basket
+                  </button>
                 </div>
               </div>
             </div>
 
             <!-- Deal Card 2 -->
-            <div class="col-md-12">
-              <div class="deal-card">
-                <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80" alt="Family Veg Combo Basket" class="deal-card-img">
-                <div class="deal-content">
-                  <div class="d-flex align-items-center gap-2 mb-1">
-                    <span class="badge-pill badge-deal">Save 25%</span>
-                    <span class="badge bg-warning-subtle text-warning-emphasis small rounded-pill px-2 py-0.5">Best Value</span>
-                  </div>
-                  <h5 class="mb-1 fw-bold">Family Weekly Green Combo Basket</h5>
-                  <p class="small text-muted mb-2">7kg Assorted fresh daily vegetables + crisp salad essentials.</p>
-                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-2">
-                    <div class="product-price">
+            <div class="col-md-6">
+              <div class="deal-card h-100 flex-column align-items-start">
+                <div class="d-flex w-100 gap-3 align-items-center">
+                  <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80"
+                    alt="Family Veg Combo Basket" class="deal-card-img">
+                  <div class="deal-content flex-grow-1">
+                    <div class="d-flex align-items-center justify-content-between gap-1 mb-1">
+                      <span class="badge-pill badge-deal">Save 25%</span>
+                      <div class="d-flex gap-1">
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-circle p-1" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;"
+                          onclick="openQuickView(this)" data-id="prod-10" data-name="Family Weekly Green Combo Basket" data-price="499" data-old-price="650" data-unit="Combo Box" data-image="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80" data-category="Combos" data-farmer="FreshLeaf Direct Partner Farms" data-rating="4.9" title="Quick View">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-danger rounded-circle p-1" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;"
+                          onclick="toggleWishlist({ id: 'prod-10', name: 'Family Weekly Green Combo Basket', price: 499, unit: 'Combo Box', image: 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80', category: 'Combos' })" title="Save to Wishlist">
+                          <i class="bi bi-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <h6 class="mb-1 fw-bold text-truncate"><a href="product-details.html?id=prod-10" class="text-decoration-none text-dark">Family Weekly Combo</a></h6>
+                    <div class="product-price mb-1">
                       <span class="current-price">₹499</span>
                       <span class="original-price">₹650</span>
-                      <span class="product-unit-label">/ Basket</span>
+                      <span class="product-unit-label">/ Box</span>
                     </div>
-                    <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="addToCart({ id: 'prod-10', name: 'Family Weekly Green Combo Basket', price: 499, unit: 'Combo Box', image: 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80', category: 'Combos' })">
-                      <i class="bi bi-cart-plus me-1"></i> Add to Basket
-                    </button>
                   </div>
+                </div>
+
+                <div class="deal-progress-wrap w-100 mt-2 pt-2 border-top">
+                  <div class="d-flex justify-content-between small text-muted mb-1">
+                    <span><i class="bi bi-fire text-danger me-1"></i><strong>91% Claimed</strong></span>
+                    <span class="text-danger fw-semibold">Only 4 boxes left</span>
+                  </div>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 91%"></div>
+                  </div>
+                  <button class="btn btn-fresh btn-fresh-primary btn-fresh-sm w-100 mt-2"
+                    onclick="addToCart({ id: 'prod-10', name: 'Family Weekly Green Combo Basket', price: 499, unit: 'Combo Box', image: 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80', category: 'Combos' })">
+                    <i class="bi bi-cart-plus me-1"></i> Add to Basket
+                  </button>
                 </div>
               </div>
             </div>

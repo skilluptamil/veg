@@ -226,3 +226,34 @@
     transform: translateX(0);
   }
 }
+
+/* Accordion & FAQ RTL Alignment */
+[dir="rtl"] .accordion-item {
+  text-align: right !important;
+}
+
+[dir="rtl"] .accordion-button {
+  text-align: right !important;
+  direction: rtl !important;
+  padding: 1.25rem 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  transform: rotate(0deg);
+}
+
+[dir="rtl"] .accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+}
+
+[dir="rtl"] .accordion-body {
+  text-align: right !important;
+  direction: rtl !important;
+  unicode-bidi: plaintext;
+}

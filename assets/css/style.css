@@ -1542,24 +1542,59 @@ body.dark-mode .deal-card {
   margin-top: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 1rem;
   border-top: 1px solid var(--border-subtle);
 }
 
-.blog-author {
-  display: flex;
+.read-story-btn {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  font-size: 0.85rem;
+  width: 100%;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--primary, #16a34a);
+  background: rgba(22, 163, 74, 0.08);
+  border: 1.5px solid rgba(22, 163, 74, 0.25);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
-.blog-author img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.read-story-btn:hover {
+  background: var(--primary, #16a34a);
+  color: #ffffff !important;
+  border-color: var(--primary, #16a34a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+}
+
+.read-story-btn i {
+  transition: transform 0.25s ease;
+}
+
+.read-story-btn:hover i {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .read-story-btn:hover i {
+  transform: translateX(-4px);
+}
+
+[data-bs-theme="dark"] .read-story-btn,
+body.dark-mode .read-story-btn {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+[data-bs-theme="dark"] .read-story-btn:hover,
+body.dark-mode .read-story-btn:hover {
+  background: var(--primary, #16a34a);
+  color: #ffffff !important;
 }
 
 /* Sidebar Widgets */
@@ -2347,6 +2382,229 @@ body.dark-mode .deal-card {
   transition: var(--transition-fast);
 }
 
+.delivery-zone-pill-btn {
+  margin-top: auto;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1.5px solid var(--border-color);
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.delivery-zone-pill-btn:hover {
+  border-color: var(--primary);
+  background: var(--primary-subtle);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.18);
+}
+
+.delivery-zone-pill-btn:active {
+  transform: translateY(0);
+}
+
+.live-pulse-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulseGreen 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.pin-chips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pin-chip-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pin-chip-btn:hover {
+  background: var(--primary-subtle);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* Slot Selector Cards */
+.slot-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+}
+
+.slot-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.slot-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-subtle);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.slot-card.selected .btn-slot-reserve {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+/* Live Order Tracker */
+.tracker-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.tracker-timeline {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.tracker-step-item {
+  position: relative;
+  padding-bottom: 1.75rem;
+  padding-left: 2.25rem;
+  border-left: 2px dashed var(--border-color);
+}
+
+.tracker-step-item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.tracker-step-icon {
+  position: absolute;
+  left: -13px;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  z-index: 2;
+}
+
+.tracker-step-item.completed {
+  border-left: 2px solid var(--primary);
+}
+
+.tracker-step-item.completed .tracker-step-icon {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.tracker-step-item.active {
+  border-left: 2px dashed var(--border-color);
+}
+
+.tracker-step-item.active .tracker-step-icon {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
+}
+
+/* GPS & Telemetry Simulator */
+.gps-sim-box {
+  background: linear-gradient(145deg, #09121d 0%, #0f2338 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gps-sim-map-visual {
+  height: 140px;
+  background: radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.15), transparent 70%),
+              linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  border-radius: var(--radius-md);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.gps-van-marker {
+  animation: moveVan 4s ease-in-out infinite alternate;
+}
+
+@keyframes moveVan {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(80px); }
+}
+
+.telemetry-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.82rem;
+}
+
 .delivery-zone-card:hover .delivery-zone-pill {
   border-color: rgba(34, 197, 94, 0.3);
   background: var(--primary-subtle);
@@ -2360,7 +2618,16 @@ body.dark-mode .delivery-zone-card {
 }
 
 [data-bs-theme="dark"] .delivery-zone-pill,
-body.dark-mode .delivery-zone-pill {
+body.dark-mode .delivery-zone-pill,
+[data-bs-theme="dark"] .delivery-zone-pill-btn,
+body.dark-mode .delivery-zone-pill-btn {
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-bs-theme="dark"] .pin-chip-btn,
+body.dark-mode .pin-chip-btn {
   background: var(--bg-surface);
   border-color: var(--border-color);
   color: var(--text-main);
@@ -2979,6 +3246,108 @@ body.dark-mode .story-floating-stat .stat-subtitle {
 
 [dir="rtl"] .offcanvas-header .btn-close {
   margin: -0.5rem auto -0.5rem -0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Accordion & FAQ Component (LTR & Theme Responsive)
+   -------------------------------------------------------------------------- */
+.accordion {
+  --bs-accordion-bg: var(--bg-card);
+  --bs-accordion-btn-bg: var(--bg-card);
+  --bs-accordion-btn-color: var(--heading-color);
+  --bs-accordion-active-bg: var(--primary-subtle);
+  --bs-accordion-active-color: var(--primary);
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-border-color: var(--border-color);
+}
+
+.accordion-item {
+  background-color: var(--bg-card) !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.25s ease;
+}
+
+.accordion-item:hover {
+  border-color: rgba(34, 197, 94, 0.35) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-header {
+  margin: 0;
+}
+
+.accordion-button {
+  background-color: var(--bg-card) !important;
+  color: var(--heading-color) !important;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  border: none;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary-subtle) !important;
+  color: var(--primary) !important;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  background-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+}
+
+.accordion-body {
+  background-color: var(--bg-card) !important;
+  color: var(--text-muted) !important;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  border-top: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+[data-bs-theme="dark"] .accordion-item,
+body.dark-mode .accordion-item {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .accordion-button,
+body.dark-mode .accordion-button {
+  background-color: var(--bg-card) !important;
+  color: var(--heading-color) !important;
+}
+
+[data-bs-theme="dark"] .accordion-button:not(.collapsed),
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: rgba(34, 197, 94, 0.15) !important;
+  color: #4ade80 !important;
+}
+
+[data-bs-theme="dark"] .accordion-body,
+body.dark-mode .accordion-body {
+  background-color: var(--bg-card) !important;
+  color: var(--text-muted) !important;
 }
 
 

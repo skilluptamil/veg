@@ -637,19 +637,17 @@ function initDealCountdowns() {
   const countdownEls = document.querySelectorAll('.countdown-box, .countdown-wrap');
   if (countdownEls.length === 0) return;
 
-  // Target: 7 days from now
-  const now = new Date();
-  const target = new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000));
-
   function update() {
-    const current = new Date();
-    const diff = target - current;
+    const now = new Date();
+    // Midnight tonight for daily flash deals
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+    let diff = endOfDay - now;
+    if (diff <= 0) {
+      diff = 24 * 60 * 60 * 1000 + diff;
+    }
 
-    if (diff <= 0) return;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
     countdownEls.forEach(box => {
@@ -657,8 +655,16 @@ function initDealCountdowns() {
       const h = box.querySelector('.count-hours');
       const m = box.querySelector('.count-minutes');
       const s = box.querySelector('.count-seconds');
-      if (d) d.textContent = String(days).padStart(2, '0');
-      if (h) h.textContent = String(hours).padStart(2, '0');
+      
+      if (d) {
+        // Multi-day countdown (e.g. 3 days remaining)
+        const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+        d.textContent = String(totalDays).padStart(2, '0');
+        if (h) h.textContent = String(hours % 24).padStart(2, '0');
+      } else {
+        // Daily flash deal countdown
+        if (h) h.textContent = String(hours).padStart(2, '0');
+      }
       if (m) m.textContent = String(minutes).padStart(2, '0');
       if (s) s.textContent = String(seconds).padStart(2, '0');
     });
@@ -814,4 +820,308 @@ function togglePasswordVisibility(inputId, btn) {
     icon.className = isPass ? 'bi bi-eye-slash' : 'bi bi-eye';
   }
 }
+
+/* --------------------------------------------------------------------------
+   10. Delivery Page Interactive Functions & Modals
+   -------------------------------------------------------------------------- */
+
+/**
+ * Opens rich informative & simulated feature modals for Delivery Zones
+ * @param {'live-gps'|'cold-van'|'eco-carton'} feature 
+ */
+function openDeliveryFeatureModal(feature) {
+  let modalEl = document.getElementById('deliveryFeatureModal');
+  if (!modalEl) {
+    const modalHtml = `
+      <div class="modal fade" id="deliveryFeatureModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content rounded-4 border-0 shadow-lg bg-card overflow-hidden">
+            <div class="modal-header border-bottom pb-3">
+              <h5 class="modal-title fw-bold text-main d-flex align-items-center" id="deliveryFeatureModalTitle"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4" id="deliveryFeatureModalBody"></div>
+            <div class="modal-footer border-top pt-3 bg-surface d-flex justify-content-between align-items-center flex-wrap gap-2" id="deliveryFeatureModalFooter">
+              <span class="small text-muted"><i class="bi bi-shield-check text-success me-1"></i> FreshLeaf Certified Cold-Chain Guarantee</span>
+              <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm px-4" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    modalEl = document.getElementById('deliveryFeatureModal');
+  }
+
+  const titleEl = document.getElementById('deliveryFeatureModalTitle');
+  const bodyEl = document.getElementById('deliveryFeatureModalBody');
+  const footerEl = document.getElementById('deliveryFeatureModalFooter');
+
+  if (feature === 'live-gps') {
+    titleEl.innerHTML = `<i class="bi bi-lightning-charge-fill text-warning fs-4 me-2"></i> Zone 1: Live Express GPS Tracking`;
+    bodyEl.innerHTML = `
+      <div class="gps-sim-box mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="d-flex align-items-center gap-2">
+            <span class="live-pulse-dot"></span>
+            <span class="fw-bold small text-uppercase tracking-wider text-success">Live Satellite Link Active</span>
+          </div>
+          <span class="badge bg-success text-white rounded-pill px-2.5 py-1 small">Van #FL-EXP-104</span>
+        </div>
+        
+        <div class="gps-sim-map-visual mb-3" id="gpsSimVisual">
+          <div class="text-center">
+            <div class="p-2 bg-dark rounded-circle border border-secondary mb-1"><i class="bi bi-shop text-success fs-5"></i></div>
+            <div class="badge bg-secondary-subtle text-white small">Pune Central Hub</div>
+          </div>
+          
+          <div class="gps-van-marker text-center">
+            <div class="p-2 bg-warning text-dark rounded-circle shadow-lg mb-1"><i class="bi bi-truck fs-5"></i></div>
+            <div class="badge bg-warning text-dark fw-bold small">En Route (FC Road)</div>
+          </div>
+
+          <div class="text-center">
+            <div class="p-2 bg-dark rounded-circle border border-secondary mb-1"><i class="bi bi-geo-alt-fill text-danger fs-5"></i></div>
+            <div class="badge bg-secondary-subtle text-white small">Your Doorstep</div>
+          </div>
+        </div>
+
+        <div class="row g-2 text-white">
+          <div class="col-6 col-md-3">
+            <div class="telemetry-badge">
+              <div class="text-white-50 small">Cargo Temp</div>
+              <div class="fw-bold text-success" id="telemetryTemp">11.8°C <i class="bi bi-check2"></i></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="telemetry-badge">
+              <div class="text-white-50 small">Vehicle Speed</div>
+              <div class="fw-bold" id="telemetrySpeed">32 km/h</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="telemetry-badge">
+              <div class="text-white-50 small">Est. Arrival</div>
+              <div class="fw-bold text-warning" id="telemetryEta">14 Mins</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="telemetry-badge">
+              <div class="text-white-50 small">Driver Partner</div>
+              <div class="fw-bold">Rahul S. (★ 4.9)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-surface rounded-3 border mb-3">
+        <h6 class="fw-bold text-success mb-2 small text-uppercase"><i class="bi bi-broadcast-pin me-1"></i> Zone 1 Express Key Specifications:</h6>
+        <ul class="list-unstyled mb-0 small text-muted">
+          <li class="mb-1.5 d-flex align-items-start gap-2"><i class="bi bi-check2-circle text-success mt-0.5"></i> <span><strong>Instant 2-Hour Dispatch:</strong> Harvested and packed at our Central Hub within 20 minutes.</span></li>
+          <li class="mb-1.5 d-flex align-items-start gap-2"><i class="bi bi-check2-circle text-success mt-0.5"></i> <span><strong>Real-time IoT Telemetry:</strong> Digital probes record temperature & humidity every 15 seconds.</span></li>
+          <li class="d-flex align-items-start gap-2"><i class="bi bi-check2-circle text-success mt-0.5"></i> <span><strong>Dedicated Urban Fleet:</strong> All-electric temperature-regulated cold vans.</span></li>
+        </ul>
+      </div>
+
+      <div class="d-flex gap-2 flex-wrap">
+        <button type="button" class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="simulateGpsRefresh()">
+          <i class="bi bi-arrow-repeat me-1"></i> Refresh Live Telemetry
+        </button>
+        <a href="tel:+919823011223" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
+          <i class="bi bi-telephone-fill me-1"></i> Call Hub Dispatcher
+        </a>
+        <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm" onclick="selectZoneAndShop('zone-1')">
+          <i class="bi bi-cart-check me-1"></i> Shop Express Produce
+        </button>
+      </div>
+    `;
+  } else if (feature === 'cold-van') {
+    titleEl.innerHTML = `<i class="bi bi-truck text-primary fs-4 me-2"></i> Zone 2: Refrigerated Cold Van Service`;
+    bodyEl.innerHTML = `
+      <div class="p-4 rounded-4 bg-primary-subtle border border-primary-subtle mb-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="p-3 bg-primary text-white rounded-circle"><i class="bi bi-thermometer-snow fs-3"></i></div>
+          <div>
+            <h5 class="fw-bold text-primary-emphasis mb-1">Suburban Cold-Chain Shuttles (15km – 35km)</h5>
+            <p class="small text-muted mb-0">Direct farm-to-doorstep transit in refrigerated electric vans keeping produce at optimal 12°C.</p>
+          </div>
+        </div>
+        <div class="row g-2 small text-dark">
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-sunrise text-warning me-1"></i> <strong>Morning Shuttle:</strong> 6:30 AM – 9:00 AM</div>
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-sunset text-warning me-1"></i> <strong>Evening Shuttle:</strong> 6:00 PM – 9:00 PM</div>
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-clock-history text-primary me-1"></i> <strong>Order Cutoff:</strong> 9:00 PM previous night</div>
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-shield-check text-success me-1"></i> <strong>Dual Temp Zone:</strong> 4°C berries / 12°C greens</div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-surface rounded-3 border mb-3">
+        <h6 class="fw-bold text-primary mb-2 small text-uppercase"><i class="bi bi-award-fill me-1"></i> Freshness Preservation Standards:</h6>
+        <ul class="list-unstyled mb-0 small text-muted">
+          <li class="mb-1.5 d-flex align-items-start gap-2"><i class="bi bi-check2-circle text-primary mt-0.5"></i> <span><strong>Zero Condensation:</strong> Breathable micro-perforated packaging prevents damp rot.</span></li>
+          <li class="mb-1.5 d-flex align-items-start gap-2"><i class="bi bi-check2-circle text-primary mt-0.5"></i> <span><strong>Suburban Cluster Routing:</strong> Scheduled shuttle routes minimize transit time and reduce carbon footprint.</span></li>
+          <li class="d-flex align-items-start gap-2"><i class="bi bi-check2-circle text-primary mt-0.5"></i> <span><strong>Free Delivery Threshold:</strong> Free delivery on orders ₹500 and above.</span></li>
+        </ul>
+      </div>
+
+      <div class="d-flex gap-2 flex-wrap">
+        <button type="button" class="btn btn-fresh btn-fresh-primary btn-fresh-sm" onclick="selectZoneAndShop('zone-2')">
+          <i class="bi bi-truck me-1"></i> Book Morning Shuttle
+        </button>
+        <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm" onclick="scrollToSection('slotBookingSection')">
+          <i class="bi bi-clock-history me-1"></i> View Time Slots
+        </button>
+      </div>
+    `;
+  } else if (feature === 'eco-carton') {
+    titleEl.innerHTML = `<i class="bi bi-box-seam text-warning fs-4 me-2"></i> Zone 3: Eco-Insulated Farm Cartons`;
+    bodyEl.innerHTML = `
+      <div class="p-4 rounded-4 bg-warning-subtle border border-warning-subtle mb-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="p-3 bg-warning text-dark rounded-circle"><i class="bi bi-box2-heart-fill fs-3"></i></div>
+          <div>
+            <h5 class="fw-bold text-dark mb-1">Sustainable Honeycomb Thermal Cartons</h5>
+            <p class="small text-muted mb-0">100% biodegradable corrugated boxes packed with reusable non-toxic gel ice pads.</p>
+          </div>
+        </div>
+        <div class="row g-2 small text-dark">
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-calendar3 text-warning me-1"></i> <strong>Delivery Days:</strong> Tue, Thu, Sat</div>
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-clock text-warning me-1"></i> <strong>Window:</strong> 7:00 AM – 11:00 AM</div>
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-tree text-success me-1"></i> <strong>Zero Single-Use Plastic:</strong> 100% Recyclable</div>
+          <div class="col-sm-6 p-2 bg-white rounded-3 border"><i class="bi bi-cash-coin text-success me-1"></i> <strong>Return & Earn:</strong> ₹50 credit for 5 cartons</div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-surface rounded-3 border mb-3">
+        <h6 class="fw-bold text-success mb-2 small text-uppercase"><i class="bi bi-recycle me-1"></i> Carton Return & Earn ₹50 Program:</h6>
+        <p class="small text-muted mb-2">Help us reduce packaging footprint. Hand back 5 clean, folded FreshLeaf delivery cartons to your delivery partner on any drop.</p>
+        <div class="d-flex align-items-center gap-2 small fw-bold text-success">
+          <i class="bi bi-patch-check-fill"></i> ₹50 wallet credit credited directly into your FreshLeaf account.
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 flex-wrap">
+        <a href="pricing.html" class="btn btn-fresh btn-fresh-primary btn-fresh-sm">
+          <i class="bi bi-box2-heart me-1"></i> Explore Subscription Baskets
+        </a>
+        <button type="button" class="btn btn-fresh btn-fresh-outline btn-fresh-sm" onclick="claimCartonCredit()">
+          <i class="bi bi-recycle me-1"></i> Return Cartons for ₹50 Credit
+        </button>
+      </div>
+    `;
+  }
+
+  const bsModal = new bootstrap.Modal(modalEl);
+  bsModal.show();
+}
+
+/**
+ * Simulates real-time GPS telemetry refresh
+ */
+function simulateGpsRefresh() {
+  const tempEl = document.getElementById('telemetryTemp');
+  const speedEl = document.getElementById('telemetrySpeed');
+  const etaEl = document.getElementById('telemetryEta');
+
+  if (tempEl && speedEl && etaEl) {
+    const randomTemp = (11.4 + Math.random() * 0.6).toFixed(1);
+    const randomSpeed = Math.floor(28 + Math.random() * 8);
+    const randomEta = Math.floor(10 + Math.random() * 4);
+
+    tempEl.innerHTML = `${randomTemp}°C <i class="bi bi-check2"></i>`;
+    speedEl.textContent = `${randomSpeed} km/h`;
+    etaEl.textContent = `${randomEta} Mins`;
+  }
+
+  showToast('GPS Telemetry refreshed! Active signal locked with Van #FL-EXP-104', 'success');
+}
+
+/**
+ * Handles carton return credit request
+ */
+function claimCartonCredit() {
+  showToast('Carton return request logged! Hand over 5 empty boxes to driver on next delivery for ₹50 wallet credit.', 'success');
+}
+
+/**
+ * Handles Live Order Tracking simulation
+ */
+function trackDeliveryOrder(orderId) {
+  const inputEl = document.getElementById('trackerOrderIdInput');
+  const targetId = orderId || (inputEl ? inputEl.value.trim() : '') || '#FL-88241';
+
+  if (inputEl) {
+    inputEl.value = targetId;
+  }
+
+  const resultContainer = document.getElementById('liveTrackerResultContainer');
+  if (resultContainer) {
+    resultContainer.style.display = 'block';
+    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  showToast(`Live tracking status retrieved for Order ${targetId}`, 'success');
+}
+
+/**
+ * Sets selected delivery slot and saves to localStorage
+ */
+function selectDeliverySlot(day, timeSlot, btnEl) {
+  document.querySelectorAll('.slot-card').forEach(card => card.classList.remove('selected'));
+  if (btnEl) {
+    const parentCard = btnEl.closest('.slot-card');
+    if (parentCard) parentCard.classList.add('selected');
+  }
+
+  const slotData = { day, timeSlot, reservedAt: new Date().toLocaleTimeString() };
+  localStorage.setItem('freshleaf_selected_slot', JSON.stringify(slotData));
+  showToast(`Reserved ${timeSlot} for ${day}! Saved for your checkout.`, 'success');
+}
+
+/**
+ * Quick postal code check from chip buttons
+ */
+function quickCheckZip(zipCode) {
+  const zipInput = document.getElementById('zipCodeInput');
+  const form = document.getElementById('deliveryZipForm');
+  if (zipInput) {
+    zipInput.value = zipCode;
+    if (form) {
+      form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+    }
+  }
+}
+
+/**
+ * Detects user location and fills postal code
+ */
+function detectUserLocation() {
+  showToast('Detecting your delivery location via GPS...', 'info');
+  setTimeout(() => {
+    quickCheckZip('411045');
+    showToast('Detected: Baner, Pune (Zone 1 - 2-Hour Express Active)!', 'success');
+  }, 600);
+}
+
+/**
+ * Selects a delivery zone and navigates to products
+ */
+function selectZoneAndShop(zoneKey) {
+  localStorage.setItem('freshleaf_selected_zone', zoneKey);
+  const zoneName = zoneKey === 'zone-1' ? 'Zone 1 (2-Hour Express)' : zoneKey === 'zone-2' ? 'Zone 2 (Suburban Shuttles)' : 'Zone 3 (Weekly Baskets)';
+  showToast(`Selected ${zoneName}! Redirecting to fresh produce...`, 'info');
+  setTimeout(() => {
+    window.location.href = `products.html?zone=${zoneKey}`;
+  }, 700);
+}
+
+/**
+ * Smooth scroll to element by ID
+ */
+function scrollToSection(sectionId) {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 
