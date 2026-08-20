@@ -32,6 +32,9 @@ body.dark-mode .site-header {
 [data-bs-theme="dark"] .site-header.is-sticky,
 body.dark-mode .site-header.is-sticky {
   background: rgba(21, 34, 56, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
 [data-bs-theme="dark"] .main-nav .dropdown-menu,

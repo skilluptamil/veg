@@ -96,13 +96,16 @@ function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+  const updateStickyState = () => {
+    if (window.scrollY > 20) {
       header.classList.add('is-sticky');
     } else {
       header.classList.remove('is-sticky');
     }
-  });
+  };
+
+  window.addEventListener('scroll', updateStickyState, { passive: true });
+  updateStickyState();
 }
 
 /* --------------------------------------------------------------------------
