@@ -3,7 +3,7 @@
  * Persistent single source of truth across all admin dashboard pages.
  */
 
-const PROPVANTAGE_STORAGE_KEY = 'propvantage_dashboard_state_v1';
+const PROPVANTAGE_STORAGE_KEY = 'propvantage_dashboard_state_v2';
 
 // Initial Realistic Seed Data
 const SEED_PROPVANTAGE_DATA = {
@@ -469,12 +469,14 @@ const SEED_PROPVANTAGE_DATA = {
   messages: [
     {
       id: "msg-1",
-      sender: "Ananya Sharma",
-      senderType: "Tenant",
-      propertyName: "Oakridge Manor & Heights",
-      unit: "A-304",
-      subject: "Lease Extension & Assigned Parking Inquiry",
-      body: "Hello PropVantage management, I received the upcoming renewal notice and would like to confirm if we can add a second covered parking spot to our lease agreement.",
+      sender: "Chef Karan",
+      senderType: "B2B Commercial",
+      propertyName: "Olive Cafe & Bistro",
+      unit: "Baner",
+      email: "chef.karan@olivecafe.com",
+      phone: "+91 98112 33445",
+      subject: "Wholesale Organic Basil & Tomato Quote",
+      body: "Hello FreshLeaf Team,\n\nWe are launching our new Mediterranean woodfire pizzeria in Baner next month. We require guaranteed daily morning delivery (before 6:30 AM) of approximately 20kg ripe vine tomatoes, 2kg sweet basil leaves, and 5kg baby spinach.\n\nPlease send over your commercial price sheet, sample availability, and monthly billing terms.\n\nBest regards,\nChef Karan (Head Chef)",
       date: "Today, 10:24 AM",
       isRead: false,
       isArchived: false
@@ -482,9 +484,11 @@ const SEED_PROPVANTAGE_DATA = {
     {
       id: "msg-2",
       sender: "Dr. Rajesh Verma",
-      senderType: "Tenant",
+      senderType: "Resident",
       propertyName: "Sunset Boulevard Lofts",
       unit: "B-102",
+      email: "dr.rajesh.verma@medcare.org",
+      phone: "+91 98220 11984",
       subject: "Water Heater Service Window Confirmation",
       body: "Thank you for dispatching Mike from ProPlumb. Just confirming he will arrive between 2:00 PM and 4:00 PM today as discussed.",
       date: "Today, 8:45 AM",
@@ -497,6 +501,8 @@ const SEED_PROPVANTAGE_DATA = {
       senderType: "Vendor",
       propertyName: "Oakridge Manor & Heights",
       unit: "A-304",
+      email: "service@apexclimate.com",
+      phone: "+91 94225 66781",
       subject: "HVAC Inspection Report & Part Estimate",
       body: "Attached is the diagnostic summary for unit A-304. Capacitor replacement required, cost estimated at $240.",
       date: "Yesterday",
@@ -506,9 +512,11 @@ const SEED_PROPVANTAGE_DATA = {
     {
       id: "msg-4",
       sender: "Sneha Patel",
-      senderType: "Tenant",
+      senderType: "Resident",
       propertyName: "Greenfield Park Residences",
       unit: "G-205",
+      email: "sneha.patel@gmail.com",
+      phone: "+91 97654 32110",
       subject: "Signed Lease Agreement Uploaded",
       body: "I have digitally signed the 12-month lease renewal via the portal. Looking forward to another year!",
       date: "Sep 5, 2026",
@@ -518,9 +526,11 @@ const SEED_PROPVANTAGE_DATA = {
     {
       id: "msg-5",
       sender: "Vikram Malhotra",
-      senderType: "Tenant",
+      senderType: "Resident",
       propertyName: "Marina Bay Waterfront",
       unit: "MB-12",
+      email: "vikram.m@investcorp.com",
+      phone: "+91 98901 23456",
       subject: "Guest Parking Pass Request for Weekend",
       body: "Hi team, I have family visiting this Saturday and Sunday. Can you issue a temporary 48-hour guest parking permit?",
       date: "Sep 4, 2026",
@@ -533,6 +543,8 @@ const SEED_PROPVANTAGE_DATA = {
       senderType: "Vendor",
       propertyName: "General Portfolio",
       unit: "-",
+      email: "dispatch@proplumb.in",
+      phone: "+91 99234 88765",
       subject: "Annual Backflow Prevention Certification Complete",
       body: "All annual municipal backflow checks for Oakridge and Sunset complexes have passed inspection successfully.",
       date: "Sep 2, 2026",

@@ -153,34 +153,37 @@
           </div>
 
           <div id="messageDetailContent" style="display: none;">
-            <div class="d-flex justify-content-between align-items-start border-bottom pb-3 mb-3">
-              <div>
-                <span class="badge bg-success-subtle text-success small mb-1" id="msgDetailSenderType">Tenant</span>
-                <h5 class="fw-bold mb-1" id="msgDetailSubject">Subject</h5>
-                <div class="small text-muted">
-                  From: <strong class="text-main" id="msgDetailSender">Sender Name</strong> · <span id="msgDetailProperty">Property</span> (Unit <span id="msgDetailUnit">Unit</span>)
+            <div class="message-detail-header d-flex justify-content-between align-items-start border-bottom pb-3 mb-3 flex-wrap gap-2">
+              <div class="message-header-info" style="min-width: 0; max-width: 100%; flex: 1 1 auto;">
+                <div class="d-flex align-items-center gap-2 mb-1.5 flex-wrap">
+                  <span class="badge bg-warning-subtle text-warning-emphasis small fw-bold" id="msgDetailSenderType">B2B Commercial</span>
+                  <span class="small text-muted" id="msgDetailDate">Today, 10:24 AM</span>
+                </div>
+                <h5 class="fw-bold mb-1 text-break message-title" id="msgDetailSubject">Wholesale Organic Basil & Tomato Quote</h5>
+                <div class="small text-muted message-sender-line text-break">
+                  From: <strong class="text-main" id="msgDetailSender">Chef Karan</strong> <span id="msgDetailContactMeta">(chef.karan@olivecafe.com) • Mobile: +91 98112 33445</span>
                 </div>
               </div>
-              <div class="d-flex gap-1">
+              <div class="d-flex gap-1 message-actions flex-shrink-0 align-self-start">
                 <button class="btn btn-sm btn-light border" id="btnToggleReadStatus" title="Toggle Read/Unread"><i class="bi bi-envelope-open"></i></button>
                 <button class="btn btn-sm btn-light border text-danger" id="btnDeleteMsg" title="Delete Message"><i class="bi bi-trash3"></i></button>
                 <button class="btn btn-sm btn-light border" id="btnArchiveMsg" title="Archive Message"><i class="bi bi-archive"></i></button>
               </div>
             </div>
 
-            <div class="p-3 bg-surface rounded-3 mb-4" id="msgDetailBody" style="line-height: 1.6;">
+            <div class="p-3 bg-surface rounded-3 mb-4 text-break" id="msgDetailBody" style="line-height: 1.65; word-break: break-word;">
               <!-- Body text -->
             </div>
 
             <!-- Reply Box -->
             <div class="border-top pt-3">
-              <h6 class="fw-bold mb-2"><i class="bi bi-reply-fill text-success me-1"></i> Send Reply to Tenant</h6>
+              <h6 class="fw-bold mb-2"><i class="bi bi-reply-fill text-success me-1"></i> Send Reply</h6>
               <form id="messageReplyForm">
                 <div class="mb-2">
                   <textarea class="form-control" id="replyTextInput" rows="3" placeholder="Type your response here..." required></textarea>
                 </div>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="small text-muted"><i class="bi bi-shield-check text-success"></i> Notification will be sent via SMS & Tenant Portal</div>
+                <div class="d-flex justify-content-between align-items-center message-reply-actions flex-wrap gap-2">
+                  <div class="small text-muted"><i class="bi bi-shield-check text-success"></i> Notification will be sent via Email & SMS</div>
                   <button type="submit" class="btn btn-fresh btn-fresh-primary btn-fresh-sm"><i class="bi bi-send-fill me-1"></i> Send Reply</button>
                 </div>
               </form>
@@ -247,12 +250,12 @@
 
         return `
           <a href="#" class="list-group-item list-group-item-action p-3 rounded-3 mb-2 border ${unreadClass} ${selectedClass}" onclick="event.preventDefault(); selectMessage('${m.id}')">
-            <div class="d-flex justify-content-between align-items-center mb-1">
+            <div class="d-flex justify-content-between align-items-center mb-1 flex-wrap gap-1">
               <strong class="text-main small">${m.sender}</strong>
               <small class="text-muted" style="font-size: 0.75rem;">${m.date}</small>
             </div>
             <div class="fw-semibold small text-truncate mb-1">${m.subject}</div>
-            <p class="small text-muted mb-0 text-truncate">${m.body}</p>
+            <p class="small text-muted mb-0 text-truncate">${m.body.replace(/\n/g, ' ')}</p>
           </a>
         `;
       }).join('');
@@ -275,10 +278,36 @@
 
       document.getElementById('msgDetailSubject').textContent = msg.subject;
       document.getElementById('msgDetailSender').textContent = msg.sender;
-      document.getElementById('msgDetailSenderType').textContent = msg.senderType;
-      document.getElementById('msgDetailProperty').textContent = msg.propertyName;
-      document.getElementById('msgDetailUnit').textContent = msg.unit;
-      document.getElementById('msgDetailBody').textContent = msg.body;
+      
+      const badgeType = document.getElementById('msgDetailSenderType');
+      if (badgeType) {
+        badgeType.textContent = msg.senderType || 'Inquiry';
+        if (msg.senderType === 'B2B Commercial' || msg.senderType === 'Commercial') {
+          badgeType.className = 'badge bg-warning-subtle text-warning-emphasis small fw-semibold';
+        } else if (msg.senderType === 'Vendor') {
+          badgeType.className = 'badge bg-info-subtle text-info small fw-semibold';
+        } else {
+          badgeType.className = 'badge bg-success-subtle text-success small fw-semibold';
+        }
+      }
+
+      const dateEl = document.getElementById('msgDetailDate');
+      if (dateEl) dateEl.textContent = msg.date || 'Today';
+
+      const contactMeta = document.getElementById('msgDetailContactMeta');
+      if (contactMeta) {
+        if (msg.email && msg.phone) {
+          contactMeta.textContent = `(${msg.email}) • Mobile: ${msg.phone}`;
+        } else if (msg.email) {
+          contactMeta.textContent = `(${msg.email})`;
+        } else if (msg.propertyName && msg.unit) {
+          contactMeta.textContent = `· ${msg.propertyName} (Unit ${msg.unit})`;
+        } else {
+          contactMeta.textContent = '';
+        }
+      }
+
+      document.getElementById('msgDetailBody').innerHTML = (msg.body || '').replace(/\n/g, '<br>');
 
       // Bind button events
       document.getElementById('btnToggleReadStatus').onclick = () => {

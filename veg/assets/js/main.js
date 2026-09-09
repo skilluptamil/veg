@@ -557,26 +557,28 @@ function renderCart() {
 
       cartTableBody.innerHTML = cart.map(item => `
         <tr>
-          <td class="ps-4">
-            <div class="d-flex align-items-center gap-3">
+          <td class="ps-3 ps-md-4 cell-item">
+            <div class="d-flex align-items-center gap-2 gap-md-3">
               <img src="${item.image}" alt="${item.name}" class="cart-item-img-table">
-              <div>
-                <h6 class="fw-bold mb-1">${item.name}</h6>
-                <span class="badge ${item.category === 'Subscriptions' ? 'bg-primary-subtle text-primary' : 'bg-success-subtle text-success'} small rounded-pill px-2 py-0.5">${item.category === 'Subscriptions' ? 'Automated Subscription' : 'Farm Direct'}</span>
-                <span class="small text-muted ms-2">${item.unit}</span>
+              <div class="min-w-0">
+                <h6 class="fw-bold mb-1 cart-item-name">${item.name}</h6>
+                <div class="d-flex align-items-center flex-wrap gap-1">
+                  <span class="badge ${item.category === 'Subscriptions' ? 'bg-primary-subtle text-primary' : 'bg-success-subtle text-success'} small rounded-pill px-2 py-0.5">${item.category === 'Subscriptions' ? 'Subscription' : 'Farm Direct'}</span>
+                  <span class="small text-muted ms-1">${item.unit}</span>
+                </div>
               </div>
             </div>
           </td>
-          <td class="text-center fw-semibold">₹${item.price}</td>
-          <td class="text-center">
-            <div class="d-inline-flex align-items-center border rounded-pill px-2 py-1 bg-surface">
+          <td class="text-center fw-semibold cell-price">₹${item.price}</td>
+          <td class="text-center cell-qty">
+            <div class="d-inline-flex align-items-center border rounded-pill px-2 py-1 bg-surface shadow-xs">
               <button class="btn btn-sm p-0 px-2 fw-bold text-secondary" onclick="updateCartQty('${item.id}', -1)">-</button>
               <span class="fw-bold px-2">${item.qty}</span>
               <button class="btn btn-sm p-0 px-2 fw-bold text-secondary" onclick="updateCartQty('${item.id}', 1)">+</button>
             </div>
           </td>
-          <td class="text-end fw-bold text-success">₹${item.price * item.qty}</td>
-          <td class="pe-4 text-end">
+          <td class="text-end fw-bold text-success cell-subtotal">₹${item.price * item.qty}</td>
+          <td class="pe-3 pe-md-4 text-end cell-action">
             <button class="btn btn-sm btn-outline-danger border-0 rounded-circle" onclick="removeFromCart('${item.id}')" title="Remove item">
               <i class="bi bi-trash3 fs-6"></i>
             </button>
@@ -711,9 +713,9 @@ function renderWishlistPage() {
       <tr>
         <td class="ps-4">
           <div class="d-flex align-items-center gap-3">
-            <a href="product-details.html">
+            <div class="flex-shrink-0">
               <img src="${item.image}" alt="${item.name}" class="rounded-3 border shadow-sm" width="68" height="68" style="object-fit: cover;">
-            </a>
+            </div>
             <div>
               <span class="badge bg-success-subtle text-success small rounded-pill px-2.5 py-1 mb-1">${item.category || 'Organic'}</span>
               <h6 class="fw-bold mb-1"><a href="product-details.html" class="text-decoration-none text-main">${item.name}</a></h6>

@@ -67,10 +67,10 @@ img, video, iframe, canvas, svg {
     font-size: 0.76rem;
   }
   .site-header {
-    padding: 0.4rem 0;
+    padding: 0.15rem 0;
   }
   .header-brand img {
-    height: 34px;
+    height: 30px;
     width: auto;
   }
   .hero-fresh {
@@ -134,13 +134,13 @@ img, video, iframe, canvas, svg {
     display: none;
   }
   .site-header {
-    padding: 0.35rem 0;
+    padding: 0.1rem 0;
   }
   .header-brand img {
-    height: 32px;
+    height: 28px;
   }
   .header-actions {
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
   .action-badge-btn {
     width: 36px;
@@ -400,36 +400,186 @@ img, video, iframe, canvas, svg {
 /* --------------------------------------------------------------------------
    Extra Small Mobile & 360px Viewport Optimizations
    -------------------------------------------------------------------------- */
-@media (max-width: 480px) {
-  /* Cart & Basket Items Responsive Stacking */
+@media (max-width: 575.98px) {
+  /* Header Navbar on Mobile (Fits 360px & 320px perfectly without wrapping) */
+  .site-header {
+    padding: 0.35rem 0 !important;
+  }
+  .site-header .container-fluid {
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+  }
+  .header-brand img {
+    height: 28px !important;
+    width: auto !important;
+  }
+  .header-actions {
+    gap: 0.25rem !important;
+  }
+  .action-badge-btn {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    font-size: 0.88rem !important;
+    padding: 0 !important;
+  }
+  .action-badge-btn .badge-count {
+    top: -3px !important;
+    right: -3px !important;
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Cart Page Header / Hero Section */
+  section.bg-surface.border-bottom {
+    padding-top: 1.15rem !important;
+    padding-bottom: 1.15rem !important;
+  }
+  section.bg-surface.border-bottom h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.35rem !important;
+  }
+  section.bg-surface.border-bottom .badge {
+    font-size: 0.74rem !important;
+    padding: 0.35rem 0.7rem !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Cart Free Shipping Progress Bar Card */
+  #cartFreeShippingCard {
+    padding: 1rem 0.85rem !important;
+  }
+  #cartFreeShippingText {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+  }
+  #cartFreeShippingCard .badge {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.55rem !important;
+  }
+
+  /* Cart Table & Basket Items Responsive Constraints (Zero text overlap) */
+  .cart-table-wrap {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .cart-table-wrap .table,
+  .cart-table {
+    min-width: 520px !important;
+  }
+  .cart-table-wrap .table td,
+  .cart-table-wrap .table th,
+  .cart-table th, 
+  .cart-table td {
+    padding: 0.75rem 0.55rem !important;
+    font-size: 0.84rem !important;
+  }
   .cart-item-img-table {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
   }
-  
-  .cart-table th, .cart-table td {
-    padding: 0.6rem 0.4rem;
-    font-size: 0.82rem;
+  .cart-item-name {
+    font-size: 0.88rem !important;
+    line-height: 1.3 !important;
+  }
+  .card-header, 
+  .card-footer {
+    padding: 0.85rem 0.95rem !important;
   }
 
-  /* Delivery Zone Action Buttons Stacking */
+  /* Delivery Zone Action Buttons Stacking & Live Tracker (360px Protection) */
+  .tracker-card {
+    padding: 1.25rem 0.85rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .tracker-result-box,
+  #liveTrackerResultContainer {
+    padding: 1rem 0.75rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .tracker-driver-card {
+    padding: 0.85rem 0.65rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .tracker-driver-info {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .tracker-driver-info h6,
+  .tracker-driver-info span {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .tracker-driver-actions,
   .tracker-card .d-flex.gap-2 {
-    flex-direction: column;
-    width: 100%;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
   }
 
+  .tracker-driver-actions .btn,
+  .tracker-driver-actions a.btn,
+  .tracker-driver-actions button.btn,
   .tracker-card .d-flex.gap-2 .btn {
-    width: 100%;
-    margin-bottom: 0.35rem;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.84rem !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0 !important;
   }
 
-  /* Dashboard Messages Wrapping */
+  .tracker-step-item {
+    padding-left: 1.75rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  .tracker-step-item .fw-bold,
+  .tracker-step-item .small {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Dashboard Messages & Cards Responsive Protection (360px) */
   .admin-card {
-    padding: 1rem 0.75rem;
-    margin-bottom: 1rem;
+    padding: 0.95rem 0.75rem !important;
+    margin-bottom: 1rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    word-break: break-word !important;
   }
 
   .admin-card-header {
@@ -438,27 +588,66 @@ img, video, iframe, canvas, svg {
     gap: 0.5rem;
   }
 
+  .message-detail-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+
+  .message-header-info {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .message-title {
+    font-size: 1.05rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .message-sender-line {
+    font-size: 0.8rem !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .message-actions {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 0.35rem !important;
+  }
+
   .list-group-item {
     padding: 0.75rem 0.6rem !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
   }
 }
 
-@media (max-width: 359.98px) {
+@media (max-width: 380px) {
   .hero-fresh .hero-title,
   .hero-organic .hero-title {
     font-size: 1.45rem;
   }
   section.bg-surface.border-bottom .hero-title,
   section.bg-surface.border-bottom h1 {
-    font-size: 1.35rem !important;
+    font-size: 1.15rem !important;
   }
   .header-actions {
-    gap: 0.2rem;
+    gap: 0.18rem !important;
   }
   .action-badge-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.82rem;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 0.82rem !important;
+  }
+  .action-badge-btn .badge-count {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 0.6rem !important;
   }
   .badge-section {
     font-size: 0.7rem;
@@ -467,5 +656,45 @@ img, video, iframe, canvas, svg {
   .product-thumb {
     height: 135px;
   }
+  
+  /* 360px Dashboard Card & Messages Optimization */
+  .admin-main {
+    padding: 0.5rem 0.35rem !important;
+  }
+  .admin-card {
+    padding: 0.85rem 0.6rem !important;
+    border-radius: 10px !important;
+  }
+  .message-title {
+    font-size: 0.96rem !important;
+  }
+  .message-sender-line {
+    font-size: 0.76rem !important;
+  }
+  .admin-card .badge,
+  .message-header-info .badge {
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 0.72rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+  /* 360px Delivery Tracker & Driver Card Optimization */
+  .tracker-card {
+    padding: 1rem 0.65rem !important;
+  }
+  .tracker-result-box,
+  #liveTrackerResultContainer {
+    padding: 0.85rem 0.6rem !important;
+  }
+  .tracker-driver-card {
+    padding: 0.75rem 0.55rem !important;
+  }
+  .tracker-driver-actions .btn,
+  .tracker-driver-actions a.btn,
+  .tracker-driver-actions button.btn {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.65rem !important;
+  }
 }
+
 

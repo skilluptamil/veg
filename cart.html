@@ -155,19 +155,22 @@
         
         <!-- Left Column: Produce Table & Options -->
         <div class="col-lg-8">
-          <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-card mb-4">
+          <div class="cart-items-card mb-4">
             
             <!-- Card Header -->
-            <div class="card-header bg-surface py-3 px-4 d-flex align-items-center justify-content-between border-0">
-              <h5 class="fw-bold mb-0">Basket Items (<span class="cart-badge-count">3</span> items)</h5>
+            <div class="cart-card-header">
+              <h5 class="fw-bold mb-0 d-flex align-items-center gap-2">
+                <i class="bi bi-basket3-fill text-success"></i>
+                <span>Basket Items (<span class="cart-badge-count">3</span> items)</span>
+              </h5>
               <button class="btn btn-outline-danger btn-sm rounded-pill px-3" onclick="clearCart()">
                 <i class="bi bi-trash3 me-1"></i> Clear Basket
               </button>
             </div>
 
             <!-- Produce Items Table -->
-            <div class="table-responsive p-0">
-              <table class="table align-middle mb-0">
+            <div class="table-responsive p-0 cart-table-wrap">
+              <table class="table cart-table align-middle mb-0">
                 <thead class="bg-surface text-muted small">
                   <tr>
                     <th scope="col" class="ps-4 py-3">Produce Item</th>
@@ -184,19 +187,22 @@
             </div>
 
             <!-- Card Bottom Bar: Continue Shopping & Refresh -->
-            <div class="card-footer bg-surface py-3 px-4 d-flex flex-wrap justify-content-between align-items-center gap-2 border-0">
+            <div class="cart-card-footer flex-wrap gap-2">
               <a href="products.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm">
                 <i class="bi bi-arrow-left me-1"></i> Continue Shopping
               </a>
-              <span class="small text-muted">
-                <i class="bi bi-clock-history text-success me-1"></i> Harvested within the last 6 hours from certified local farms
+              <span class="small text-muted d-flex align-items-center gap-1">
+                <i class="bi bi-clock-history text-success"></i> Harvested within the last 6 hours from certified local farms
               </span>
             </div>
           </div>
 
           <!-- Delivery Slot & Preferences -->
           <div class="card border-0 shadow-sm rounded-4 p-4 bg-card mb-4">
-            <h5 class="fw-bold mb-3"><i class="bi bi-calendar2-check text-success me-2"></i> Preferred Delivery Time Slot</h5>
+            <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+              <i class="bi bi-calendar2-check-fill text-success"></i>
+              <span>Preferred Delivery Time Slot</span>
+            </h5>
             <div class="row g-3">
               <div class="col-md-4 col-sm-6">
                 <label class="delivery-slot-card p-3 border rounded-3 d-block cursor-pointer active">
@@ -231,8 +237,11 @@
 
         <!-- Right Column: Order Summary Card -->
         <div class="col-lg-4">
-          <div class="card border-0 shadow-sm rounded-4 p-4 bg-card position-sticky" style="top: 100px;">
-            <h5 class="fw-bold mb-3">Order Summary</h5>
+          <div class="cart-summary-card">
+            <div class="cart-summary-header">
+              <h5 class="fw-bold mb-0">Order Summary</h5>
+              <span class="badge bg-surface text-muted fw-normal"><span class="cart-badge-count">3</span> items</span>
+            </div>
             
             <!-- Summary Breakdown -->
             <div class="d-flex justify-content-between mb-2">
@@ -255,14 +264,18 @@
               <span class="fw-bold" id="cartDeliveryCharge">₹40</span>
             </div>
 
-            <!-- Promo Code Input -->
-            <div class="mb-4">
-              <label class="form-label small fw-semibold text-muted">Have a Coupon Code?</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="cartCouponInput" placeholder="Try 'FRESH10' or 'ORGANIC20'" style="text-transform: uppercase;">
-                <button class="btn btn-fresh btn-fresh-primary px-3" type="button" onclick="applyCoupon()">Apply</button>
+            <!-- Promo Code Input (Modern Seamless Pill Widget) -->
+            <div class="coupon-box-wrap mb-4">
+              <label class="form-label small fw-semibold text-muted mb-2 d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-ticket-perforated-fill text-success me-1"></i> Have a Coupon Code?</span>
+                <span class="badge bg-success-subtle text-success" style="font-size: 0.72rem; cursor: pointer;" onclick="document.getElementById('cartCouponInput').value='FRESH10'; applyCoupon();">Use: FRESH10</span>
+              </label>
+              <div class="coupon-input-group">
+                <i class="bi bi-tag-fill coupon-icon"></i>
+                <input type="text" class="coupon-input" id="cartCouponInput" placeholder="Enter coupon code" autocomplete="off" onkeypress="if(event.key==='Enter') applyCoupon();">
+                <button class="btn-coupon-apply" type="button" onclick="applyCoupon()">Apply</button>
               </div>
-              <div class="small mt-1 text-success fw-semibold" id="couponFeedback" style="display: none;"></div>
+              <div class="small mt-2" id="couponFeedback" style="display: none;"></div>
             </div>
 
             <hr class="my-3 border-secondary-subtle">

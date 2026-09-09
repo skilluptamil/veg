@@ -185,7 +185,7 @@
             </div>
 
             <!-- Live Tracker Result Container -->
-            <div id="liveTrackerResultContainer" class="p-4 rounded-4 bg-surface border">
+            <div id="liveTrackerResultContainer" class="p-4 rounded-4 bg-surface border tracker-result-box">
               <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 border-bottom pb-3">
                 <div>
                   <span class="badge bg-success-subtle text-success fw-bold px-2.5 py-1 rounded-pill mb-1">
@@ -193,7 +193,7 @@
                   </span>
                   <h4 class="fw-bold mb-0 text-main">Order #FL-88241</h4>
                 </div>
-                <div class="text-md-end">
+                <div class="text-md-end text-start">
                   <div class="small text-muted">Estimated Arrival</div>
                   <div class="fw-bold text-success fs-5">7:15 AM (~12 mins away)</div>
                 </div>
@@ -229,15 +229,15 @@
               </div>
 
               <!-- Driver Card -->
-              <div class="p-3 bg-card rounded-3 border d-flex justify-content-between align-items-center flex-wrap gap-3">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="p-2 bg-success-subtle text-success rounded-circle"><i class="bi bi-person-badge fs-3"></i></div>
-                  <div>
-                    <h6 class="fw-bold mb-0 text-main">Rahul Sharma (Delivery Specialist)</h6>
-                    <span class="small text-muted">★ 4.9 Rating · Temperature Verified (36.4°C)</span>
+              <div class="p-3 bg-card rounded-3 border d-flex justify-content-between align-items-center flex-wrap gap-3 tracker-driver-card">
+                <div class="d-flex align-items-center gap-3 tracker-driver-info">
+                  <div class="p-2 bg-success-subtle text-success rounded-circle flex-shrink-0"><i class="bi bi-person-badge fs-3"></i></div>
+                  <div style="min-width: 0;">
+                    <h6 class="fw-bold mb-0 text-main text-break">Rahul Sharma (Delivery Specialist)</h6>
+                    <span class="small text-muted text-break">★ 4.9 Rating · Temperature Verified (36.4°C)</span>
                   </div>
                 </div>
-                <div class="d-flex gap-2">
+                <div class="d-flex gap-2 tracker-driver-actions">
                   <a href="tel:+919823011223" class="btn btn-fresh btn-fresh-primary btn-fresh-sm">
                     <i class="bi bi-telephone-fill me-1"></i> Call Driver
                   </a>

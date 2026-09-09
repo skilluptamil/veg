@@ -402,9 +402,9 @@ function initBlogListPage() {
     blogGrid.innerHTML = filtered.map(post => `
       <div class="col-lg-4 col-md-6 blog-card-item" data-category="${post.category}">
         <div class="blog-card h-100 d-flex flex-column">
-          <a href="blog-details.html?id=${post.id}" class="blog-thumb">
+          <div class="blog-thumb">
             <img src="${post.image}" alt="${post.title}" loading="lazy">
-          </a>
+          </div>
           <div class="blog-body d-flex flex-column flex-grow-1">
             <div class="blog-meta">
               <span><i class="bi bi-tag-fill text-success me-1"></i> ${post.categoryName}</span>
@@ -525,9 +525,9 @@ function initBlogDetailsPage() {
     const otherPosts = BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 3);
     recentEl.innerHTML = otherPosts.map(p => `
       <div class="d-flex gap-3 mb-3">
-        <a href="blog-details.html?id=${p.id}" class="flex-shrink-0">
+        <div class="flex-shrink-0">
           <img src="${p.image}" class="rounded-3" width="70" height="70" style="object-fit: cover;" alt="${p.title}">
-        </a>
+        </div>
         <div>
           <h6 class="small fw-bold mb-1">
             <a href="blog-details.html?id=${p.id}" class="text-main text-decoration-none">${p.title}</a>

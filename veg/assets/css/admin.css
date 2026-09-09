@@ -393,6 +393,10 @@ body.dark-mode .metric-card {
   padding: 1.5rem;
   box-shadow: var(--shadow-sm, 0 2px 4px rgba(0,0,0,0.04));
   margin-bottom: 1.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 [data-bs-theme="dark"] .admin-card,
@@ -406,6 +410,55 @@ body.dark-mode .admin-card {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Message Detail Section Responsive Hierarchy */
+.message-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 100%;
+}
+
+.message-header-info {
+  min-width: 0;
+  max-width: 100%;
+  flex: 1 1 auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.message-title {
+  font-size: 1.2rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.35;
+  color: var(--heading-color, #0f172a);
+}
+
+.message-sender-line {
+  font-size: 0.85rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.message-actions {
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.message-reply-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .admin-table {
@@ -571,10 +624,65 @@ body.dark-mode .admin-card {
     padding: 0 0.75rem;
   }
   .admin-main {
-    padding: 0.75rem;
+    padding: 0.75rem 0.5rem;
   }
   .admin-card {
-    padding: 1rem;
+    padding: 0.95rem 0.75rem;
+    border-radius: 12px;
+  }
+  .admin-card-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .message-detail-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.65rem;
+  }
+  .message-header-info {
+    width: 100%;
+  }
+  .message-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .message-title {
+    font-size: 1.05rem;
+  }
+  .message-sender-line {
+    font-size: 0.8rem;
+  }
+  .message-reply-actions {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.65rem;
+  }
+  .message-reply-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-main {
+    padding: 0.5rem 0.35rem;
+  }
+  .admin-card {
+    padding: 0.85rem 0.6rem;
+    border-radius: 10px;
+  }
+  .message-title {
+    font-size: 0.96rem;
+  }
+  .message-sender-line {
+    font-size: 0.76rem;
+  }
+  .badge {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 0.72rem;
+  }
+  .list-group-item {
+    padding: 0.65rem 0.5rem !important;
   }
 }
 
