@@ -170,10 +170,16 @@
 }
 
 @media (min-width: 992px) {
+  [dir="rtl"] .footer-col-categories,
+  [dir="rtl"] .site-footer .footer-col-categories {
+    padding-left: 0 !important;
+    padding-right: 2rem !important;
+  }
+
   [dir="rtl"] .footer-col-contact,
   [dir="rtl"] .site-footer .footer-col-contact {
     padding-left: 0 !important;
-    padding-right: 3.5rem !important;
+    padding-right: 1.75rem !important;
   }
 }
 

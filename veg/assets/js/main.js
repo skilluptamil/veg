@@ -24,14 +24,18 @@ function initTheme() {
   themeToggles.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('freshleaf_theme', newTheme);
-      showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'info');
+      toggleTheme();
     });
   });
 }
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme);
+  localStorage.setItem('freshleaf_theme', newTheme);
+}
+window.toggleTheme = toggleTheme;
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-bs-theme', theme);
@@ -50,8 +54,8 @@ function applyTheme(theme) {
     }
   });
 
-  // Switch logo if present
-  const logos = document.querySelectorAll('.header-brand img, .admin-brand img');
+  // Switch logo if present (excluding footer which is always dark)
+  const logos = document.querySelectorAll('.header-brand img, .admin-brand img, .offcanvas-header img, .brand-logo img, img.logo-img');
   logos.forEach(logo => {
     if (theme === 'dark') {
       logo.src = logo.src.replace('logo.svg', 'logo-dark.svg');
@@ -72,14 +76,18 @@ function initRTL() {
   rtlToggles.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-      const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-      applyDirection(newDir);
-      localStorage.setItem('freshleaf_direction', newDir);
-      showToast(`Direction changed to ${newDir.toUpperCase()}`, 'info');
+      toggleRTL();
     });
   });
 }
+
+function toggleRTL() {
+  const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+  const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+  applyDirection(newDir);
+  localStorage.setItem('freshleaf_direction', newDir);
+}
+window.toggleRTL = toggleRTL;
 
 function applyDirection(dir) {
   document.documentElement.setAttribute('dir', dir);
@@ -87,6 +95,21 @@ function applyDirection(dir) {
   if (rtlLink) {
     rtlLink.disabled = (dir !== 'rtl');
   }
+  // Update RTL toggle icons and accessible labels across the page
+  document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
+    const icon = btn.querySelector('i');
+    if (icon) {
+      if (dir === 'rtl') {
+        icon.className = 'bi bi-text-left';
+        btn.setAttribute('title', 'Switch to LTR (Left to Right)');
+        btn.setAttribute('aria-label', 'Switch to LTR');
+      } else {
+        icon.className = 'bi bi-text-right';
+        btn.setAttribute('title', 'Switch to RTL (Right to Left)');
+        btn.setAttribute('aria-label', 'Switch to RTL');
+      }
+    }
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -1186,5 +1209,73 @@ function scrollToSection(sectionId) {
     el.scrollIntoView({ behavior: 'smooth' });
   }
 }
+
+/**
+ * Checks Pincode from the Home Page Delivery Checker Bar
+ */
+function checkHeroPincode(e) {
+  if (e) e.preventDefault();
+  const input = document.getElementById('heroPincodeInput');
+  const resultBox = document.getElementById('heroPincodeResult');
+  if (!input || !resultBox) return;
+
+  const pin = input.value.trim();
+  if (!pin || pin.length < 6) {
+    resultBox.innerHTML = `<div class="alert alert-warning py-2 px-3 mb-0 small rounded-3 d-flex align-items-center gap-2">
+      <i class="bi bi-exclamation-triangle-fill"></i> Please enter a valid 6-digit postal pincode.
+    </div>`;
+    resultBox.classList.remove('d-none');
+    return;
+  }
+
+  // Simulated instant postal verification
+  const isExpress = ['411045', '411007', '411001', '400001', '400050', '560001'].includes(pin);
+  if (isExpress) {
+    resultBox.innerHTML = `<div class="alert alert-success py-2 px-3 mb-0 small rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div>
+        <i class="bi bi-check-circle-fill text-success me-1"></i>
+        <strong>Pincode ${pin} is Eligible!</strong> Morning Dawn Harvest Slot (6:30 AM – 9:00 AM) & 2-Hour Express available today!
+      </div>
+      <a href="products.html" class="btn btn-sm btn-success px-3 py-1 rounded-pill">Shop Now <i class="bi bi-arrow-right"></i></a>
+    </div>`;
+  } else {
+    resultBox.innerHTML = `<div class="alert alert-info py-2 px-3 mb-0 small rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div>
+        <i class="bi bi-truck text-info me-1"></i>
+        <strong>Pincode ${pin}: Standard Morning Harvest Delivery Active!</strong> Next day 7:00 AM delivery slot open.
+      </div>
+      <a href="products.html" class="btn btn-sm btn-info text-white px-3 py-1 rounded-pill">Explore Produce</a>
+    </div>`;
+  }
+  resultBox.classList.remove('d-none');
+  showToast(`Pincode ${pin} checked: Delivery slots open!`, 'success');
+}
+
+/**
+ * Quick select pincode from chips
+ */
+function quickSelectPincode(pin) {
+  const input = document.getElementById('heroPincodeInput');
+  if (input) {
+    input.value = pin;
+    checkHeroPincode();
+  }
+}
+
+/**
+ * Copies promotional coupon code to clipboard with toast notification
+ */
+function copyCouponCode(code) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code).then(() => {
+      showToast(`Coupon code ${code} copied to clipboard!`, 'success');
+    }).catch(() => {
+      showToast(`Use coupon: ${code} at checkout!`, 'info');
+    });
+  } else {
+    showToast(`Use coupon: ${code} at checkout!`, 'info');
+  }
+}
+
 
 

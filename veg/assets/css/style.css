@@ -43,8 +43,8 @@ body:not(.dark-mode) {
   --border-subtle: #f1f5f9;
   
   /* Typography */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Elevation & Shadows */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -81,6 +81,7 @@ html {
 body {
   font-family: var(--font-body);
   font-weight: 400;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-main);
   background-color: var(--bg-main);
@@ -89,34 +90,193 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Strict Heading Weight: 600 Throughout the Website */
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1.fw-bold, h2.fw-bold, h3.fw-bold, h4.fw-bold, h5.fw-bold, h6.fw-bold,
+h1.fw-bolder, h2.fw-bolder, h3.fw-bolder, h4.fw-bolder, h5.fw-bolder, h6.fw-bolder,
+h1.fw-semibold, h2.fw-semibold, h3.fw-semibold, h4.fw-semibold, h5.fw-semibold, h6.fw-semibold,
+.h1.fw-bold, .h2.fw-bold, .h3.fw-bold, .h4.fw-bold, .h5.fw-bold, .h6.fw-bold,
+.hero-title, .hero-title.fw-bold,
+.section-title, .section-title.fw-bold,
+.section-heading,
+.page-title,
+.card-title, .card-title.fw-bold,
+.modal-title, .modal-title.fw-bold,
+.offcanvas-title, .offcanvas-title.fw-bold,
+.footer-title,
+.product-title, .product-card-title,
+.blog-title, .blog-card-title,
+.category-title, .feature-title,
+.pricing-title, .service-title,
+.stat-title, .sidebar-title,
+.widget-title, .testimonial-name,
+.cart-item-title, .team-name,
+.delivery-zone-title, .farmer-name,
+.table-title, .summary-title {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em;
+}
+
+h1:not(.text-white):not([class*="text-"]),
+h2:not(.text-white):not([class*="text-"]),
+h3:not(.text-white):not([class*="text-"]),
+h4:not(.text-white):not([class*="text-"]),
+h5:not(.text-white):not([class*="text-"]),
+h6:not(.text-white):not([class*="text-"]),
+.h1:not(.text-white):not([class*="text-"]),
+.h2:not(.text-white):not([class*="text-"]),
+.h3:not(.text-white):not([class*="text-"]),
+.h4:not(.text-white):not([class*="text-"]),
+.h5:not(.text-white):not([class*="text-"]),
+.h6:not(.text-white):not([class*="text-"]) {
   color: var(--heading-color);
+}
+
+/* Ensure all white text headings and CTA headings are strictly white */
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+h5.text-white,
+h6.text-white,
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.bg-success h1,
+.bg-success h2,
+.bg-success h3,
+.bg-success h4,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3 {
+  color: #ffffff !important;
+}
+
+
+h1, .h1, .hero-title {
+  font-size: 1.95rem; /* 31px */
   line-height: 1.25;
   letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-size: 1.45rem; /* 23px */
+  line-height: 1.3;
+}
+
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-size: 1.1rem; /* 17px */
+  line-height: 1.35;
+}
+
+/* Strict Paragraph Weight: 400 - 550 Throughout the Website */
+p,
+.card-text,
+.footer-desc,
+.feature-desc,
+.testimonial-text,
+.blog-excerpt,
+.blog-desc,
+.product-desc,
+.team-bio,
+.delivery-zone-desc,
+.farmer-quote,
+.accordion-body,
+.form-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Lead & Emphasized Paragraphs (Weight 500 within 400-550 range) */
+p.lead, .lead,
+.hero-lead, .hero-desc,
+.section-lead,
+.text-lead,
+.subtitle-lead,
+.feature-lead,
+p.fw-semibold,
+p.fw-medium,
+p.fw-bold {
+  font-family: var(--font-body);
+  font-weight: 500 !important;
+  line-height: 1.65;
+}
+
+/* Small, Muted & Secondary Text (Weight 400) */
+small, .small,
+p.small,
+p.text-muted, .text-muted p,
+p.text-light, .text-light p {
+  font-size: 0.84rem;
+  font-weight: 400;
+}
+
+/* Bold/Strong text inside paragraphs capped at max 550 */
+p b,
+p strong,
+.lead b,
+.lead strong,
+.card-text b,
+.card-text strong,
+.footer-desc b,
+.footer-desc strong,
+.testimonial-text b,
+.testimonial-text strong,
+.feature-desc b,
+.feature-desc strong,
+.team-bio b,
+.team-bio strong,
+.accordion-body b,
+.accordion-body strong {
+  font-weight: 550 !important;
+}
+
+/* Explicit High Contrast for Headings on Green/Dark Backgrounds */
+.text-white,
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+.text-white .h1, .text-white .h2, .text-white .h3, .text-white .h4, .text-white .h5, .text-white .h6,
+h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.text-white,
+.h1.text-white, .h2.text-white, .h3.text-white, .h4.text-white, .h5.text-white, .h6.text-white,
+.newsletter-banner,
+.newsletter-banner h1, .newsletter-banner h2, .newsletter-banner h3, .newsletter-banner h4, .newsletter-banner h5, .newsletter-banner h6,
+.newsletter-banner .h1, .newsletter-banner .h2, .newsletter-banner .h3, .newsletter-banner .h4,
+.bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4, .bg-primary h5, .bg-primary h6,
+.bg-success h1, .bg-success h2, .bg-success h3, .bg-success h4, .bg-success h5, .bg-success h6,
+.hero-organic,
+.hero-organic h1, .hero-organic h2, .hero-organic h3, .hero-organic h4, .hero-organic h5, .hero-organic h6,
+.hero-organic .hero-title,
+.hero-organic .organic-pillar-box,
+.hero-organic .organic-pillar-box h1, .hero-organic .organic-pillar-box h2, .hero-organic .organic-pillar-box h3, .hero-organic .organic-pillar-box h4, .hero-organic .organic-pillar-box h5, .hero-organic .organic-pillar-box h6,
+.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6,
+.site-footer .footer-title {
+  color: #ffffff !important;
+}
+
+/* Home 1 Light Mode Hero Contrast */
+.hero-fresh .hero-title,
+.hero-fresh h1,
+.hero-fresh h2 {
+  color: #0f172a !important;
+}
+
+.hero-fresh .hero-title .text-highlight {
+  color: #15803d !important;
+}
+
+.hero-fresh .hero-lead {
+  color: #334155 !important;
 }
 
 [data-bs-theme="light"] body,
 body:not(.dark-mode) {
   color: #1e293b;
   background-color: #faf8f5;
-}
-
-[data-bs-theme="light"] h1,
-[data-bs-theme="light"] h2,
-[data-bs-theme="light"] h3,
-[data-bs-theme="light"] h4,
-[data-bs-theme="light"] h5,
-[data-bs-theme="light"] h6,
-body:not(.dark-mode) h1,
-body:not(.dark-mode) h2,
-body:not(.dark-mode) h3,
-body:not(.dark-mode) h4,
-body:not(.dark-mode) h5,
-body:not(.dark-mode) h6 {
-  color: #0f172a !important;
 }
 
 [data-bs-theme="light"] .text-muted,
@@ -202,7 +362,7 @@ ul {
   border-radius: var(--radius-pill);
   background-color: var(--primary-subtle);
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -255,16 +415,25 @@ ul {
 }
 
 .btn-fresh-outline {
-  background-color: transparent;
-  border-color: var(--primary);
-  color: var(--primary) !important;
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main) !important;
+  font-weight: 500;
 }
 
 .btn-fresh-outline:hover {
-  background-color: var(--primary);
-  color: #ffffff !important;
+  background-color: var(--primary-subtle);
+  color: var(--primary) !important;
+  border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+}
+
+.btn-fresh-outline.active,
+.btn-fresh.active {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-fresh-outline-light {
@@ -280,13 +449,15 @@ ul {
 }
 
 .btn-fresh-sm {
-  padding: 0.45rem 1rem;
-  font-size: 0.85rem;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 500;
 }
 
 .btn-fresh-lg {
-  padding: 0.9rem 2.2rem;
-  font-size: 1.05rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.98rem;
+  font-weight: 600;
 }
 
 .btn-icon-round {
@@ -373,6 +544,7 @@ ul {
   position: sticky;
   top: 0;
   z-index: 1030;
+  padding: 0.15rem 0;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -385,16 +557,16 @@ ul {
 }
 
 .header-brand img {
-  height: 42px;
+  height: 36px;
   width: auto;
 }
 
 .main-nav .nav-link {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.92rem;
+  font-weight: 500;
+  font-size: 0.88rem;
   color: var(--heading-color);
-  padding: 1.25rem 0.65rem !important;
+  padding: 0.85rem 0.6rem !important;
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
@@ -677,7 +849,7 @@ ul {
 
 .hero-title {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   margin-bottom: 1.25rem;
 }
@@ -757,31 +929,59 @@ ul {
 
 /* Home 2 Hero: Organic & Sustainable Farm Focus */
 .hero-organic {
-  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.82)),
-              url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-  padding: 7rem 0 8rem;
-  color: #ffffff;
+  background: linear-gradient(135deg, #0b2e1a 0%, #15803d 100%);
+  padding: 6rem 0 5rem;
   position: relative;
+  overflow: hidden;
+  color: #ffffff !important;
 }
 
+.hero-organic h1,
+.hero-organic h2,
+.hero-organic h3,
+.hero-organic h4,
+.hero-organic h5,
+.hero-organic h6,
 .hero-organic .hero-title {
-  color: #ffffff;
+  color: #ffffff !important;
+  font-weight: 600 !important;
 }
 
 .hero-organic .hero-lead {
-  color: #cbd5e1;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-organic .text-warning {
+  color: #fbbf24 !important;
 }
 
 .organic-pillar-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  color: #ffffff !important;
+}
+
+.organic-pillar-box h1,
+.organic-pillar-box h2,
+.organic-pillar-box h3,
+.organic-pillar-box h4,
+.organic-pillar-box h5,
+.organic-pillar-box h6 {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.organic-pillar-box p {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .pillar-item {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -791,8 +991,10 @@ ul {
 }
 
 .pillar-item i {
-  font-size: 1.75rem;
-  color: var(--primary-light);
+  font-size: 1.4rem;
+  color: #4ade80 !important;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -862,7 +1064,7 @@ ul {
 
 .category-title {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
@@ -986,7 +1188,7 @@ ul {
 
 .product-title {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   line-height: 1.35;
 }
@@ -1284,7 +1486,7 @@ body.dark-mode .deal-card {
 
 .feature-title {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
@@ -1519,7 +1721,7 @@ body.dark-mode .deal-card {
 
 .blog-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.75rem;
   line-height: 1.35;
 }
@@ -1608,7 +1810,7 @@ body.dark-mode .read-story-btn:hover {
 
 .widget-title {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid var(--primary-subtle);
@@ -1688,7 +1890,7 @@ body.dark-mode .read-story-btn:hover {
 
 .testimonial-name {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.15rem;
   color: var(--heading-color);
 }
@@ -1705,10 +1907,24 @@ body.dark-mode .read-story-btn:hover {
   background: linear-gradient(135deg, #15803d 0%, #166534 100%);
   border-radius: var(--radius-xl);
   padding: 4rem 3rem;
-  color: #ffffff;
+  color: #ffffff !important;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+}
+
+.newsletter-banner h1,
+.newsletter-banner h2,
+.newsletter-banner h3,
+.newsletter-banner h4,
+.newsletter-banner h5,
+.newsletter-banner h6,
+.newsletter-banner .h1,
+.newsletter-banner .h2,
+.newsletter-banner .h3,
+.newsletter-banner .h4 {
+  color: #ffffff !important;
+  font-weight: 600 !important;
 }
 
 .newsletter-banner::after {
@@ -1807,9 +2023,10 @@ body.dark-mode .read-story-btn:hover {
 
 .site-footer .footer-title {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   position: relative;
+  white-space: nowrap;
 }
 
 .site-footer .footer-links li {
@@ -1864,8 +2081,12 @@ body.dark-mode .read-story-btn:hover {
 }
 
 @media (min-width: 992px) {
+  .site-footer .footer-col-categories {
+    padding-left: 2rem !important;
+  }
+
   .site-footer .footer-col-contact {
-    padding-left: 3.5rem !important;
+    padding-left: 1.75rem !important;
   }
 }
 
@@ -1948,7 +2169,7 @@ body.dark-mode .read-story-btn:hover {
 
 .cart-item-title {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
@@ -2222,7 +2443,7 @@ body.dark-mode .read-story-btn:hover {
 
 .team-name {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 0.25rem;
 }
@@ -2323,7 +2544,7 @@ body.dark-mode .read-story-btn:hover {
 
 .delivery-zone-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
 }
@@ -2955,7 +3176,7 @@ body.dark-mode .process-step-card {
 
 .farmer-name {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.35rem;
   color: var(--heading-color);
 }
@@ -3149,6 +3370,105 @@ body.dark-mode .story-floating-stat .stat-subtitle {
   left: 10px !important;
 }
 
+/* ==========================================================================
+   Mobile Navigation Drawer & Offcanvas Alignment
+   ========================================================================== */
+.offcanvas.offcanvas-start {
+  max-width: 320px !important;
+  width: 85vw !important;
+  background-color: var(--bg-card, #ffffff);
+  border-right: 1px solid var(--border-color, #e2e8f0);
+}
+
+.offcanvas-header {
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-surface, #f8fafc);
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.offcanvas-header .btn-close {
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.offcanvas-header .btn-close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+.offcanvas-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+}
+
+/* Mobile Nav List Items */
+#mobileNavOffcanvas .nav-link,
+#mobileMenu .nav-link,
+#mobileMenuOffcanvas .nav-link,
+.mobile-nav-list .nav-link {
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main, #1e293b) !important;
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  margin-bottom: 0.25rem;
+}
+
+#mobileNavOffcanvas .nav-link i,
+#mobileMenu .nav-link i,
+#mobileMenuOffcanvas .nav-link i,
+.mobile-nav-list .nav-link i {
+  font-size: 1.15rem;
+  color: var(--primary, #16a34a);
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+#mobileNavOffcanvas .nav-link:hover,
+#mobileMenu .nav-link:hover,
+#mobileMenuOffcanvas .nav-link:hover,
+.mobile-nav-list .nav-link:hover {
+  background: rgba(22, 163, 74, 0.08);
+  color: var(--primary, #16a34a) !important;
+  transform: translateX(4px);
+}
+
+#mobileNavOffcanvas .nav-link.active,
+#mobileMenu .nav-link.active,
+#mobileMenuOffcanvas .nav-link.active,
+.mobile-nav-list .nav-link.active {
+  background: rgba(22, 163, 74, 0.12);
+  color: var(--primary, #16a34a) !important;
+  font-weight: 600;
+}
+
+/* Mobile RTL Nav Item Alignment */
+[dir="rtl"] #mobileNavOffcanvas .nav-link,
+[dir="rtl"] #mobileMenu .nav-link,
+[dir="rtl"] #mobileMenuOffcanvas .nav-link,
+[dir="rtl"] .mobile-nav-list .nav-link {
+  text-align: right;
+  flex-direction: row;
+}
+
+[dir="rtl"] #mobileNavOffcanvas .nav-link:hover,
+[dir="rtl"] #mobileMenu .nav-link:hover,
+[dir="rtl"] #mobileMenuOffcanvas .nav-link:hover,
+[dir="rtl"] .mobile-nav-list .nav-link:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .offcanvas-header .btn-close {
+  margin: -0.5rem auto -0.5rem -0.5rem;
+}
+
 /* --------------------------------------------------------------------------
    Accordion & FAQ Component (LTR & Theme Responsive)
    -------------------------------------------------------------------------- */
@@ -3250,6 +3570,869 @@ body.dark-mode .accordion-body {
   background-color: var(--bg-card) !important;
   color: var(--text-muted) !important;
 }
+
+/* --------------------------------------------------------------------------
+   14. Enhanced Visual Traceability & Sourcing Journey Cards
+   -------------------------------------------------------------------------- */
+.process-step-card-visual {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.process-step-card-visual:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+.step-img-wrap {
+  position: relative;
+  height: 185px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.step-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-step-card-visual:hover .step-img-wrap img {
+  transform: scale(1.08);
+}
+
+.step-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.step-number-pill {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.4);
+  border: 2px solid #ffffff;
+}
+
+.step-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.process-step-card-visual:hover .step-icon-badge {
+  background: var(--accent);
+  color: #0f172a;
+  transform: rotate(10deg);
+}
+
+.step-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.step-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.step-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.step-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary-subtle);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* --------------------------------------------------------------------------
+   15. Interactive Batch Traceability Scanner & Certificate Modal
+   -------------------------------------------------------------------------- */
+.trace-lookup-bar {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.batch-quick-pill {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.batch-quick-pill:hover,
+.batch-quick-pill.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.lab-cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.lab-cert-stamp {
+  border: 2px dashed #10b981;
+  color: #10b981;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-size: 0.82rem;
+  transform: rotate(-3deg);
+}
+
+/* --------------------------------------------------------------------------
+   16. Seasonal Harvest Calendar & Freshness Matrix
+   -------------------------------------------------------------------------- */
+.harvest-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.harvest-table th {
+  background: var(--bg-surface);
+  color: var(--heading-color);
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.harvest-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-card);
+  vertical-align: middle;
+}
+
+.harvest-table tr:last-child td {
+  border-bottom: none;
+}
+
+.brix-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  color: #ea580c;
+  background: #fff7ed;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+}
+
+[data-bs-theme="dark"] .brix-score,
+body.dark-mode .brix-score {
+  background: rgba(234, 88, 12, 0.15);
+  color: #fb923c;
+}
+
+/* --------------------------------------------------------------------------
+   17. Regenerative Soil & Eco Impact Stats
+   -------------------------------------------------------------------------- */
+.impact-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition-normal);
+  height: 100%;
+}
+
+.impact-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.impact-stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.impact-stat-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.impact-stat-label {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   18. Farm Box Subscription Card
+   -------------------------------------------------------------------------- */
+.farm-sub-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.75rem;
+  position: relative;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.farm-sub-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.farm-sub-card.popular-box {
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(21, 128, 61, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   19. Customer Community Testimonial Cards
+   -------------------------------------------------------------------------- */
+.farm-testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: var(--transition-normal);
+  height: 100%;
+}
+
+.farm-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.customer-avatar-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--primary);
+  flex-shrink: 0;
+}
+
+.customer-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   20. Produce Market Enhancement Components (Categories, Quality, Sourcing, Deals, Delivery)
+   ========================================================================== */
+
+/* --- Delivery Slot & Pincode Checker --- */
+.delivery-checker-bar {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  margin-top: -2.5rem;
+  z-index: 10;
+}
+
+.delivery-checker-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+}
+
+.pincode-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  padding: 0.35rem 0.5rem 0.35rem 1.25rem;
+  transition: var(--transition-fast);
+}
+
+.pincode-input-group:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.15);
+  background: var(--bg-card);
+}
+
+.pincode-input-group input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  width: 100%;
+}
+
+.pincode-input-group input::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.pincode-quick-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.pincode-quick-chip:hover {
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.delivery-live-status {
+  background: var(--primary-subtle);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.25rem;
+}
+
+/* --- Freshness & Quality Assurance Matrix (4 Pillars) --- */
+.freshness-matrix-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.5rem;
+  height: 100%;
+  transition: var(--transition-normal);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.freshness-matrix-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.matrix-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.icon-harvest {
+  background: rgba(21, 128, 61, 0.12);
+  color: var(--primary);
+}
+
+.icon-testing {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0284c7;
+}
+
+.icon-coldchain {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.icon-warranty {
+  background: rgba(245, 158, 11, 0.14);
+  color: #d97706;
+}
+
+.freshness-matrix-card:hover .matrix-icon-circle {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.matrix-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.matrix-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  font-size: 0.88rem;
+}
+
+.matrix-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.matrix-checklist li i {
+  color: var(--primary);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* --- Produce Highlights & Seasonality Guide --- */
+.produce-highlight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.produce-highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.produce-highlight-thumb {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.produce-highlight-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.produce-highlight-card:hover .produce-highlight-thumb img {
+  transform: scale(1.08);
+}
+
+.brix-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #fbbf24;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.harvest-timestamp-pill {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(21, 128, 61, 0.9);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.produce-highlight-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.flavor-profile-bar {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  margin: 0.85rem 0;
+  font-size: 0.82rem;
+}
+
+/* --- Local Partner Farms & Sourcing Directory --- */
+.farm-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.farm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.farm-card-thumb {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.farm-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.farm-card:hover .farm-card-thumb img {
+  transform: scale(1.06);
+}
+
+.farm-dist-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.farm-badge-method {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.farm-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.farm-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.82rem;
+}
+
+.farm-crop-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+}
+
+.farm-crop-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border-radius: var(--radius-pill);
+}
+
+/* --- Curated Value Offers & Bundle Combos --- */
+.bundle-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bundle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.bundle-card.featured-bundle {
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.bundle-card-thumb {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.bundle-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bundle-card:hover .bundle-card-thumb img {
+  transform: scale(1.06);
+}
+
+.bundle-savings-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #ea580c;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.35);
+}
+
+.bundle-weight-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.bundle-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bundle-items-preview {
+  list-style: none;
+  padding: 0;
+  margin: 0.85rem 0 1.25rem 0;
+  font-size: 0.84rem;
+}
+
+.bundle-items-preview li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+  color: var(--text-muted);
+}
+
+.bundle-items-preview li i {
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+/* Coupon Promo Banner */
+.coupon-promo-box {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.coupon-code-pill {
+  background: #ffffff;
+  color: var(--primary);
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px dashed var(--primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.coupon-code-pill:hover {
+  background: #fef3c7;
+  color: #b45309;
+  border-color: #b45309;
+}
+
+/* --- Delivery Slots & Temperature Cold-Fleet --- */
+.delivery-slot-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: var(--transition-normal);
+  height: 100%;
+}
+
+.delivery-slot-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.slot-time-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-subtle);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cold-fleet-badge {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0284c7;
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+
 
 
 

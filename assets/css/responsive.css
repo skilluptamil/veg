@@ -382,11 +382,54 @@ img, video, iframe, canvas, svg {
 }
 
 /* --------------------------------------------------------------------------
-   Extra Small Mobile (< 360px - Fold / SE)
+   Extra Small Mobile & 360px Viewport Optimizations
    -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  /* Cart & Basket Items Responsive Stacking */
+  .cart-item-img-table {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .cart-table th, .cart-table td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.82rem;
+  }
+
+  /* Delivery Zone Action Buttons Stacking */
+  .tracker-card .d-flex.gap-2 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .tracker-card .d-flex.gap-2 .btn {
+    width: 100%;
+    margin-bottom: 0.35rem;
+  }
+
+  /* Dashboard Messages Wrapping */
+  .admin-card {
+    padding: 1rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .admin-card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  .list-group-item {
+    padding: 0.75rem 0.6rem !important;
+  }
+}
+
 @media (max-width: 359.98px) {
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
   .header-actions {
     gap: 0.2rem;
@@ -394,13 +437,14 @@ img, video, iframe, canvas, svg {
   .action-badge-btn {
     width: 32px;
     height: 32px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
   .badge-section {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.65rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
   }
   .product-thumb {
-    height: 140px;
+    height: 135px;
   }
 }
+

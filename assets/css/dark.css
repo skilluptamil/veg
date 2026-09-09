@@ -49,6 +49,23 @@ body.dark-mode .hero-fresh {
   background: linear-gradient(135deg, #0b1320 0%, #152238 50%, #0e1e32 100%);
 }
 
+[data-bs-theme="dark"] .hero-fresh .hero-title,
+body.dark-mode .hero-fresh .hero-title,
+[data-bs-theme="dark"] .hero-fresh h1,
+body.dark-mode .hero-fresh h1 {
+  color: #f8fafc !important;
+}
+
+[data-bs-theme="dark"] .hero-fresh .hero-title .text-highlight,
+body.dark-mode .hero-fresh .hero-title .text-highlight {
+  color: #4ade80 !important;
+}
+
+[data-bs-theme="dark"] .hero-fresh .hero-lead,
+body.dark-mode .hero-fresh .hero-lead {
+  color: #94a3b8 !important;
+}
+
 [data-bs-theme="dark"] .hero-fresh::before,
 body.dark-mode .hero-fresh::before {
   background: radial-gradient(circle, rgba(34, 197, 94, 0.22) 0%, rgba(34, 197, 94, 0.05) 50%, transparent 70%);
@@ -352,6 +369,73 @@ body.dark-mode #mobileMenuOffcanvas .nav-link.active,
 body.dark-mode .mobile-nav-list .nav-link.active {
   background: rgba(34, 197, 94, 0.2) !important;
   color: #4ade80 !important;
+}
+
+/* Product Cards & CTA Dark Mode */
+[data-bs-theme="dark"] .product-card,
+body.dark-mode .product-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-bs-theme="dark"] .product-card .product-title a,
+body.dark-mode .product-card .product-title a {
+  color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .product-card .current-price,
+body.dark-mode .product-card .current-price {
+  color: #4ade80;
+}
+
+[data-bs-theme="dark"] .product-card .btn-fresh-primary,
+body.dark-mode .product-card .btn-fresh-primary {
+  background-color: #15803d !important;
+  color: #ffffff !important;
+  border-color: #15803d !important;
+}
+
+[data-bs-theme="dark"] .product-card .btn-fresh-primary:hover,
+body.dark-mode .product-card .btn-fresh-primary:hover {
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+}
+
+/* QA Step 2 High Contrast Badge */
+[data-bs-theme="dark"] .badge.bg-warning.bg-opacity-10,
+body.dark-mode .badge.bg-warning.bg-opacity-10 {
+  background: rgba(245, 158, 11, 0.25) !important;
+  color: #fbbf24 !important;
+}
+
+/* Environmental Impact Overlay Card */
+[data-bs-theme="dark"] .position-relative .position-absolute.bg-card,
+body.dark-mode .position-relative .position-absolute.bg-card {
+  background: rgba(21, 34, 56, 0.95) !important;
+  border-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+/* Blog Filter Tabs Dark Mode */
+[data-bs-theme="dark"] button[data-blog-category],
+body.dark-mode button[data-blog-category] {
+  background-color: #152238 !important;
+  border-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+[data-bs-theme="dark"] button[data-blog-category]:hover,
+body.dark-mode button[data-blog-category]:hover {
+  background-color: #1c2e4a !important;
+  color: #ffffff !important;
+  border-color: #15803d !important;
+}
+
+[data-bs-theme="dark"] button[data-blog-category].active,
+body.dark-mode button[data-blog-category].active {
+  background-color: #15803d !important;
+  border-color: #15803d !important;
+  color: #ffffff !important;
 }
 
 

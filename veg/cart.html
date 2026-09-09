@@ -9,10 +9,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -45,8 +45,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="index.html" data-bs-toggle="dropdown">Home</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.html"><i class="bi bi-shop me-2"></i>Home 1</a></li>
-                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-flower1 me-2"></i>Home 2</a></li>
+                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -61,12 +61,12 @@
         <!-- Header Actions -->
         <div class="header-actions d-flex align-items-center gap-2">
           <!-- Theme Toggle -->
-          <button class="theme-toggle-btn action-badge-btn" title="Toggle Theme" onclick="toggleTheme()">
+          <button type="button" class="theme-toggle-btn action-badge-btn" title="Toggle Theme">
             <i class="bi bi-moon-stars-fill"></i>
           </button>
           <!-- RTL Toggle -->
-          <button class="action-badge-btn" title="Toggle RTL Direction" onclick="toggleRTL()">
-            <i class="bi bi-translate"></i>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+            <i class="bi bi-text-right"></i>
           </button>
           <!-- Wishlist Badge -->
           <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
@@ -354,7 +354,7 @@
         </div>
 
         <!-- Col 3: Categories -->
-        <div class="col-lg-2 col-md-3 col-6">
+        <div class="col-lg-3 col-md-3 col-6 footer-col-categories">
           <h5 class="footer-title">Produce Categories</h5>
           <ul class="footer-links">
             <li><a href="products.html?cat=vegetables"><i class="bi bi-chevron-right small text-success me-1"></i> Farm Vegetables</a></li>
@@ -367,7 +367,7 @@
         </div>
 
         <!-- Col 4: Store & Contact Info -->
-        <div class="col-lg-4 col-md-6 ps-lg-4 footer-col-contact">
+        <div class="col-lg-3 col-md-6 footer-col-contact">
           <h5 class="footer-title">Visit Our Market</h5>
           <a href="https://maps.google.com/?q=Pune+Agriculture+Market" target="_blank" rel="noopener noreferrer" class="footer-contact-link mb-2">
             <i class="bi bi-geo-alt-fill text-success fs-5 me-2"></i>
