@@ -225,6 +225,26 @@ img, video, iframe, canvas, svg {
   }
 
   /* Forms & Checkers */
+  .delivery-checker-bar {
+    padding: 1.25rem 1rem !important;
+    margin-top: 1.25rem !important;
+  }
+  .pincode-input-group {
+    padding: 0.25rem 0.35rem 0.25rem 0.85rem;
+    min-height: 44px;
+  }
+  .pincode-input-group input {
+    font-size: 0.84rem;
+  }
+  .pincode-input-group .btn {
+    font-size: 0.78rem;
+    padding: 0 0.85rem;
+    height: 36px;
+  }
+  .checker-chips-row {
+    gap: 0.3rem 0.4rem;
+  }
+
   .zip-input-group {
     flex-direction: column;
     gap: 0.65rem;
@@ -694,6 +714,41 @@ img, video, iframe, canvas, svg {
   .tracker-driver-actions button.btn {
     font-size: 0.8rem !important;
     padding: 0.5rem 0.65rem !important;
+  }
+
+  /* 360px Delivery Checker Bar */
+  .delivery-checker-bar {
+    padding: 1rem 0.75rem !important;
+    border-radius: 14px !important;
+    margin-top: 1rem !important;
+  }
+  .checker-icon-box {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.2rem !important;
+    border-radius: 10px !important;
+  }
+  .checker-title {
+    font-size: 0.98rem !important;
+  }
+  .checker-desc {
+    font-size: 0.78rem !important;
+  }
+  .pincode-input-group {
+    padding: 0.25rem 0.3rem 0.25rem 0.75rem !important;
+    min-height: 42px !important;
+  }
+  .pincode-input-group input {
+    font-size: 0.8rem !important;
+  }
+  .pincode-input-group .btn {
+    font-size: 0.75rem !important;
+    padding: 0 0.75rem !important;
+    height: 34px !important;
+  }
+  .pincode-quick-chip {
+    font-size: 0.72rem !important;
+    padding: 0.15rem 0.5rem !important;
   }
 }
 

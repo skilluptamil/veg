@@ -208,34 +208,32 @@
   <!-- Interactive Pincode & Delivery Slot Checker Bar -->
   <div class="container position-relative">
     <div class="delivery-checker-bar">
-      <div class="row align-items-center g-3">
+      <div class="row align-items-center g-3 g-lg-4">
         <div class="col-lg-5">
           <div class="d-flex align-items-center gap-3">
-            <div class="matrix-icon-circle icon-harvest mb-0" style="width: 52px; height: 52px; font-size: 1.4rem;">
+            <div class="checker-icon-box flex-shrink-0">
               <i class="bi bi-truck-front-fill"></i>
             </div>
             <div>
-              <h5 class="mb-0 fw-bold">Check Morning Harvest Delivery</h5>
-              <p class="text-muted small mb-0">Enter your pincode for instant refrigerated EV delivery slots.</p>
+              <h5 class="checker-title mb-1 fw-bold text-main">Check Morning Harvest Delivery</h5>
+              <p class="text-muted small mb-0 checker-desc">Enter your pincode for instant refrigerated EV delivery slots.</p>
             </div>
           </div>
         </div>
         <div class="col-lg-7">
-          <form onsubmit="checkHeroPincode(event)" class="d-flex flex-column gap-2">
-            <div class="d-flex gap-2 align-items-center">
-              <div class="pincode-input-group flex-grow-1">
-                <i class="bi bi-geo-alt-fill text-success me-2"></i>
-                <input type="text" id="heroPincodeInput" placeholder="Enter 6-digit Pincode (e.g. 411045, 400001)" maxlength="6">
-                <button type="submit" class="btn btn-fresh btn-fresh-primary btn-fresh-sm rounded-pill px-3">
-                  Check Slot <i class="bi bi-arrow-right"></i>
-                </button>
-              </div>
+          <form onsubmit="checkHeroPincode(event)" class="checker-form d-flex flex-column gap-2">
+            <div class="pincode-input-group">
+              <i class="bi bi-geo-alt-fill text-success fs-5 me-2 flex-shrink-0"></i>
+              <input type="text" id="heroPincodeInput" placeholder="Enter 6-digit Pincode (e.g. 411045, 400001)" maxlength="6" autocomplete="postal-code">
+              <button type="submit" class="btn btn-fresh btn-fresh-primary btn-fresh-sm rounded-pill px-3.5 flex-shrink-0">
+                <span>Check Slot</span> <i class="bi bi-arrow-right ms-1"></i>
+              </button>
             </div>
-            <div class="d-flex align-items-center gap-2 flex-wrap">
-              <span class="small text-muted fw-semibold">Popular Zones:</span>
-              <span class="pincode-quick-chip" onclick="quickSelectPincode('411045')">411045 (Baner, Pune)</span>
-              <span class="pincode-quick-chip" onclick="quickSelectPincode('400001')">400001 (Mumbai South)</span>
-              <span class="pincode-quick-chip" onclick="quickSelectPincode('560001')">560001 (Bengaluru CBD)</span>
+            <div class="d-flex align-items-center gap-1.5 flex-wrap checker-chips-row">
+              <span class="small text-muted fw-semibold me-1">Popular Zones:</span>
+              <span class="pincode-quick-chip" onclick="quickSelectPincode('411045')">411045 (Baner)</span>
+              <span class="pincode-quick-chip" onclick="quickSelectPincode('400001')">400001 (Mumbai)</span>
+              <span class="pincode-quick-chip" onclick="quickSelectPincode('560001')">560001 (Bengaluru)</span>
             </div>
           </form>
           <div id="heroPincodeResult" class="mt-2 d-none"></div>

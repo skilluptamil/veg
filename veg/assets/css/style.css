@@ -4443,8 +4443,8 @@ body.dark-mode .brix-score {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 1.75rem 2rem;
-  box-shadow: var(--shadow-md);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.07);
   position: relative;
   overflow: hidden;
   margin-top: -2.5rem;
@@ -4458,18 +4458,54 @@ body.dark-mode .brix-score {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+  background: linear-gradient(90deg, var(--primary) 0%, #22c55e 50%, var(--accent) 100%);
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
+}
+
+.checker-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(21, 128, 61, 0.1);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.delivery-checker-bar:hover .checker-icon-box {
+  transform: scale(1.05);
+}
+
+.checker-title {
+  font-size: 1.12rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--heading-color, #0f172a);
+  margin-bottom: 0.2rem;
+}
+
+.checker-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 0;
 }
 
 .pincode-input-group {
   position: relative;
   display: flex;
   align-items: center;
-  border: 2px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   border-radius: var(--radius-pill);
   background: var(--bg-surface);
-  padding: 0.35rem 0.5rem 0.35rem 1.25rem;
+  padding: 0.3rem 0.4rem 0.3rem 1.15rem;
   transition: var(--transition-fast);
+  min-height: 48px;
 }
 
 .pincode-input-group:focus-within {
@@ -4482,8 +4518,8 @@ body.dark-mode .brix-score {
   border: none;
   background: transparent;
   outline: none;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--text-main);
   width: 100%;
 }
@@ -4491,25 +4527,38 @@ body.dark-mode .brix-score {
 .pincode-input-group input::placeholder {
   color: var(--text-muted);
   font-weight: 400;
+  font-size: 0.88rem;
+}
+
+.checker-chips-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  padding-left: 0.25rem;
 }
 
 .pincode-quick-chip {
-  display: inline-block;
-  font-size: 0.78rem;
-  padding: 0.25rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
   background: var(--bg-surface);
   color: var(--text-muted);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: all 0.2s ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .pincode-quick-chip:hover {
   background: var(--primary-subtle);
   color: var(--primary);
   border-color: var(--primary);
+  transform: translateY(-1px);
 }
 
 .delivery-live-status {
