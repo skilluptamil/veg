@@ -6,12 +6,110 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initRTL();
+  initActiveNav();
   initStickyHeader();
   initBackToTop();
   initSearchPopup();
   initCartAndWishlist();
   initDealCountdowns();
 });
+
+/* --------------------------------------------------------------------------
+   0. Active Page Navigation Highlighting
+   -------------------------------------------------------------------------- */
+function initActiveNav() {
+  const path = window.location.pathname;
+  let page = path.split('/').pop().split('?')[0].split('#')[0] || 'index.html';
+  if (!page || page === '' || page === '/') page = 'index.html';
+
+  const desktopNavLinks = document.querySelectorAll('.main-nav .nav-link');
+  const dropdownItems = document.querySelectorAll('.main-nav .dropdown-item');
+  const mobileNavLinks = document.querySelectorAll('#mobileNavOffcanvas .nav-link');
+
+  // Clear existing active states first
+  desktopNavLinks.forEach(link => link.classList.remove('active'));
+  dropdownItems.forEach(item => item.classList.remove('active'));
+  mobileNavLinks.forEach(link => {
+    link.classList.remove('active', 'text-success', 'fw-bold');
+    link.classList.add('fw-semibold');
+  });
+
+  let matchedDesktop = false;
+  let matchedMobile = false;
+
+  // 1. Highlight Desktop Links
+  desktopNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    const linkPage = href.split('/').pop().split('?')[0].split('#')[0];
+    if (linkPage === page) {
+      link.classList.add('active');
+      matchedDesktop = true;
+    }
+  });
+
+  // Check dropdown items (e.g. Home 1 / Home 2)
+  dropdownItems.forEach(item => {
+    const href = item.getAttribute('href');
+    if (!href) return;
+    const linkPage = href.split('/').pop().split('?')[0].split('#')[0];
+    if (linkPage === page) {
+      item.classList.add('active');
+      const parentDropdown = item.closest('.dropdown');
+      if (parentDropdown) {
+        const toggle = parentDropdown.querySelector('.dropdown-toggle');
+        if (toggle) toggle.classList.add('active');
+      }
+      matchedDesktop = true;
+    }
+  });
+
+  // Fallback matching for sub-pages / details
+  if (!matchedDesktop) {
+    if (page.startsWith('product-details') || page.startsWith('product')) {
+      const prodLink = document.querySelector('.main-nav a[href*="products.html"]');
+      if (prodLink) prodLink.classList.add('active');
+    } else if (page.startsWith('blog-details')) {
+      const blogLink = document.querySelector('.main-nav a[href*="blog.html"]');
+      if (blogLink) blogLink.classList.add('active');
+    } else if (page.startsWith('service-details')) {
+      const srvLink = document.querySelector('.main-nav a[href*="services.html"]');
+      if (srvLink) srvLink.classList.add('active');
+    } else if (page === '' || page === 'index.html') {
+      const homeToggle = document.querySelector('.main-nav .dropdown-toggle');
+      if (homeToggle) homeToggle.classList.add('active');
+    }
+  }
+
+  // 2. Highlight Mobile Offcanvas Links
+  mobileNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    const linkPage = href.split('/').pop().split('?')[0].split('#')[0];
+    if (linkPage === page) {
+      link.classList.remove('fw-semibold');
+      link.classList.add('active', 'fw-bold', 'text-success');
+      matchedMobile = true;
+    }
+  });
+
+  if (!matchedMobile) {
+    if (page.startsWith('product-details')) {
+      const mobProd = document.querySelector('#mobileNavOffcanvas a[href*="products.html"]');
+      if (mobProd) {
+        mobProd.classList.remove('fw-semibold');
+        mobProd.classList.add('active', 'fw-bold', 'text-success');
+      }
+    } else if (page.startsWith('blog-details')) {
+      const mobBlog = document.querySelector('#mobileNavOffcanvas a[href*="blog.html"]');
+      if (mobBlog) {
+        mobBlog.classList.remove('fw-semibold');
+        mobBlog.classList.add('active', 'fw-bold', 'text-success');
+      }
+    }
+  }
+}
+window.initActiveNav = initActiveNav;
 
 /* --------------------------------------------------------------------------
    1. Theme Management (Dark / Light Mode)

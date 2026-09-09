@@ -25,28 +25,22 @@
   <link rel="stylesheet" href="assets/css/dark.css">
   <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-stylesheet" disabled>
 </head>
-<body class="bg-surface d-flex flex-column min-vh-100">
+<body class="bg-surface d-flex flex-column min-vh-100 justify-content-center py-4 position-relative">
 
-  <!-- Top Utility Header with Home Link, Dark/Light Mode and RTL Switcher -->
-  <header class="py-3 border-bottom bg-card shadow-xs">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a href="index.html" class="d-inline-flex align-items-center gap-2 text-decoration-none fw-semibold text-main">
-        <i class="bi bi-arrow-left text-success"></i>
-        <span>Back to FreshLeaf Store</span>
-      </a>
-      <div class="d-flex align-items-center gap-2">
-        <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
-          <i class="bi bi-moon-stars-fill"></i>
-        </button>
-        <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
-          <i class="bi bi-text-right"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+  <!-- Floating Theme & RTL Controls -->
+  <div class="position-fixed top-0 end-0 m-3 z-3 d-flex align-items-center gap-2">
+    <!-- Theme Toggle -->
+    <button type="button" class="action-badge-btn theme-toggle-btn shadow-sm" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+      <i class="bi bi-moon-stars-fill"></i>
+    </button>
+    <!-- RTL Toggle -->
+    <button type="button" class="action-badge-btn rtl-toggle-btn shadow-sm" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL Direction">
+      <i class="bi bi-text-right"></i>
+    </button>
+  </div>
 
   <!-- Login Main Content -->
-  <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+  <main class="d-flex align-items-center justify-content-center my-auto">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10 col-xl-9">
@@ -54,19 +48,28 @@
             <div class="row g-0">
               
               <!-- Left Promo Column -->
-              <div class="col-md-5 d-none d-md-flex flex-column justify-content-between p-5 text-white position-relative" style="background: linear-gradient(135deg, rgba(21, 128, 61, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=600&q=80') center/cover;">
+              <div class="col-md-5 d-none d-md-flex flex-column justify-content-between p-5 text-white position-relative" style="background: linear-gradient(135deg, rgba(21, 128, 61, 0.92), rgba(15, 23, 42, 0.92)), url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=600&q=80') center/cover;">
                 <div>
-                  <a href="index.html"><img src="assets/images/logo-dark.svg" alt="FreshLeaf Market" height="42" class="mb-4"></a>
-                  <h3 class="fw-bold mb-2">Welcome to Local Farm Direct</h3>
-                  <p class="small text-light opacity-75">Sign in to manage recurring weekly veggie baskets, track live delivery vans, and earn harvest points.</p>
+                  <a href="index.html" class="d-inline-block mb-4">
+                    <img src="assets/images/logo-dark.svg" alt="FreshLeaf Market" height="46">
+                  </a>
+                  <h3 class="fw-bold mb-2 text-white">Welcome to Local Farm Direct</h3>
+                  <p class="small text-light opacity-90 mb-0">Sign in to manage recurring weekly veggie baskets, track live delivery vans, and earn harvest points.</p>
                 </div>
-                <div class="border-top border-light border-opacity-25 pt-3 small text-light opacity-75">
+                <div class="border-top border-light border-opacity-25 pt-3 small text-light opacity-90">
                   <i class="bi bi-shield-check text-warning me-1"></i> 100% Secure SSL Checkout
                 </div>
               </div>
 
               <!-- Right Login Form Column -->
               <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
+                <!-- Mobile Brand Logo -->
+                <div class="d-md-none text-center mb-3">
+                  <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="40">
+                  </a>
+                </div>
+
                 <div class="mb-4">
                   <div class="badge-section mb-2"><i class="bi bi-shield-lock-fill text-success me-1"></i> Account Sign In</div>
                   <h2 class="fw-bold mb-1 text-heading">Customer Login</h2>
@@ -100,7 +103,7 @@
                     <label class="form-check-label small" for="rememberMe">Remember my login</label>
                   </div>
 
-                  <button type="submit" class="btn btn-fresh btn-fresh-primary w-100 py-2">
+                  <button type="submit" class="btn btn-fresh btn-fresh-primary auth-submit-btn w-100">
                     <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Market
                   </button>
                 </form>
@@ -114,10 +117,10 @@
 
                 <!-- Social Logins (Under Sign In to Market) -->
                 <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center gap-2 py-2" onclick="showToast('Google authentication demo', 'info')">
+                  <button type="button" class="btn btn-auth-social w-100" onclick="showToast('Google authentication demo', 'info')">
                     <i class="fab fa-google text-danger"></i> Continue with Google
                   </button>
-                  <button type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center gap-2 py-2" onclick="showToast('Apple authentication demo', 'info')">
+                  <button type="button" class="btn btn-auth-social w-100" onclick="showToast('Apple authentication demo', 'info')">
                     <i class="fab fa-apple"></i> Continue with Apple
                   </button>
                 </div>

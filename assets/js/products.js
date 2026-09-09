@@ -548,7 +548,7 @@ function applyCategoryUI(cat) {
   if (titleEl) titleEl.textContent = meta.title;
   if (breadcrumbEl) breadcrumbEl.textContent = meta.breadcrumb;
   if (subtitleEl) subtitleEl.textContent = meta.subtitle;
-  if (badgeEl) badgeEl.textContent = meta.badge;
+  if (badgeEl) badgeEl.innerHTML = `<i class="bi bi-patch-check-fill text-success me-1"></i> ${meta.badge}`;
 }
 
 function selectCategory(cat, e) {

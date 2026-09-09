@@ -41,8 +41,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.html">Home 1 (Marketplace)</a></li>
-                <li><a class="dropdown-item active" href="home-2.html">Home 2 (Organic & Traceability)</a></li>
+                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item active" href="home-2.html">Home 2</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -54,22 +54,26 @@
           </ul>
         </nav>
 
-        <!-- Actions -->
+        <!-- Right Action Controls -->
         <div class="header-actions">
-          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL"><i class="bi bi-text-right"></i></button>
+          <button type="button" class="action-badge-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="action-badge-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL Direction">
+            <i class="bi bi-text-right"></i>
+          </button>
           <a href="wishlist.html" class="action-badge-btn" title="Wishlist">
             <i class="bi bi-heart"></i>
-            <span class="badge-count wishlist-badge-count">2</span>
+            <span class="badge-count wishlist-count">0</span>
           </a>
-          <a href="cart.html" class="action-badge-btn" title="Shopping Cart">
+          <a href="cart.html" class="action-badge-btn" title="Cart">
             <i class="bi bi-basket3"></i>
-            <span class="badge-count cart-badge-count">3</span>
+            <span class="badge-count cart-count">0</span>
           </a>
           <a href="login.html" class="btn btn-fresh btn-fresh-outline btn-fresh-sm d-none d-md-inline-flex">
             <i class="bi bi-person"></i> Login
           </a>
-          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas">
+          <button class="action-badge-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas">
             <i class="bi bi-list fs-4"></i>
           </button>
         </div>
@@ -77,16 +81,16 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Offcanvas -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas">
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenuOffcanvas">
     <div class="offcanvas-header border-bottom">
       <img src="assets/images/logo.svg" alt="FreshLeaf Market" height="38">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
       <ul class="nav flex-column gap-2 mb-4">
-        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html"><i class="bi bi-shop me-2 text-success"></i> Home 1 (Marketplace)</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold text-success" href="home-2.html"><i class="bi bi-flower1 me-2"></i> Home 2 (Organic & Traceability)</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home 1</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-success" href="home-2.html">Home 2</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="about.html"><i class="bi bi-people me-2 text-success"></i> About Us</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="products.html"><i class="bi bi-grid me-2 text-success"></i> All Produce</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold" href="delivery-coverage.html"><i class="bi bi-truck me-2 text-success"></i> Delivery Zones</a></li>

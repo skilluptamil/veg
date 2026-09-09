@@ -44,6 +44,32 @@ body.dark-mode .main-nav .dropdown-menu {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
+[data-bs-theme="dark"] .main-nav .nav-link,
+body.dark-mode .main-nav .nav-link {
+  color: #e2e8f0 !important;
+}
+
+[data-bs-theme="dark"] .main-nav .nav-link:hover,
+[data-bs-theme="dark"] .main-nav .nav-link.active,
+[data-bs-theme="dark"] .main-nav .nav-link.show,
+body.dark-mode .main-nav .nav-link:hover,
+body.dark-mode .main-nav .nav-link.active,
+body.dark-mode .main-nav .nav-link.show {
+  color: #4ade80 !important;
+  font-weight: 600 !important;
+}
+
+[data-bs-theme="dark"] .main-nav .nav-link::before,
+body.dark-mode .main-nav .nav-link::before {
+  background-color: #4ade80 !important;
+}
+
+[data-bs-theme="dark"] .main-nav .dropdown-item.active,
+body.dark-mode .main-nav .dropdown-item.active {
+  background-color: rgba(34, 197, 94, 0.2) !important;
+  color: #4ade80 !important;
+}
+
 [data-bs-theme="dark"] .hero-fresh,
 body.dark-mode .hero-fresh {
   background: linear-gradient(135deg, #0b1320 0%, #152238 50%, #0e1e32 100%);
@@ -401,11 +427,21 @@ body.dark-mode .product-card .btn-fresh-primary:hover {
   color: #ffffff !important;
 }
 
-/* QA Step 2 High Contrast Badge */
+/* QA Step Badges */
+[data-bs-theme="dark"] .badge-step-pill,
+body.dark-mode .badge-step-pill {
+  background-color: #15803d !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .badge-step-amber,
+body.dark-mode .badge-step-amber,
 [data-bs-theme="dark"] .badge.bg-warning.bg-opacity-10,
 body.dark-mode .badge.bg-warning.bg-opacity-10 {
-  background: rgba(245, 158, 11, 0.25) !important;
+  background: rgba(245, 158, 11, 0.22) !important;
   color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
 }
 
 /* Environmental Impact Overlay Card */

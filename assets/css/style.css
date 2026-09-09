@@ -134,31 +134,16 @@ h6:not(.text-white):not([class*="text-"]),
   color: var(--heading-color);
 }
 
-/* Ensure all white text headings and CTA headings are strictly white */
-h1.text-white,
-h2.text-white,
-h3.text-white,
-h4.text-white,
-h5.text-white,
-h6.text-white,
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.bg-success h1,
-.bg-success h2,
-.bg-success h3,
-.bg-success h4,
-.bg-primary h1,
-.bg-primary h2,
-.bg-primary h3 {
+/* Direct White Heading Utility */
+.text-white,
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.text-white {
   color: #ffffff !important;
 }
 
 
-h1, .h1, .hero-title {
+
+h1, .h1 {
   font-size: 1.95rem; /* 31px */
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -237,25 +222,168 @@ p strong,
   font-weight: 550 !important;
 }
 
-/* Explicit High Contrast for Headings on Green/Dark Backgrounds */
+/* ==========================================================================
+   Universal High-Contrast White Text on All Green Backgrounds Across All Pages
+   (Eliminates dark blue/slate heading & text inheritance on any green container)
+   ========================================================================== */
+
+/* 1. Direct Text Color for Green Containers & Sections */
+.bg-success,
+.bg-primary,
+section.bg-success,
+section.bg-primary,
+div.bg-success,
+div.bg-primary,
+header.bg-success,
+header.bg-primary,
+footer.bg-success,
+footer.bg-primary,
+aside.bg-success,
+aside.bg-primary,
+article.bg-success,
+article.bg-primary,
+.badge-section.bg-success,
+.badge-section.bg-primary,
+.modal-header.bg-success,
+.modal-header.bg-primary,
+.coupon-promo-box,
+.newsletter-banner,
+.deals-section,
+.hero-organic,
+.hero-organic .organic-pillar-box,
+.banner-green,
+.banner-fresh,
+.stat-card-green,
+.feature-card-green,
+.green-card,
+[class*="bg-success"]:not([class*="-subtle"]),
+[class*="bg-primary"]:not([class*="-subtle"]) {
+  color: #ffffff !important;
+}
+
+/* 2. All Headings inside Green Background Containers */
+.bg-success h1, .bg-success h2, .bg-success h3, .bg-success h4, .bg-success h5, .bg-success h6,
+.bg-success .h1, .bg-success .h2, .bg-success .h3, .bg-success .h4, .bg-success .h5, .bg-success .h6,
+.bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4, .bg-primary h5, .bg-primary h6,
+.bg-primary .h1, .bg-primary .h2, .bg-primary .h3, .bg-primary .h4, .bg-primary .h5, .bg-primary .h6,
+.coupon-promo-box h1, .coupon-promo-box h2, .coupon-promo-box h3, .coupon-promo-box h4, .coupon-promo-box h5, .coupon-promo-box h6,
+.coupon-promo-box .h1, .coupon-promo-box .h2, .coupon-promo-box .h3, .coupon-promo-box .h4,
+.newsletter-banner h1, .newsletter-banner h2, .newsletter-banner h3, .newsletter-banner h4, .newsletter-banner h5, .newsletter-banner h6,
+.newsletter-banner .h1, .newsletter-banner .h2, .newsletter-banner .h3, .newsletter-banner .h4,
+.deals-section h1, .deals-section h2, .deals-section h3, .deals-section h4, .deals-section h5, .deals-section h6,
+.deals-section .h1, .deals-section .h2, .deals-section .h3, .deals-section .h4,
+.deals-section .section-title,
+.hero-organic h1, .hero-organic h2, .hero-organic h3, .hero-organic h4, .hero-organic h5, .hero-organic h6,
+.hero-organic .hero-title, .hero-organic .h1, .hero-organic .h2, .hero-organic .h3,
+.hero-organic .organic-pillar-box h1, .hero-organic .organic-pillar-box h2, .hero-organic .organic-pillar-box h3, .hero-organic .organic-pillar-box h4, .hero-organic .organic-pillar-box h5, .hero-organic .organic-pillar-box h6,
+.modal-header.bg-success .modal-title,
+.modal-header.bg-primary .modal-title,
+.badge-section.bg-success,
+.badge-section.bg-primary,
+.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6,
+.site-footer .footer-title,
 .text-white,
 .text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
 .text-white .h1, .text-white .h2, .text-white .h3, .text-white .h4, .text-white .h5, .text-white .h6,
 h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.text-white,
 .h1.text-white, .h2.text-white, .h3.text-white, .h4.text-white, .h5.text-white, .h6.text-white,
-.newsletter-banner,
-.newsletter-banner h1, .newsletter-banner h2, .newsletter-banner h3, .newsletter-banner h4, .newsletter-banner h5, .newsletter-banner h6,
-.newsletter-banner .h1, .newsletter-banner .h2, .newsletter-banner .h3, .newsletter-banner .h4,
-.bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4, .bg-primary h5, .bg-primary h6,
-.bg-success h1, .bg-success h2, .bg-success h3, .bg-success h4, .bg-success h5, .bg-success h6,
-.hero-organic,
-.hero-organic h1, .hero-organic h2, .hero-organic h3, .hero-organic h4, .hero-organic h5, .hero-organic h6,
-.hero-organic .hero-title,
-.hero-organic .organic-pillar-box,
-.hero-organic .organic-pillar-box h1, .hero-organic .organic-pillar-box h2, .hero-organic .organic-pillar-box h3, .hero-organic .organic-pillar-box h4, .hero-organic .organic-pillar-box h5, .hero-organic .organic-pillar-box h6,
-.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6,
-.site-footer .footer-title {
+[class*="bg-success"]:not([class*="-subtle"]) h1, [class*="bg-success"]:not([class*="-subtle"]) h2, [class*="bg-success"]:not([class*="-subtle"]) h3, [class*="bg-success"]:not([class*="-subtle"]) h4, [class*="bg-success"]:not([class*="-subtle"]) h5, [class*="bg-success"]:not([class*="-subtle"]) h6,
+[class*="bg-primary"]:not([class*="-subtle"]) h1, [class*="bg-primary"]:not([class*="-subtle"]) h2, [class*="bg-primary"]:not([class*="-subtle"]) h3, [class*="bg-primary"]:not([class*="-subtle"]) h4, [class*="bg-primary"]:not([class*="-subtle"]) h5, [class*="bg-primary"]:not([class*="-subtle"]) h6 {
   color: #ffffff !important;
+}
+
+/* 3. Paragraphs, Leads, Subtitles, Text Blocks inside Green Containers */
+.bg-success p:not(.text-dark),
+.bg-primary p:not(.text-dark),
+.coupon-promo-box p:not(.text-dark),
+.newsletter-banner p:not(.text-dark),
+.deals-section p:not(.text-dark),
+.deals-section .section-lead,
+.hero-organic p:not(.text-dark),
+.hero-organic .hero-lead,
+.hero-organic .hero-desc,
+.hero-organic .organic-pillar-box p,
+[class*="bg-success"]:not([class*="-subtle"]) p:not(.text-dark),
+[class*="bg-primary"]:not([class*="-subtle"]) p:not(.text-dark) {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 4. Spans, Strong, B, Small, Labels, Lists, Icons inside Green Containers */
+.bg-success strong:not(.text-dark), .bg-primary strong:not(.text-dark),
+.bg-success b:not(.text-dark), .bg-primary b:not(.text-dark),
+.bg-success span:not(.badge):not(.coupon-code-pill):not(.countdown-number):not(.countdown-label):not(.text-dark):not(.btn):not(.dropdown-item),
+.bg-primary span:not(.badge):not(.coupon-code-pill):not(.countdown-number):not(.countdown-label):not(.text-dark):not(.btn):not(.dropdown-item),
+.coupon-promo-box span:not(.coupon-code-pill):not(.badge):not(.text-dark),
+.coupon-promo-box strong, .coupon-promo-box b,
+.newsletter-banner span:not(.badge):not(.btn):not(.text-dark),
+.newsletter-banner strong, .newsletter-banner b,
+.deals-section span:not(.countdown-unit):not(.countdown-number):not(.countdown-label):not(.badge):not(.text-dark),
+.deals-section strong, .deals-section b,
+.hero-organic strong, .hero-organic b,
+.hero-organic span:not(.badge):not(.btn):not(.text-dark),
+.hero-organic .pillar-item,
+.hero-organic .pillar-item div,
+.bg-success li:not(.text-dark), .bg-primary li:not(.text-dark),
+.coupon-promo-box li, .newsletter-banner li, .deals-section li, .hero-organic li,
+.bg-success label, .bg-primary label,
+.bg-success small:not(.text-dark), .bg-primary small:not(.text-dark),
+.coupon-promo-box small, .newsletter-banner small, .deals-section small, .hero-organic small,
+[class*="bg-success"]:not([class*="-subtle"]) strong,
+[class*="bg-success"]:not([class*="-subtle"]) span:not(.badge):not(.btn):not(.text-dark),
+[class*="bg-success"]:not([class*="-subtle"]) li,
+[class*="bg-success"]:not([class*="-subtle"]) small:not(.text-dark),
+[class*="bg-primary"]:not([class*="-subtle"]) strong,
+[class*="bg-primary"]:not([class*="-subtle"]) span:not(.badge):not(.btn):not(.text-dark),
+[class*="bg-primary"]:not([class*="-subtle"]) li,
+[class*="bg-primary"]:not([class*="-subtle"]) small:not(.text-dark) {
+  color: #ffffff !important;
+}
+
+/* 5. Hyperlinks inside Green Background Containers */
+.bg-success a:not(.btn):not(.badge):not(.coupon-code-pill):not(.text-dark):not(.dropdown-item),
+.bg-primary a:not(.btn):not(.badge):not(.coupon-code-pill):not(.text-dark):not(.dropdown-item),
+.coupon-promo-box a:not(.btn):not(.coupon-code-pill):not(.badge),
+.newsletter-banner a:not(.btn):not(.badge),
+.deals-section a:not(.btn):not(.badge),
+.hero-organic a:not(.btn):not(.badge),
+[class*="bg-success"]:not([class*="-subtle"]) a:not(.btn):not(.badge):not(.text-dark),
+[class*="bg-primary"]:not([class*="-subtle"]) a:not(.btn):not(.badge):not(.text-dark) {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bg-success a:not(.btn):not(.badge):not(.coupon-code-pill):not(.text-dark):hover,
+.bg-primary a:not(.btn):not(.badge):not(.coupon-code-pill):not(.text-dark):hover,
+.coupon-promo-box a:not(.btn):not(.coupon-code-pill):not(.badge):hover,
+.newsletter-banner a:not(.btn):not(.badge):hover,
+.deals-section a:not(.btn):not(.badge):hover,
+.hero-organic a:not(.btn):not(.badge):hover {
+  color: #fef08a !important; /* Soft Amber highlight */
+}
+
+/* 6. Solid Green Badges, Progress Bars & Floating Action Pills */
+.badge.bg-success,
+.badge.bg-primary,
+.badge-fresh-primary,
+.badge-fresh-success,
+.admin-nav-badge.bg-success,
+.progress-bar.bg-success,
+.progress-bar.bg-primary,
+.rounded-circle.bg-success,
+.rounded-circle.bg-primary {
+  color: #ffffff !important;
+}
+
+/* 7. Secondary / Muted Text Overrides inside Green Containers */
+.bg-success .text-muted, .bg-primary .text-muted,
+.bg-success .text-light, .bg-primary .text-light,
+.bg-success .text-secondary, .bg-primary .text-secondary,
+.coupon-promo-box .text-muted, .coupon-promo-box .text-light,
+.newsletter-banner .text-muted, .newsletter-banner .text-light,
+.deals-section .text-muted, .deals-section .text-light,
+.hero-organic .text-muted, .hero-organic .text-light {
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 /* Home 1 Light Mode Hero Contrast */
@@ -352,6 +480,25 @@ ul {
 .badge-fresh {
   background-color: #e0f2fe;
   color: #0369a1;
+}
+
+.badge-step-amber {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+  font-weight: 700 !important;
+}
+
+.badge-step-pill {
+  background-color: #15803d !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 1.15rem !important;
+  display: inline-block;
+  border: none !important;
+  box-shadow: 0 2px 5px rgba(21, 128, 61, 0.2);
 }
 
 .badge-section {
@@ -565,8 +712,8 @@ ul {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.88rem;
-  color: var(--heading-color);
-  padding: 0.85rem 0.6rem !important;
+  color: var(--heading-color) !important;
+  padding: 0.85rem 0.65rem !important;
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
@@ -576,26 +723,43 @@ ul {
 }
 
 .main-nav .nav-link:hover,
+.main-nav .nav-link:focus,
+.main-nav .nav-link.active,
+.main-nav .nav-link.show {
+  color: var(--primary) !important;
+  font-weight: 600 !important;
+}
+
 .main-nav .nav-link.active {
-  color: var(--primary);
+  color: var(--primary) !important;
+  font-weight: 600 !important;
 }
 
 .main-nav .nav-link::before {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0.65rem;
-  right: 0.65rem;
-  height: 3px;
-  background-color: var(--primary);
-  border-radius: 3px 3px 0 0;
+  left: 0.45rem;
+  right: 0.45rem;
+  height: 3.5px;
+  background-color: var(--primary) !important;
+  border-radius: 4px 4px 0 0;
   transform: scaleX(0);
-  transition: var(--transition-fast);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-nav .nav-link:hover::before,
-.main-nav .nav-link.active::before {
-  transform: scaleX(1);
+.main-nav .nav-link.active::before,
+.main-nav .nav-link.show::before {
+  transform: scaleX(1) !important;
+}
+
+.main-nav .dropdown-item.active,
+.main-nav .dropdown-item:active {
+  background-color: var(--primary-subtle) !important;
+  color: var(--primary) !important;
+  font-weight: 600 !important;
 }
 
 /* Custom Dropdown Chevron Icon */
@@ -639,25 +803,25 @@ ul {
 
 .main-nav .dropdown-item {
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--text-main);
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1.15rem;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   transition: var(--transition-fast);
 }
 
 .main-nav .dropdown-item:hover {
   background-color: var(--primary-subtle);
   color: var(--primary);
-  padding-left: 1.25rem;
+  padding-left: 1.35rem;
 }
 
-.main-nav .dropdown-item i {
-  color: var(--primary);
-  font-size: 1rem;
+.main-nav .dropdown-item.active {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 /* Header Action Buttons */
@@ -847,11 +1011,88 @@ ul {
   100% { transform: rotate(360deg) scale(1); }
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 1.15;
+/* Landing Page Hero Titles (Home 1 & Home 2) */
+.hero-fresh .hero-title,
+.hero-organic .hero-title {
+  font-size: 3.25rem; /* 52px */
+  font-weight: 600 !important;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
   margin-bottom: 1.25rem;
+}
+
+/* Universal Inner Page Standard Hero Header Typography & Alignment */
+section.bg-surface.border-bottom {
+  position: relative;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+section.bg-surface.border-bottom .hero-title,
+section.bg-surface.border-bottom h1 {
+  font-size: 2.15rem !important; /* 34.4px */
+  font-weight: 600 !important;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--heading-color) !important;
+  margin-top: 0;
+  margin-bottom: 0.55rem !important;
+  text-align: center;
+}
+
+section.bg-surface.border-bottom .badge-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem !important;
+}
+
+section.bg-surface.border-bottom p:not(.breadcrumb p),
+section.bg-surface.border-bottom .text-muted:not(.breadcrumb-item) {
+  font-size: 0.95rem !important; /* 15.2px */
+  font-weight: 400 !important;
+  line-height: 1.6;
+  color: var(--text-muted) !important;
+  max-width: 650px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0.85rem !important;
+  text-align: center;
+}
+
+section.bg-surface.border-bottom .breadcrumb {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+
+section.bg-surface.border-bottom .breadcrumb .breadcrumb-item a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+section.bg-surface.border-bottom .breadcrumb .breadcrumb-item a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+section.bg-surface.border-bottom .breadcrumb .breadcrumb-item.active {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 2.15rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .hero-title .text-highlight {
@@ -4431,6 +4672,112 @@ body.dark-mode .brix-score {
   align-items: center;
   gap: 0.35rem;
 }
+
+/* ==========================================================================
+   21. Form Inputs & Authentication System (Strict Uniform Height & Aesthetics)
+   ========================================================================== */
+.form-control,
+input.form-control,
+select.form-control {
+  min-height: 48px !important;
+  height: 48px !important;
+  padding: 0.65rem 1rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--text-main) !important;
+  background-color: var(--bg-card) !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition-fast) !important;
+}
+
+textarea.form-control {
+  min-height: 110px !important;
+  height: auto !important;
+}
+
+.form-control:focus {
+  color: var(--text-main) !important;
+  background-color: var(--bg-card) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3.5px rgba(21, 128, 61, 0.15) !important;
+  outline: 0 !important;
+}
+
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrap .form-control {
+  padding-right: 48px !important;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+  z-index: 5;
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary);
+}
+
+.btn-auth-social {
+  min-height: 48px !important;
+  height: 48px !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  border-radius: var(--radius-md) !important;
+  border: 1.5px solid var(--border-color) !important;
+  background: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.btn-auth-social:hover {
+  background: var(--bg-surface) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.auth-submit-btn {
+  min-height: 48px !important;
+  height: 48px !important;
+  font-weight: 700 !important;
+  font-size: 0.98rem !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.auth-page-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-surface);
+  padding: 2.5rem 1rem;
+}
+
 
 
 
