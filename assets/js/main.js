@@ -152,8 +152,8 @@ function applyTheme(theme) {
     }
   });
 
-  // Switch logo if present (excluding footer which is always dark)
-  const logos = document.querySelectorAll('.header-brand img, .admin-brand img, .offcanvas-header img, .brand-logo img, img.logo-img');
+  // Switch logo if present (header, footer, offcanvas, admin, brand widgets)
+  const logos = document.querySelectorAll('.header-brand img, .footer-brand img, .admin-brand img, .offcanvas-header img, .brand-logo img, img.logo-img');
   logos.forEach(logo => {
     if (theme === 'dark') {
       logo.src = logo.src.replace('logo.svg', 'logo-dark.svg');
