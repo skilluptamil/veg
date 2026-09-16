@@ -263,3 +263,25 @@
   direction: rtl !important;
   unicode-bidi: plaintext;
 }
+
+/* Freshness Matrix Cards RTL */
+[dir="rtl"] .freshness-matrix-card {
+  text-align: right !important;
+  align-items: flex-start !important;
+}
+
+[dir="rtl"] .matrix-checklist li {
+  text-align: right !important;
+}
+
+/* Trace Lookup Bar RTL */
+[dir="rtl"] .trace-lookup-bar h6,
+[dir="rtl"] .trace-lookup-bar p {
+  text-align: right !important;
+}
+
+[dir="rtl"] .trace-lookup-bar .justify-content-lg-end {
+  justify-content: flex-start !important;
+}
+
+

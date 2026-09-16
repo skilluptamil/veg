@@ -166,6 +166,10 @@ function applyTheme(theme) {
 /* --------------------------------------------------------------------------
    2. RTL Management (Right-to-Left)
    -------------------------------------------------------------------------- */
+const RTL_ICON_SVG = `<svg class="rtl-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" y1="6" x2="3" y2="6"></line><polyline points="7 2 3 6 7 10"></polyline><line x1="21" y1="12" x2="9" y2="12"></line><line x1="21" y1="18" x2="13" y2="18"></line></svg>`;
+
+const LTR_ICON_SVG = `<svg class="rtl-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><polyline points="17 2 21 6 17 10"></polyline><line x1="3" y1="12" x2="15" y2="12"></line><line x1="3" y1="18" x2="11" y2="18"></line></svg>`;
+
 function initRTL() {
   const savedDir = localStorage.getItem('freshleaf_direction') || 'ltr';
   applyDirection(savedDir);
@@ -195,17 +199,14 @@ function applyDirection(dir) {
   }
   // Update RTL toggle icons and accessible labels across the page
   document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
-    const icon = btn.querySelector('i');
-    if (icon) {
-      if (dir === 'rtl') {
-        icon.className = 'bi bi-text-left';
-        btn.setAttribute('title', 'Switch to LTR (Left to Right)');
-        btn.setAttribute('aria-label', 'Switch to LTR');
-      } else {
-        icon.className = 'bi bi-text-right';
-        btn.setAttribute('title', 'Switch to RTL (Right to Left)');
-        btn.setAttribute('aria-label', 'Switch to RTL');
-      }
+    if (dir === 'rtl') {
+      btn.innerHTML = LTR_ICON_SVG;
+      btn.setAttribute('title', 'Switch to LTR (Left to Right)');
+      btn.setAttribute('aria-label', 'Switch to LTR');
+    } else {
+      btn.innerHTML = RTL_ICON_SVG;
+      btn.setAttribute('title', 'Switch to RTL (Right to Left)');
+      btn.setAttribute('aria-label', 'Switch to RTL');
     }
   });
 }
@@ -1365,7 +1366,9 @@ function quickSelectPincode(pin) {
 /**
  * Copies promotional coupon code to clipboard with toast notification
  */
-function copyCouponCode(code) {
+function copyCouponCode(code, btn) {
+  if (!code) code = 'FARMFRESH20';
+  
   if (navigator.clipboard) {
     navigator.clipboard.writeText(code).then(() => {
       showToast(`Coupon code ${code} copied to clipboard!`, 'success');
@@ -1374,6 +1377,18 @@ function copyCouponCode(code) {
     });
   } else {
     showToast(`Use coupon: ${code} at checkout!`, 'info');
+  }
+
+  const targetBtn = btn || (window.event && window.event.currentTarget ? window.event.currentTarget : document.querySelector('.coupon-code-pill'));
+  if (targetBtn) {
+    const icon = targetBtn.querySelector('i');
+    if (icon) {
+      const origClass = icon.className;
+      icon.className = 'bi bi-check2';
+      setTimeout(() => {
+        icon.className = origClass;
+      }, 1600);
+    }
   }
 }
 

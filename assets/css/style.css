@@ -325,9 +325,9 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.te
 /* 4. Spans, Strong, B, Small, Labels, Lists, Icons inside Green Containers */
 .bg-success strong:not(.text-dark), .bg-primary strong:not(.text-dark),
 .bg-success b:not(.text-dark), .bg-primary b:not(.text-dark),
-.bg-success span:not(.badge):not(.coupon-code-pill):not(.countdown-number):not(.countdown-label):not(.text-dark):not(.btn):not(.dropdown-item),
-.bg-primary span:not(.badge):not(.coupon-code-pill):not(.countdown-number):not(.countdown-label):not(.text-dark):not(.btn):not(.dropdown-item),
-.coupon-promo-box span:not(.coupon-code-pill):not(.badge):not(.text-dark),
+.bg-success span:not(.badge):not(.coupon-code-pill):not(.countdown-number):not(.countdown-label):not(.text-dark):not(.btn):not(.dropdown-item):not(.coupon-code-pill *),
+.bg-primary span:not(.badge):not(.coupon-code-pill):not(.countdown-number):not(.countdown-label):not(.text-dark):not(.btn):not(.dropdown-item):not(.coupon-code-pill *),
+.coupon-promo-box span:not(.badge):not(.text-dark):not(.coupon-code-pill):not(.coupon-code-pill *),
 .coupon-promo-box strong, .coupon-promo-box b,
 .newsletter-banner span:not(.badge):not(.btn):not(.text-dark),
 .newsletter-banner strong, .newsletter-banner b,
@@ -782,13 +782,6 @@ ul {
   transform: scaleX(1) !important;
 }
 
-.main-nav .dropdown-item.active,
-.main-nav .dropdown-item:active {
-  background-color: var(--primary-subtle) !important;
-  color: var(--primary) !important;
-  font-weight: 600 !important;
-}
-
 /* Custom Dropdown Chevron Icon */
 .main-nav .dropdown-toggle::after {
   display: inline-block;
@@ -831,7 +824,7 @@ ul {
 .main-nav .dropdown-item {
   font-weight: 500;
   font-size: 0.92rem;
-  color: var(--text-main);
+  color: var(--heading-color) !important;
   padding: 0.55rem 1.15rem;
   border-radius: var(--radius-sm);
   display: flex;
@@ -840,15 +833,23 @@ ul {
 }
 
 .main-nav .dropdown-item:hover {
-  background-color: var(--primary-subtle);
-  color: var(--primary);
+  background-color: var(--primary-subtle) !important;
+  color: var(--primary) !important;
+  font-weight: 600 !important;
   padding-left: 1.35rem;
 }
 
-.main-nav .dropdown-item.active {
-  background-color: var(--primary);
+.main-nav .dropdown-item.active,
+.main-nav .dropdown-item:active {
+  background-color: var(--primary) !important;
   color: #ffffff !important;
-  font-weight: 600;
+  font-weight: 600 !important;
+}
+
+.main-nav .dropdown-item.active:hover {
+  background-color: var(--primary-hover) !important;
+  color: #ffffff !important;
+  padding-left: 1.35rem;
 }
 
 /* Header Action Buttons */
@@ -879,6 +880,21 @@ ul {
   color: var(--primary);
   border-color: rgba(21, 128, 61, 0.2);
   transform: translateY(-2px);
+}
+
+.rtl-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  vertical-align: middle;
+  display: inline-block;
+  transition: transform var(--transition-fast, 0.2s ease);
+}
+
+.action-badge-btn:hover .rtl-icon,
+.btn-icon-round:hover .rtl-icon {
+  transform: scale(1.1);
 }
 
 .action-badge-btn .badge-count {
@@ -1082,8 +1098,8 @@ section.bg-surface.border-bottom .badge-section {
   margin-bottom: 0.85rem !important;
 }
 
-section.bg-surface.border-bottom p:not(.breadcrumb p),
-section.bg-surface.border-bottom .text-muted:not(.breadcrumb-item) {
+section.bg-surface.border-bottom:not(.live-trace-section) p:not(.breadcrumb p):not(.trace-lookup-bar *),
+section.bg-surface.border-bottom:not(.live-trace-section) .text-muted:not(.breadcrumb-item):not(.trace-lookup-bar *) {
   font-size: 0.95rem !important; /* 15.2px */
   font-weight: 400 !important;
   line-height: 1.6;
@@ -4227,20 +4243,62 @@ body.dark-mode .accordion-body {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 1.5rem;
+  padding: 1.25rem 1.75rem;
   box-shadow: var(--shadow-sm);
 }
 
-.batch-quick-pill {
+.trace-lookup-bar .trace-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(21, 128, 61, 0.25);
+}
+
+.trace-lookup-bar h6 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--heading-color) !important;
+  margin-bottom: 0.15rem !important;
+  text-align: start !important;
+  letter-spacing: -0.01em;
+}
+
+.trace-lookup-bar p {
+  font-size: 0.83rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+  text-align: start !important;
+  max-width: 100% !important;
+}
+
+.trace-lookup-bar .quick-demos-label {
   font-size: 0.82rem;
   font-weight: 600;
-  padding: 0.4rem 0.9rem;
+  color: var(--text-muted) !important;
+  margin: 0 0.25rem 0 0 !important;
+  white-space: nowrap;
+}
+
+.batch-quick-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   background: var(--bg-surface);
   color: var(--text-main);
   cursor: pointer;
   transition: var(--transition-fast);
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .batch-quick-pill:hover,
@@ -4248,6 +4306,7 @@ body.dark-mode .accordion-body {
   background: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
+  transform: translateY(-1px);
 }
 
 .lab-cert-card {
@@ -4575,12 +4634,14 @@ body.dark-mode .brix-score {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.65rem;
   height: 100%;
   transition: var(--transition-normal);
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
 }
 
 .freshness-matrix-card:hover {
@@ -4629,7 +4690,7 @@ body.dark-mode .brix-score {
 .matrix-stat-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.35rem 0.85rem;
@@ -4638,26 +4699,54 @@ body.dark-mode .brix-score {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   margin-bottom: 1rem;
+  align-self: flex-start;
+  width: fit-content;
+}
+
+.freshness-matrix-card h4 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 0.65rem;
+  text-align: start;
+  line-height: 1.35;
+}
+
+.freshness-matrix-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  text-align: start;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
 }
 
 .matrix-checklist {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0 0;
-  font-size: 0.88rem;
+  margin: auto 0 0 0;
+  width: 100%;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .matrix-checklist li {
   display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-muted);
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-align: start;
 }
 
 .matrix-checklist li i {
   color: var(--primary);
-  margin-top: 0.15rem;
+  font-size: 0.95rem;
   flex-shrink: 0;
 }
 
@@ -4947,25 +5036,56 @@ body.dark-mode .brix-score {
 }
 
 .coupon-code-pill {
-  background: #ffffff;
-  color: var(--primary);
-  font-family: monospace;
-  font-weight: 800;
+  background: #ffffff !important;
+  color: #15803d !important;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace, sans-serif !important;
+  font-weight: 800 !important;
   font-size: 1.1rem;
-  padding: 0.4rem 1.25rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1.35rem;
   border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  border: 2px dashed var(--primary);
+  justify-content: center;
+  gap: 0.65rem;
+  border: 2px dashed #15803d !important;
   cursor: pointer;
-  transition: var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  user-select: all;
+  min-width: 175px;
+}
+
+.coupon-code-pill span {
+  color: #15803d !important;
+  font-family: inherit !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em;
+  display: inline-block;
+}
+
+.coupon-code-pill i {
+  color: #15803d !important;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .coupon-code-pill:hover {
-  background: #fef3c7;
-  color: #b45309;
-  border-color: #b45309;
+  background: #fef3c7 !important;
+  color: #b45309 !important;
+  border-color: #b45309 !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+.coupon-code-pill:hover span,
+.coupon-code-pill:hover i {
+  color: #b45309 !important;
+}
+
+.coupon-code-pill:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* --- Delivery Slots & Temperature Cold-Fleet --- */
