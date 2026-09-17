@@ -882,6 +882,23 @@ ul {
   transform: translateY(-2px);
 }
 
+.rtl-text-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  user-select: none;
+  font-family: inherit;
+  display: inline-block;
+  transition: transform var(--transition-fast, 0.2s ease), color var(--transition-fast, 0.2s ease);
+}
+
+.action-badge-btn:hover .rtl-text-badge,
+.btn-icon-round:hover .rtl-text-badge {
+  transform: scale(1.08);
+}
+
 .rtl-icon {
   width: 18px;
   height: 18px;

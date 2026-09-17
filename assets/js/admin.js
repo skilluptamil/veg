@@ -67,17 +67,14 @@ function applyAdminDirection(dir) {
     rtlSheet.disabled = (dir !== 'rtl');
   }
 
-  const rtlIconHtml = `<svg class="rtl-icon me-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" y1="6" x2="3" y2="6"></line><polyline points="7 2 3 6 7 10"></polyline><line x1="21" y1="12" x2="9" y2="12"></line><line x1="21" y1="18" x2="13" y2="18"></line></svg>`;
-  const ltrIconHtml = `<svg class="rtl-icon me-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><polyline points="17 2 21 6 17 10"></polyline><line x1="3" y1="12" x2="15" y2="12"></line><line x1="3" y1="18" x2="11" y2="18"></line></svg>`;
-
-  // Update RTL toggle button icon and text
+  // Update RTL toggle button text
   document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
     if (dir === 'rtl') {
-      btn.innerHTML = `${ltrIconHtml}<span class="d-none d-lg-inline small fw-semibold">LTR</span>`;
+      btn.innerHTML = `<span class="small fw-bold">LTR</span>`;
       btn.setAttribute('title', 'Switch to LTR (Left to Right)');
       btn.setAttribute('aria-label', 'Switch to LTR');
     } else {
-      btn.innerHTML = `${rtlIconHtml}<span class="d-none d-lg-inline small fw-semibold">RTL</span>`;
+      btn.innerHTML = `<span class="small fw-bold">RTL</span>`;
       btn.setAttribute('title', 'Switch to RTL (Right to Left)');
       btn.setAttribute('aria-label', 'Switch to RTL');
     }
